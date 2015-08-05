@@ -1,12 +1,14 @@
 <?php
 namespace backend\controllers;
 use yii\web\Controller;
+use backend\service\UserService;
 
 class UserController extends Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $list = UserService::show();
+        return $this->render('index',['list'=>$list]);
     }
 
     // 添加商品

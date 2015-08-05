@@ -204,77 +204,76 @@ use yii\helpers\Url;
                         </a>
                         <ul class="sub-menu">
                             <li <?php if (Yii::$app->request->pathInfo == 'goods/index'): ?>class="active"<?php endif; ?> ><a href="<?php echo Url::toRoute('goods/index') ?>">商品列表</a></li>
-                            <li><a href=""><?php echo Yii::$app->request->pathInfo;?></a></li>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'style'): ?>active <?php endif; ?>">
                         <a href="javascript:;">
                             <b class="caret pull-right"></b>
                             <i class="fa fa-code-fork"></i>
                             <span>商品分类 <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="../style/index">分类列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'style/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('style/index') ?>">分类列表</a></li>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'user'): ?>active <?php endif; ?>">
                         <a href="javascript:;">
                             <b class="caret pull-right"></b>
                             <i class="fa fa-users"></i>
                             <span>用户管理 <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="../user/index">用户列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'user/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('user/index') ?>">用户列表</a></li>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'order'): ?>active <?php endif; ?>">
                         <a href="javascript:;">
                             <b class="caret pull-right"></b>
                             <i class="fa fa-file-o"></i>
                             <span>订单管理 <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="../order/index">订单列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'order/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/index') ?>">订单列表</a></li>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'address'): ?>active <?php endif; ?>">
                         <a href="javascript:;">
                             <b class="caret pull-right"></b>
                             <i class="fa fa-truck"></i>
                             <span>收货地址管理 <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="../address/index">收货地址列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'address/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('address/index') ?>">收货地址列表</a></li>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'admin'): ?>active <?php endif; ?>">
                         <a href="javascript:;">
                             <b class="caret pull-right"></b>
                             <i class="fa fa-user"></i>
                             <span>管理员 <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="../admin/index">管理员列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'admin/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('admin/index') ?>">管理员列表</a></li>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'link'): ?>active <?php endif; ?>">
                         <a href="javascript:;">
                             <b class="caret pull-right"></b>
                             <i class="fa fa-link"></i>
                             <span>友情链接 <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="../link/index">友链列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'link/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('link/index') ?>">友链列表</a></li>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'banner'): ?>active <?php endif; ?>">
                         <a href="javascript:;">
                             <b class="caret pull-right"></b>
                             <i class="fa fa-picture-o"></i>
                             <span>banner <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="../banner/index">首页banner</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'banner/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('banner/index') ?>">首页banner</a></li>
                         </ul>
                     </li>
                     <li class="has-sub">

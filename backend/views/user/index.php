@@ -32,7 +32,7 @@
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="../goods/add.html">新建</a>
+                                        <a href="../user/add.html">新建</a>
                                     </li>
                                 </ul>
                             </div>
@@ -44,33 +44,22 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>省</th>
-                                            <th>市</th>
-                                            <th>县/区</th>
-                                            <th>详细地址</th>
-                                            <th>邮编</th>
+                                            <th>账号</th>
+                                            <th>邮箱</th>
+                                            <th>性别</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach($list as $value):?>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>4</td>
-                                            <td>X</td>
+                                            <td><?php echo $value['id'];?></td>
+                                            <td><?php echo $value['name'];?></td>
+                                            <td><?php echo $value['email'];?></td>
+                                            <td><?php echo $value['sex'];?></td>
                                             <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
                                         </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>C</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
-                                        </tr>
+                                    <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>

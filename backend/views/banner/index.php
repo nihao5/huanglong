@@ -32,7 +32,7 @@
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="../goods/add.html">新建</a>
+                                        <a href="../banner/add.html">新建</a>
                                     </li>
                                 </ul>
                             </div>

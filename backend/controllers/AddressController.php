@@ -1,7 +1,7 @@
 <?php
 namespace backend\controllers;
 use yii\web\Controller;
-use backend\models\Address;
+use backend\service\AddressService;
 
 class AddressController extends Controller
 {
@@ -9,6 +9,11 @@ class AddressController extends Controller
     
     public function actionIndex()
     {
-        return $this->render('index');
+        $list = AddressService::show();
+        return $this->render('index',['list'=>$list]);
+    }
+    public function actionAdd()
+    {
+        return $this->render('add');
     }
 }

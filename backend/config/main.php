@@ -35,7 +35,7 @@ return [
             'enablePrettyUrl' => true,// 启用美化URL
             'showScriptName' => false,//隐藏index.php 
             // 'enableStrictParsing' => false,// 是否执行严格的url解析
-            //'suffix' => '.html',//后缀，如果设置了此项，那么浏览器地址栏就必须带上.html后缀，否则会报404错误
+            'suffix' => '.html',//后缀，如果设置了此项，那么浏览器地址栏就必须带上.html后缀，否则会报404错误
             'rules' => [
                     ['class' => 'yii\rest\UrlRule', 'controller' => ['phone', 'index', 'comment','site']],
                 ],

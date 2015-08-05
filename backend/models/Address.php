@@ -9,11 +9,13 @@ use Yii;
  *
  * @property string $id
  * @property integer $uid
+ * @property string $consignee
  * @property string $province
  * @property string $cite
  * @property string $county
  * @property string $address
  * @property integer $zipcode
+ * @property integer $phone
  * @property integer $default
  * @property integer $modtime
  */
@@ -33,8 +35,9 @@ class Address extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['uid', 'province', 'cite', 'county', 'address', 'zipcode', 'modtime'], 'required'],
-            [['uid', 'zipcode', 'default', 'modtime'], 'integer'],
+            [['uid', 'consignee', 'province', 'cite', 'county', 'address', 'zipcode', 'phone', 'modtime'], 'required'],
+            [['uid', 'zipcode', 'phone', 'default', 'modtime'], 'integer'],
+            [['consignee'], 'string', 'max' => 20],
             [['province', 'cite', 'county'], 'string', 'max' => 30],
             [['address'], 'string', 'max' => 100]
         ];
@@ -48,11 +51,13 @@ class Address extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'uid' => 'Uid',
+            'consignee' => 'Consignee',
             'province' => 'Province',
             'cite' => 'Cite',
             'county' => 'County',
             'address' => 'Address',
             'zipcode' => 'Zipcode',
+            'phone' => 'Phone',
             'default' => 'Default',
             'modtime' => 'Modtime',
         ];
