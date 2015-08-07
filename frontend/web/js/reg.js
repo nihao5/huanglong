@@ -119,14 +119,14 @@ $(function(){
 	//Ajax发送表单
 	$('.reg_btn_wrap').click(function(){
 
-			if (phonelock == true && nicknamelock == true && passwordlock == true && confpasslock == true && codelock == true) {
+			if (phonelock == true && nicknamelock == true && passwordlock == true && confpasslock == true) {
 
 				$('#registerForm').submit();
 			}else{
 				alert('请正确输入相关信息！');
 				return false;
 			}
-		reFleshCode();
+		// reFleshCode();
 	});
 
 //验证手机函数
@@ -135,18 +135,37 @@ $(function(){
 		if (!phone) {
 			$('<span class="msg_err"></span>').insertAfter('#mobile');
 			$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[1]+'</div>').insertAfter('#mobile');
+		}else if(!/^1[3|4|5|8]\d{9}$/.test(phone)){
+			$('<span class="msg_err"></span>').insertAfter('#mobile');
+			$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[2]+'</div>').insertAfter('#mobile');
+			// $.post(url1,{'phone':phone},function(msg){
+			// 	if(msg){
+			// 		$('<span class="msg_err"></span>').insertAfter('#mobile');
+			// 		$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[3]+'</div>').insertAfter('#mobile');
+			// 	}else{
+			// 		if (/^1[3|4|5|8]\d{9}$/.test(phone)) {
+			// 			phonelock = true;
+			// 		} else {
+			// 			$('<span class="msg_err"></span>').insertAfter('#mobile');
+			// 			$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[2]+'</div>').insertAfter('#mobile');	
+			// 		}
+			// 	}
+			// });
 		}else{
-			$.post(url1,{'phone':phone},function(msg){
-				if(msg){
-					$('<span class="msg_err"></span>').insertAfter('#mobile');
-					$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[3]+'</div>').insertAfter('#mobile');
-				}else{
-					if (/^1[3|4|5|8]\d{9}$/.test(phone)) {
-						phonelock = true;
-					} else {
+			$.ajax({
+				url:"",
+				type:"post",
+				dataType:"",
+				cache:false,
+				success:function(data){
+					// 如果在数据库中查询到了，就返回已注册
+					if(data){
 						$('<span class="msg_err"></span>').insertAfter('#mobile');
-						$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[2]+'</div>').insertAfter('#mobile');	
+						$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[3]+'</div>').insertAfter('#mobile');
+					}else{
+						phonelock = true;
 					}
+					
 				}
 			});
 		}

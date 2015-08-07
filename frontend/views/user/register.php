@@ -101,42 +101,7 @@
 		</div>
 	</div>
 </div>
-<script id="loginNav" type="text/html">
-</script>
-<script id="loginTpl" type="text/html">
-</script>
-<script id="loginSina" type="text/html">
-<div class="pop_login"> <div class="l_ico"> <a class="big_sina" href="/connect/auth/weibo?frm=tk_sina1"></a> </div> <h4>登录后，继续逛！</h4> <div class="mt30_f c_f">已有帐号，直接<a class="red_f" href="/user/login?frm=tk_denglu2">登录</a></div></div>
-</script>
-<script id="loginQQ" type="text/html">
-<div class="pop_login"> <div class="l_ico"> <a class="big_qq" href="/connect/auth/qzone?frm=tk_qq1"></a> </div> <h4>登录后，继续逛！</h4> <div class="mt30_f c_f">已有帐号，直接<a class="red_f" href="/user/login?frm=tk_denglu1">登录</a></div></div>
-</script>
-<script id="loginRenren" type="text/html">
-<div class="pop_login"> <div class="l_ico"> <a class="big_ren" href="/connect/auth/renren?frm=tk_rr"></a> </div> <h4>登录后，继续逛！</h4> <div class="mt30_f c_f">已有帐号，直接<a class="red_f" href="/user/login?frm=tk_dengl3">登录</a></div></div>
-</script>
-<script id="pop_loading" type="text/html">
-<div class="pop_loading"><div></div></div>
-</script>
-<script id="shop_pop_loading" type="text/html">
-<div class="shop_pop_loading"> <div></div> </div>
-</script>
-<script id="floatingWindow" type="text/html">
-<div class="rec_layout floatingWindow"><div class="top_ico none_f"></div><div class="left_ico none_f"></div><div class="right_ico none_f"></div><div class="bot_ico none_f"></div><div class="group_rec"></div></div>
-</script>
-<script id="loginSmile" type="text/html">
-// <div class="smileysbox clearfix_f"> <div class="line"></div> <ul>  <li class="smiley" id="" title=""> <img emotion="" title="" src="/images/face/.gif" /> </li>  </ul></div>
-</script>
-<script id="mailSub" type="text/html">
-<div class="mail_sub"> <fieldset> <form id="substribe" method="post" target="_blank" action="/edm/subscribe"> <legend>美丽说邮件订阅</legend> <p><span>您的邮箱：</span><input id="sub_email" class="l_ipt" type="text" name="email" placeholder="建议您使用qq邮箱" /></p> <p><span>您的姓名：</span><input id="sub_opt" class="l_ipt" type="text" name=username placeholder="选填" /></p> <p> <input id="sub_now" class="btn sure" type="submit" value="现在订阅"/> <span class="hint_sub none_f red_f">您的邮箱填写有误，请重新填写。</span> </p> </form> </fieldset> </div>
-</script>
-<div class="atDiv" style="word-wrap: break-word; outline: medium none; position: absolute;overflow:auto;filter:alpha(opacity=0);moz-opacity:0;opacity:0;">
-<span class="before"></span>
-<span class="flag"></span>
-<span class="after"></span>
-</div>
-<script id="atSearchKey" type="text/html">
-<ul class="atSearch pa_f" style="border:1px solid #CCCCCC;border-radius:2px;color:#333;padding:1px;background:#fff;z-index:1000;"> <li class="atTitle" style="padding:5px 10px;white-space:nowrap;">选择最近@的人或直接输入</li></ul>
-</script>
+
 <script src="/js/reg.js"></script>
 </body>
 </html>
