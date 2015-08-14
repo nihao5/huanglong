@@ -62,8 +62,8 @@ AppAsset::register($this);
 					<ul class="menu_leo">
 						<li><a class="first" href="#"><em style="background:url(&quot;/img/i_wx_single.png&quot;) no-repeat; padding:1px 8px;">&nbsp;</em>微信登录</a></li>
 						<li><a href="#"><em class="i_QQ">&nbsp;</em> QQ登录</a></li>
-						<li><a href="#">登录</a></li>
-						<li><a href="#">注册</a></li>
+						<li><a href="../user/login">登录</a></li>
+						<li><a href="../user/register">注册</a></li>
 						<li><a href="#" target="_blank" class="mycart"><em class="i_cart">&nbsp;</em>我的购物车<span class="num_bgc num_bgc_none">0</span></a></li>
 						<li><a href="#" target="_blank"><em class="i_order">&nbsp;</em>	我的订单</a></li>
 						<li><a href="#" target="_blank"><em class="i_mob">&nbsp;</em>下载App</a></li>

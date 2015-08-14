@@ -15,7 +15,7 @@ $(function(){
 	var codelock = false;
 	//表单效果
 
-	$('#mlsUser').focus(function(){		
+	$('#mlsUser').focus(function(){	
 		 			 
 		 $('#mlsUser').nextAll().not('.user_icon').remove();
 	});
@@ -79,13 +79,31 @@ $(function(){
 
 	//Ajax发送表单
 	$('.login_btn').click(function(){
-		if (nicknamelock == true && passwordlock == true && codelock == true) {
-
-			$('#registerForm').submit();
+		if (nicknamelock == true && passwordlock == true) {
+			var _csrf = $('#_csrf').val();
+			var username = $("#mlsUser").val();
+			var password = $("#password").val();
+			$.ajax({
+				url:'../user/login',
+				type:'post',
+				dataType:'json',
+				data:{username:username,password:password,_csrf:_csrf},
+				success:function(data){
+					if(data.status == -1){
+						$('<span class="msg_err"></span>').insertAfter('#password');
+		 				$('<div id="msgmlsUser" class="msg_error"><span></span>'+data.msg+'</div>').insertAfter('#password');
+						// alert(data.msg);
+						return false;
+					}else{
+						window.location.href="../index/index";
+					}
+				}
+			});
 		}else{
+			// $('#registerForm').submit(function(){return false;});
 			alert('请正确输入相关信息！');
 			return false;
 		}
-		reFleshCode();
+		// reFleshCode();
 	});   
 });

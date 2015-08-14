@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,14 +26,14 @@
 				<img width="370" height="353" src="/img/register/ad_img.jpg">
 			</div>
 			<div id="mob_reg" class="reg_form">
-				<form id="registerForm" action="" onsubmit="return false" method="post">
+				<form id="registerForm" action="../user/register" method="post">
 					<h3>
-						<a href="#">登录</a>
+						<a href="../user/login">登录</a>
 						注册美丽说
 					</h3>
 					<div class="reg_list">
 						<p class="reg_box">
-							<input id="mobile" class="reg_txt" type="text" autocomplete="off" placeholder="手机号" name="mobile">
+							<input id="mobile" class="reg_txt" type="text" autocomplete="off" placeholder="手机号" name="phone">
 							<!-- <span></span> -->
 							<span class="tel_icon"></span>
 						</p>
@@ -72,6 +75,7 @@
 					</div>
 					<div class="regErrorMessage none_f"></div>
 					<div class="reg_btn_wrap">
+					<input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
 						<input class="reg_btn" type="submit" value="立即注册">
 					</div>
 					<div class="agree_reg">

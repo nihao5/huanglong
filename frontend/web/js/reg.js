@@ -10,6 +10,7 @@ $(function(){
 	var passwordlock = false;
 	var confpasslock = false;
 	var codelock = false;
+	var _csrf = $('#_csrf').val();
 
 	//注册手机
 	$('#mobile').focus(function(){			 			 
@@ -20,7 +21,7 @@ $(function(){
 	$('#mobile').blur(function(){
 		$('#mobile').nextAll().not('.tel_icon').remove();
 		var val = $(this).val();
-		checkPhone(val);
+		checkPhone(val,_csrf);
 	});	
 
 	//注册用户名
@@ -33,7 +34,7 @@ $(function(){
 	$('#nickname').blur(function(){
 		$('#nickname').nextAll().not('.user_icon').remove();
 		var val = $(this).val();
-		checkUsername(val);
+		checkUsername(val,_csrf);
 	});	
 
 	//注册密码验证
@@ -120,9 +121,9 @@ $(function(){
 	$('.reg_btn_wrap').click(function(){
 
 			if (phonelock == true && nicknamelock == true && passwordlock == true && confpasslock == true) {
-
-				$('#registerForm').submit();
+				$('#registerForm').submit(function(){return true;});
 			}else{
+				$('#registerForm').submit(function(){return false;});
 				alert('请正确输入相关信息！');
 				return false;
 			}
@@ -131,35 +132,23 @@ $(function(){
 
 //验证手机函数
 	
-	function checkPhone(phone) {
+	function checkPhone(phone,_csrf) {
 		if (!phone) {
 			$('<span class="msg_err"></span>').insertAfter('#mobile');
 			$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[1]+'</div>').insertAfter('#mobile');
 		}else if(!/^1[3|4|5|8]\d{9}$/.test(phone)){
 			$('<span class="msg_err"></span>').insertAfter('#mobile');
 			$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[2]+'</div>').insertAfter('#mobile');
-			// $.post(url1,{'phone':phone},function(msg){
-			// 	if(msg){
-			// 		$('<span class="msg_err"></span>').insertAfter('#mobile');
-			// 		$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[3]+'</div>').insertAfter('#mobile');
-			// 	}else{
-			// 		if (/^1[3|4|5|8]\d{9}$/.test(phone)) {
-			// 			phonelock = true;
-			// 		} else {
-			// 			$('<span class="msg_err"></span>').insertAfter('#mobile');
-			// 			$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[2]+'</div>').insertAfter('#mobile');	
-			// 		}
-			// 	}
-			// });
 		}else{
 			$.ajax({
-				url:"",
+				url:"../user/check-phone",
 				type:"post",
-				dataType:"",
+				dataType:"json",
 				cache:false,
+				data:{phone:phone,_csrf:_csrf},
 				success:function(data){
 					// 如果在数据库中查询到了，就返回已注册
-					if(data){
+					if(data.status == -1){
 						$('<span class="msg_err"></span>').insertAfter('#mobile');
 						$('<div id="msgmlsUser" class="msg_error"><span></span>'+phoneMessage[3]+'</div>').insertAfter('#mobile');
 					}else{
@@ -172,7 +161,7 @@ $(function(){
 	}
 
 //验证用户名函数
-	function checkUsername(username) {
+	function checkUsername(username,_csrf) {
 		if (!username) {
 			$('<span class="msg_err"></span>').insertAfter('#nickname');
 			$('<div id="msgmlsUser" class="msg_error"><span></span>'+usernameMessage[1]+'</div>').insertAfter('#nickname');
@@ -185,18 +174,18 @@ $(function(){
 		}else if (/^[0-9]{4,23}$/.test(username)) {
 			$('<span class="msg_err"></span>').insertAfter('#nickname');
 			$('<div id="msgmlsUser" class="msg_error"><span></span>'+usernameMessage[5]+'</div>').insertAfter('#nickname');		
-		}else if (/^[a-zA-Z0-9_\u4E00-\uFA29]*$/.test(username)) {
-			$.post(url2,{'username':username},function(msg){
-				if(msg){
+		}else if (!/^[a-zA-Z0-9_\u4E00-\uFA29]*$/.test(username)) {
+			$('<span class="msg_err"></span>').insertAfter('#nickname');
+			$('<div id="msgmlsUser" class="msg_error"><span></span>'+usernameMessage[2]+'</div>').insertAfter('#nickname');
+		} else {
+			$.post('../user/check-name',{'username':username,_csrf:_csrf},function(msg){
+				if(msg.status == -1){
 					$('<span class="msg_err"></span>').insertAfter('#nickname');
 					$('<div id="msgmlsUser" class="msg_error"><span></span>'+usernameMessage[3]+'</div>').insertAfter('#nickname');
 				}else{
 					nicknamelock = true;
 				}
-			});
-		} else {
-			$('<span class="msg_err"></span>').insertAfter('#nickname');
-			$('<div id="msgmlsUser" class="msg_error"><span></span>'+usernameMessage[2]+'</div>').insertAfter('#nickname');	
+			},"json");	
 		}
 	}
 

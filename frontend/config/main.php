@@ -29,6 +29,13 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=127.0.0.1;dbname=meili',
+            'username' => 'root',
+            'password' => '332422',
+            'charset' => 'utf8',
+        ],
     ],
     'params' => $params,
 ];

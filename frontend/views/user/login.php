@@ -24,7 +24,7 @@
 				</div>			
 				<div class="login_form">			
 					<form id="loginForm" method="post" onsubmit="return false" action="">			
-						<h3><a href="https://account.meilishuo.com/user/register">注册</a>登录美丽说</h3>					
+						<h3><a href="../user/register">注册</a>登录美丽说</h3>					
 						<div class="login_list">						
 							<p class="login_box">		
 								<input class="login_txt" id="mlsUser" name="mlsUser" placeholder="邮箱/手机号/昵称" type="text">					
