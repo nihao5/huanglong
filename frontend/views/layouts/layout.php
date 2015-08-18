@@ -19,18 +19,7 @@ AppAsset::register($this);
 	<meta name="description" content="来美丽说开启属于你的发现之旅，感受全新的购买体验吧！这里有百万粉丝的时尚大咖、热爱发现美物的生活家、一边旅行一边挖掘好货的旅行达人...而他们都将成为你的专属挑款师！还等什么？加入我们，发现流行，占有世界！">
 	<meta name="keywords" content="美丽说,淘宝网,衣服,鞋子,包包,配饰,家居,美容,搭配,达人,团购,淘宝店">
 	<script src="/js/jquery.js"></script>
-	<!-- <link rel="dns-prefetch" href="s.meilishuo.net/">
-	<link rel="dns-prefetch" href="i.meilishuo.net/">
-	<link rel="dns-prefetch" href="d01.res.meilishuo.net/">
-	<link rel="dns-prefetch" href="d02.res.meilishuo.net/">
-	<link rel="dns-prefetch" href="d03.res.meilishuo.net/">
-	<link rel="dns-prefetch" href="d04.res.meilishuo.net/">
-	<link rel="dns-prefetch" href="d05.res.meilishuo.net/"> -->
-	<!-- <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1"> -->
-	<!-- <meta property="qc:admins" content="173137167465514130576375"> -->
-	<!-- <meta name="chinaz-site-verification" content="500e4417-e595-40ac-98da-dec66c97a9e5"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="/css/base.css"> -->
-	<!--[if IE 6]><link rel="stylesheet" type="text/css" href="s.meilishuo.net/css/ie6.css?1505121125.8807.0004" /><![endif]-->
 	<link rel="apple-touch-icon-precomposed" href="/img/custom_icon_precomposed.png">
 	<?php $this->head() ?>
 	<!-- <link rel="stylesheet" type="text/css" href="/css/welcome_new.css"> -->
@@ -60,10 +49,14 @@ AppAsset::register($this);
 			<div class="uinfo_bar">
 				<div class="header_top">
 					<ul class="menu_leo">
+					<?php if(Yii::$app->session->get('username') && Yii::$app->session->get('password')){?>
+						<li><a href="../user/register">hh</a></li>
+					<?php }else{?>
 						<li><a class="first" href="#"><em style="background:url(&quot;/img/i_wx_single.png&quot;) no-repeat; padding:1px 8px;">&nbsp;</em>微信登录</a></li>
 						<li><a href="#"><em class="i_QQ">&nbsp;</em> QQ登录</a></li>
 						<li><a href="../user/login">登录</a></li>
 						<li><a href="../user/register">注册</a></li>
+					<?php }?>
 						<li><a href="#" target="_blank" class="mycart"><em class="i_cart">&nbsp;</em>我的购物车<span class="num_bgc num_bgc_none">0</span></a></li>
 						<li><a href="#" target="_blank"><em class="i_order">&nbsp;</em>	我的订单</a></li>
 						<li><a href="#" target="_blank"><em class="i_mob">&nbsp;</em>下载App</a></li>

@@ -7,7 +7,7 @@ use Yii;
 class UserController extends Controller
 {
 	public $layout = false;
-    
+    // 注册
 	public function actionRegister()
 	{
         if(Yii::$app->request->isPost){
@@ -16,9 +16,9 @@ class UserController extends Controller
             $password = Yii::$app->request->Post('password');
             $data = UserService::insertUser($phone,$username,$password);
             if($data){
-                Yii::$app->session->set('username.phone',$phone);
-                Yii::$app->session->set('username.username',$username);
-                Yii::$app->session->set('username.password',$password);
+                Yii::$app->session->set('phone',$phone);
+                Yii::$app->session->set('username',$username);
+                Yii::$app->session->set('password',$password);
                 echo "<script>alert('注册成功');location.href='../index/index';</script>";
                 // return $this->redirect(['index/index']);
             }else{
@@ -55,15 +55,14 @@ class UserController extends Controller
     // 登陆
 	public function actionLogin()
 	{
-        $this->layout='main.php';
         if(Yii::$app->request->isPost && Yii::$app->request->isAjax){
             $username = Yii::$app->request->Post('username');
             $password = Yii::$app->request->Post('password');
             $data = UserService::checkUser($username,$password);
             if($data){
-                Yii::$app->session->set('username.phone',$data['phone']);
-                Yii::$app->session->set('username.username',$data['name']);
-                Yii::$app->session->set('username.password',$password);
+                Yii::$app->session->set('phone',$data['phone']);
+                Yii::$app->session->set('username',$data['name']);
+                Yii::$app->session->set('password',$password);
                 echo json_encode(['status'=>'1','msg'=>'登录成功']);exit;
             }else{
                 echo json_encode(['status'=>'-1','msg'=>'用户名或密码错误,请重新登录']);exit;
