@@ -70,4 +70,13 @@ class UserController extends Controller
         }
 		return $this->render('login');
 	}
+
+    // 退出登录
+    public function actionLogout()
+    {
+        Yii::$app->session->remove('phone');
+        Yii::$app->session->remove('username');
+        Yii::$app->session->remove('password');
+        return $this->redirect(['index/index']);
+    }
 }
