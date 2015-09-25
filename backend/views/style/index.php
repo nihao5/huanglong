@@ -1,4 +1,6 @@
-        
+<?php
+// use yii\bootstrap\Alert;
+?>
         <!-- begin #content -->
         <div id="content" class="content">
             <!-- begin breadcrumb -->
@@ -11,7 +13,6 @@
             <!-- begin page-header -->
             <h1 class="page-header">Managed Tables <small>header small text goes here...</small></h1>
             <!-- end page-header -->
-            
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-12 -->
@@ -44,34 +45,25 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>省</th>
-                                            <th>市</th>
-                                            <th>县/区</th>
-                                            <th>详细地址</th>
-                                            <th>邮编</th>
+                                            <th>分类名称</th>
+                                            <th>父id</th>
+                                            <th>是否显示</th>
+                                            <th>添加时间</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($posts as $k => $v): ?>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>4</td>
-                                            <td>X</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <td><?= $v['id'];?></td>
+                                            <td><?= str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp',count(explode(',',$v['path']))-1).'|- '.$v['name'];?></td>
+                                            <td><?= $v['pid'];?></td>
+                                            <td><?= $v['isshow'];?></td>
+                                            <td><?= $v['modtime'];?></td>
+                                            <td><a href="../style/update.html?id=<?= $v['id'];?>" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
                                         </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>C</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
-                                        </tr>
-                                    </tbody>
+                                    <?php endforeach ?>  
+                                    </tbody>                             
                                 </table>
                             </div>
                         </div>

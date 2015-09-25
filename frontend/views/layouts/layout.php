@@ -53,7 +53,7 @@ AppAsset::register($this);
                         <li><a href="#"><em class="i_QQ">&nbsp;</em> QQ登录</a></li>
                         <li><a href="../user/login">登录</a></li>
                         <li><a href="../user/register">注册</a></li>
-                        <li><a href="../cart/index" target="_blank" class="mycart"><em class="i_cart">&nbsp;</em>我的购物车<span class="num_bgc num_bgc_none">0</span></a></li>
+                        <li><a href="../cart/index" target="_blank" class="mycart"><em class="i_cart">&nbsp;</em>我的购物车<span class="num_bgc num_bgc_none">1</span></a></li>
                         <li><a href="../order/index" target="_blank"><em class="i_order">&nbsp;</em>我的订单</a></li>
                         <li><a href="#" target="_blank"><em class="i_mob">&nbsp;</em>下载App</a></li>
                         <li><a class="last" href="#">帮助中心</a></li>
@@ -369,7 +369,7 @@ AppAsset::register($this);
     </li>
     <li>
         <a href="/cart/index" target="_blank" class="mycart">
-            <em class="i_cart">&nbsp;</em> 我的购物车<span class="num_bgc">1</span>
+            <em class="i_cart">&nbsp;</em> 我的购物车<span id="num_bgc2" class="num_bgc num_bgc_none">1</span>
         </a>
     </li>
     <li>
@@ -390,15 +390,20 @@ AppAsset::register($this);
         var htmls = $("#loginNav").html();
         $(".menu_leo").empty().append(htmls);
         $("#setting").hover(function(){
-        	$(".hw76").css('display','block');
+            $(".hw76").css('display','block');
         },function(){
-        	$(".hw76").css('display','none');
+            $(".hw76").css('display','none');
         });
         $("#message").hover(function(){
-        	$("#moreMessageBox").css('display','block');
+            $("#moreMessageBox").css('display','block');
         },function(){
-			$("#moreMessageBox").css('display','none');
-        })
+            $("#moreMessageBox").css('display','none');
+        });
+        var num_bgc = $("#num_bgc2").html();
+        if(num_bgc >= 1){
+            $("#num_bgc2").attr('class','num_bgc');
+        }
+
     </script>
 <?php }?>
 
@@ -406,6 +411,13 @@ AppAsset::register($this);
 <script src="/js/main-banner.js"></script>
 <script src="/js/left-nav.js"></script>
 <script src="/js/top-nav.js"></script>
+<script>
+    // 根据购物车数量来显示样式
+    var num_bgc = $(".num_bgc").html();
+    if(num_bgc >= 1){
+        $(".num_bgc").attr('class','num_bgc');
+    }
+</script>
 </body>
 </html>
 <?php $this->endPage() ?>

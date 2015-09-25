@@ -2,6 +2,7 @@
 // use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
+// use yii\bootstrap\Alert;
 // use yii\bootstrap\Nav;
 // use yii\bootstrap\NavBar;
 // use yii\widgets\Breadcrumbs;
@@ -26,20 +27,20 @@ use yii\helpers\Url;
     
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> -->
-    <link href="/yii2/backend/web/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/css/animate.min.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/css/style.min.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/css/style-responsive.min.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/css/theme/default.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/css/animate.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/css/style.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/css/theme/default.css" rel="stylesheet" />
     <!-- ================== END BASE CSS STYLE ================== -->
-    <link href="/yii2/backend/web/assets/plugins/DataTables/css/data-table.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/plugins/jquery-tag-it/css/jquery.tagit.css" rel="stylesheet" />
-    <link href="/yii2/backend/web/assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/DataTables/css/data-table.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/jquery-tag-it/css/jquery.tagit.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css" rel="stylesheet" />
     <!-- ================== BEGIN BASE JS ================== -->
-    <script src="/yii2/backend/web/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
-    <script src="/yii2/backend/web/assets/plugins/pace/pace.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/pace/pace.min.js"></script>
     <!-- ================== END BASE JS ================== -->
 </head>
 <body>
@@ -457,43 +458,43 @@ use yii\helpers\Url;
         </div>
         <div class="sidebar-bg"></div>
         <!-- end #sidebar -->
+
     <?php $this->beginBody() ?>
         <?= $content ?>
     <?php $this->endBody() ?>
-
 <!-- ================== BEGIN BASE JS ================== -->
     
-    <script src="/yii2/backend/web/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
-    <script src="/yii2/backend/web/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
-    <script src="/yii2/backend/web/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
         <script src="assets/crossbrowserjs/html5shiv.js"></script>
         <script src="assets/crossbrowserjs/respond.min.js"></script>
         <script src="assets/crossbrowserjs/excanvas.min.js"></script>
     <![endif]-->
-    <script src="/yii2/backend/web/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="/yii2/backend/web/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
     <!-- ================== END BASE JS ================== -->
     
     
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-     <!-- // <script src="/yii2/backend/web/assets/plugins/DataTables/js/jquery.dataTables.js"></script> -->
-     <!-- // <script src="/yii2/backend/web/assets/plugins/DataTables/js/dataTables.colVis.js"></script> -->
-     <!-- // <script src="/yii2/backend/web/assets/js/table-manage-colvis.demo.min.js"></script> -->
-    <script src="/yii2/backend/web/assets/js/inbox.demo.min.js"></script>
-    <script src="/yii2/backend/web/assets/plugins/DataTables/js/jquery.dataTables.js"></script>
-    <script src="/yii2/backend/web/assets/js/table-manage-default.demo.min.js"></script>
-    <script src="/yii2/backend/web/assets/plugins/DataTables/js/dataTables.colVis.js"></script>
-    <script src="/yii2/backend/web/assets/js/table-manage-colvis.demo.min.js"></script>
-    <script src="/yii2/backend/web/assets/plugins/parsley/dist/parsley.js"></script>
-    <script src="/yii2/backend/web/assets/js/apps.min.js"></script>
+     <!-- // <script src="/wnmp/yii2test/backend/web/assets/plugins/DataTables/js/jquery.dataTables.js"></script> -->
+     <!-- // <script src="/wnmp/yii2test/backend/web/assets/plugins/DataTables/js/dataTables.colVis.js"></script> -->
+     <!-- // <script src="/wnmp/yii2test/backend/web/assets/js/table-manage-colvis.demo.min.js"></script> -->
+    <script src="/wnmp/yii2test/backend/web/assets/js/inbox.demo.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/DataTables/js/jquery.dataTables.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/js/table-manage-default.demo.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/DataTables/js/dataTables.colVis.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/js/table-manage-colvis.demo.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/parsley/dist/parsley.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/js/apps.min.js"></script>
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-     <!-- <script src="/yii2/backend/web/assets/js/inbox.demo.min.js"></script>
-    // <script src="/yii2/backend/web/assets/plugins/jquery-tag-it/js/tag-it.min.js"></script>
-    // <script src="/yii2/backend/web/assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
-    // <script src="/yii2/backend/web/assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
-    // <script src="/yii2/backend/web/assets/js/email-compose.demo.min.js"></script>
-    // <script src="/yii2/backend/web/assets/js/apps.min.js"></script> -->
+     <!-- <script src="/wnmp/yii2test/backend/web/assets/js/inbox.demo.min.js"></script>
+    // <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+    // <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+    // <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+    // <script src="/wnmp/yii2test/backend/web/assets/js/email-compose.demo.min.js"></script>
+    // <script src="/wnmp/yii2test/backend/web/assets/js/apps.min.js"></script> -->
     <!-- ================== END PAGE LEVEL JS ================== -->
 
     

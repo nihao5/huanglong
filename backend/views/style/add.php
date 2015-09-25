@@ -1,4 +1,4 @@
-<!-- begin #content -->
+<!-- begin #content --> 
         <div id="content" class="content">
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
@@ -27,57 +27,32 @@
                             <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
                         <div class="panel-body panel-form">
-                            <form class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                            <form class="form-horizontal form-bordered" action="../style/insert.html" method="post" data-parsley-validate="true" name="demo-form">
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="fullname">Full Name * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="email">Email * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">Website :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="url" id="website" name="website" data-parsley-type="url" placeholder="url" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">Required Select Box :</label>
+                                    <label class="control-label col-md-4 col-sm-4">上层分类 * :</label>
                                     <div class="col-md-6 col-sm-6">
                                         <select class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
-                                            <option value="">Please choose</option>
+                                            <!-- <option value="">Please choose</option>
                                             <option value="foo">Foo</option>
-                                            <option value="bar">Bar</option>
+                                            <option value="bar">Bar</option> -->
+                                            <?= $path;?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Message (20 chars min, 200 max) :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="fullname">分类名称 * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <textarea class="form-control" id="message" name="message" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200"></textarea>
+                                        <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
+                                        <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Digits :</label>
+                                    <label class="control-label col-md-4 col-sm-4">是否显示 * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="digits" name="digits" data-parsley-type="digits" placeholder="Digits" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Number :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="number" name="number" data-parsley-type="number" placeholder="Number" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Phone :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="data-phone" data-parsley-type="number" placeholder="(XXX) XXXX XXX" />
+                                        <select class="form-control" id="select-required" name="isshow" data-parsley-required="true">
+                                            <option value="1">是</option>
+                                            <option value="0">否</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -175,4 +150,4 @@
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         <!-- end scroll to top btn -->
     </div>
-    <!-- end page container -->
+    <!-- end page container
