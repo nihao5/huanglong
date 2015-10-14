@@ -41,6 +41,14 @@ use yii\helpers\Url;
     <!-- ================== BEGIN BASE JS ================== -->
     <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
     <script src="/wnmp/yii2test/backend/web/assets/plugins/pace/pace.min.js"></script>
+    <style>
+        .alert.alert-error {
+            background: #F1C1C0 none repeat scroll 0 0;
+        }
+        .alert-error{
+            color:#AF5250;
+        }
+    </style>
     <!-- ================== END BASE JS ================== -->
 </head>
 <body>

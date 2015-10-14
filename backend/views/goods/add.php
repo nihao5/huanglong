@@ -1,4 +1,4 @@
-<!-- begin #content -->
+begin #content -->
         <div id="content" class="content">
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
@@ -27,59 +27,107 @@
                             <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
                         <div class="panel-body panel-form">
-                            <form class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                            <form action="../goods/insert.html" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="fullname">Full Name * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="email">Email * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">Website :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="url" id="website" name="website" data-parsley-type="url" placeholder="url" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">Required Select Box :</label>
+                                    <label class="control-label col-md-4 col-sm-4">商品分类 :</label>
                                     <div class="col-md-6 col-sm-6">
                                         <select class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
-                                            <option value="">Please choose</option>
-                                            <option value="foo">Foo</option>
-                                            <option value="bar">Bar</option>
+                                            <?= $path;?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Message (20 chars min, 200 max) :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="email">商品货号 * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <textarea class="form-control" id="message" name="message" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200"></textarea>
+                                        <input class="form-control" type="text" name="number" placeholder="number" data-parsley-required="true" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Digits :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="website">商品名 * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="digits" name="digits" data-parsley-type="digits" placeholder="Digits" />
+                                        <input class="form-control" type="text" name="sname" placeholder="sname" data-parsley-required="true"/>
+                                        <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Number :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="website">品牌 * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="number" name="number" data-parsley-type="number" placeholder="Number" />
+                                        <input class="form-control" type="text" name="brand" placeholder="brand" data-parsley-required="true"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Phone :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="website">搜索关键字 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="data-phone" data-parsley-type="number" placeholder="(XXX) XXXX XXX" />
+                                        <input class="form-control" type="text" name="key" placeholder="key" />
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="message">商品描述 (20 chars min, 200 max) :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <textarea class="form-control" name="details" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">价格 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" name="price" placeholder="price" data-parsley-required="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">促销价 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" name="sale" placeholder="sale" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">促销日期 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" name="sale_date" placeholder="sale_date" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">库存 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" name="inventory" placeholder="inventory" data-parsley-required="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4">推荐 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <select class="form-control" name="ishot" data-parsley-required="true">
+                                            <option value="1">是</option>
+                                            <option value="0" selected="selected">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4">新品 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <select class="form-control" name="isnew" data-parsley-required="true">
+                                            <option value="1" selected="selected">是</option>
+                                            <option value="0">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4">推荐 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <select class="form-control" name="issuggest" data-parsley-required="true">
+                                            <option value="1">是</option>
+                                            <option value="0" selected="selected">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4">是否审核 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <select class="form-control" name="ischeck" data-parsley-required="true">
+                                            <option value="1">是</option>
+                                            <option value="0" selected="selected">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                               
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4"></label>
                                     <div class="col-md-6 col-sm-6">
@@ -175,4 +223,4 @@
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         <!-- end scroll to top btn -->
     </div>
-    <!-- end page container -->
+    <!-- end page container

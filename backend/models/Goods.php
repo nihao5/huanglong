@@ -46,8 +46,8 @@ class Goods extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sid', 'shopid', 'number', 'sname', 'brand', 'key', 'details', 'price', 'sale', 'sale_date', 'inventory', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'addtime'], 'required'],
-            [['sid', 'shopid', 'number', 'price', 'sale', 'sale_date', 'inventory', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'is_hot', 'is_nuw', 'is_suggest', 'is_check', 'recycle', 'addtime'], 'integer'],
+            [['sid', 'shopid', 'number', 'sname', 'brand', 'key', 'details', 'price', 'sale', 'sale_date', 'addtime'], 'required'],
+            [['sid', 'shopid', 'number', 'price', 'sale', 'sale_date', 'inventory', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'is_hot', 'is_new', 'is_suggest', 'is_check', 'recycle', 'addtime'], 'integer'],
             [['sname', 'brand', 'key'], 'string', 'max' => 30],
             [['details'], 'string', 'max' => 255]
         ];
@@ -76,11 +76,16 @@ class Goods extends \yii\db\ActiveRecord
             'favorite_num' => '收藏量',
             'evaluate_num' => '评论量',
             'is_hot' => '热销',
-            'is_nuw' => '新品',
+            'is_new' => '新品',
             'is_suggest' => '推荐',
             'is_check' => '是否审核',
             'recycle' => '上架时间',
             'addtime' => '商品是否回收',
         ];
+    }
+
+    public function getStyle()
+    {
+        return $this->hasMany(Style::className(), ['id' => 'sid']);
     }
 }

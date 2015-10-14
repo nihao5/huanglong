@@ -44,33 +44,37 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>省</th>
-                                            <th>市</th>
-                                            <th>县/区</th>
-                                            <th>详细地址</th>
-                                            <th>邮编</th>
+                                            <th>分类</th>
+                                            <th>货号</th>
+                                            <th>商品名</th>
+                                            <th>品牌</th>
+                                            <th>价格</th>
+                                            <th>折扣价</th>
+                                            <th>库存</th>
+                                            <th>销量</th>
+                                            <th>收藏量</th>
+                                            <th>上架时间</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($goods as $value): ?>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>4</td>
-                                            <td>X</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <td><?= $value['id'];?></td>
+                                            <td><?= $value['style'][0]['name'];?></td>
+                                            <td><?= $value['number'];?></td>
+                                            <td><?= $value['sname'];?></td>
+                                            <td><?= $value['brand'];?></td>
+                                            <td><?= $value['price'];?></td>
+                                            <td><?= $value['sale'];?></td>
+                                            <td><?= $value['inventory'];?></td>
+                                            <td><?= $value['sale_num'];?></td>
+                                            <td><?= $value['favorite_num'];?></td>
+                                            <td><?= $value['recycle'];?></td>
+                                            <td style="width:135px;"><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
                                         </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>C</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
-                                        </tr>
+                                    <?php endforeach ?>
+                                        
                                     </tbody>
                                 </table>
                             </div>
