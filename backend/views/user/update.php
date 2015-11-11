@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Url;
 use yii\bootstrap\Alert;
-?>        
-        <!-- begin #content -->
+?>
+<!-- begin #content -->
         <div id="content" class="content">
         <?php
             if( Yii::$app->getSession()->hasFlash('success') ) {
@@ -25,20 +25,20 @@ use yii\bootstrap\Alert;
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Tables</a></li>
-                <li class="active">Managed Tables</li>
+                <li><a href="javascript:;">Form Stuff</a></li>
+                <li class="active">Form Validation</li>
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
-            <h1 class="page-header">Managed Tables <small>header small text goes here...</small></h1>
+            <h1 class="page-header">Form Validation <small>header small text goes here...</small></h1>
             <!-- end page-header -->
             
             <!-- begin row -->
             <div class="row">
-                <!-- begin col-12 -->
+                <!-- begin col-6 -->
                 <div class="col-md-12">
                     <!-- begin panel -->
-                    <div class="panel panel-inverse">
+                    <div class="panel panel-inverse" data-sortable-id="form-validation-1">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
@@ -46,69 +46,66 @@ use yii\bootstrap\Alert;
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <div class="btn-group pull-right">
-                                <button class="btn btn-success btn-xs" type="button">操作</button>
-                                <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="../goods/add.html">新建</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4 class="panel-title">Data Table - Default</h4>
+                            <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table id="data-table" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>分类</th>
-                                            <th>货号</th>
-                                            <th>商品名</th>
-                                            <th>品牌</th>
-                                            <th>价格</th>
-                                            <th>折扣价</th>
-                                            <th>库存</th>
-                                            <th>销量</th>
-                                            <th>收藏量</th>
-                                            <th>上架时间</th>
-                                            <th>操作</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php foreach ($goods as $value): ?>
-                                        <tr class="odd gradeX">
-                                            <td><?= $value['id'];?></td>
-                                            <td><?= $value['style'][0]['name'];?></td>
-                                            <td><?= $value['number'];?></td>
-                                            <td><?= $value['sname'];?></td>
-                                            <td><?= $value['brand'];?></td>
-                                            <td><?= $value['price'];?></td>
-                                            <td><?= $value['sale'];?></td>
-                                            <td><?= $value['inventory'];?></td>
-                                            <td><?= $value['sale_num'];?></td>
-                                            <td><?= $value['favorite_num'];?></td>
-                                            <td><?= $value['recycle'];?></td>
-                                            <td style="width:135px;"><a href="<?= Url::toRoute(['goods/update','id'=>$value['id']])?>" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="<?= Url::toRoute(['goods/del','id'=>$value['id']])?>" class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')"><i class="fa fa-trash-o"></i> 删除</a></td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="panel-body panel-form">
+                            <form action="<?= Url::toRoute(['user/edit','id'=>$user['id']]);?>" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="fullname">账号 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" value="<?= $user['name'];?>" id="fullname" name="name" placeholder="用户账号" data-parsley-required="true" />
+                                        <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="email">Email * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" value="<?= $user['email'];?>" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="message">手机 *:</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" value="<?= $user['phone'];?>" id="data-phone" name="phone" data-parsley-type="number" placeholder="(XXX) XXXX XXX" data-parsley-required="true" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="message">密码 *:</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="password"  value="<?= $user['password'];?>" id="digits" name="password" placeholder="密码" data-parsley-required="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4">性别 *:</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <select class="form-control" name="sex" data-parsley-required="true">
+                                            <option value="2" <?php if($user['sex'] == 2){echo 'selected';}?>>保密</option>
+                                            <option value="1" <?php if($user['sex'] == 1){echo 'selected';}?>>男</option>
+                                            <option value="0" <?php if($user['sex'] == 0){echo 'selected';}?>>女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="message">头像 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" name="img" value="<?= $user['img'];?>" placeholder="头像" data-parsley-required="true" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4"></label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <button type="submit" class="btn btn-primary">确认</button>
+                                        <button type="reset" class="btn btn-default">取消</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <!-- end panel -->
                 </div>
-                <!-- end col-12 -->
-            </div>
-            <!-- end row -->
-        </div>
+                <!-- end col-6 -->
+               
         <!-- end #content -->
-        
         <!-- begin theme-panel -->
         <div class="theme-panel">
             <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
@@ -185,7 +182,6 @@ use yii\bootstrap\Alert;
             </div>
         </div>
         <!-- end theme-panel -->
-        
         <!-- begin scroll to top btn -->
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         <!-- end scroll to top btn -->

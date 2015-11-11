@@ -242,7 +242,12 @@ use yii\helpers\Url;
                             <span>订单管理 <span class="label label-theme m-l-5">NEW</span></span> 
                         </a>
                         <ul class="sub-menu">
-                            <li <?php if (Yii::$app->request->pathInfo == 'order/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/index') ?>">订单列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'order/index'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/index') ?>">未发货订单</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'order/delivery'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/delivery') ?>">已发货订单</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'order/receipt'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/receipt') ?>">已收货订单</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'order/barter'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/barter') ?>">换货列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'order/return-goods'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/return-goods') ?>">退货列表</a></li>
+                            <li <?php if (Yii::$app->request->pathInfo == 'order/recovery'): ?>class="active"<?php endif; ?>><a href="<?php echo Url::toRoute('order/recovery') ?>">回收/取消订单</a></li>
                         </ul>
                     </li>
                     <li class="has-sub <?php if (Yii::$app->requestedAction->controller->id == 'address'): ?>active <?php endif; ?>">

@@ -1,15 +1,15 @@
-        
+   
         <!-- begin #content -->
         <div id="content" class="content">
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Tables</a></li>
-                <li class="active">Managed Tables</li>
+                <li><a href="javascript:;">地址管理</a></li>
+                <li class="active">收货地址列表</li>
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
-            <h1 class="page-header">Managed Tables <small>header small text goes here...</small></h1>
+            <h1 class="page-header">收货地址列表 <small>header small text goes here...</small></h1>
             <!-- end page-header -->
             
             <!-- begin row -->
@@ -25,7 +25,7 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <div class="btn-group pull-right">
+                            <!-- <div class="btn-group pull-right">
                                 <button class="btn btn-success btn-xs" type="button">操作</button>
                                 <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                     <span class="caret"></span>
@@ -35,8 +35,8 @@
                                         <a href="../address/add.html">新建</a>
                                     </li>
                                 </ul>
-                            </div>
-                            <h4 class="panel-title">Data Table - Default</h4>
+                            </div> -->
+                            <h4 class="panel-title">Managed Tables</h4>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -51,7 +51,9 @@
                                             <th>详细地址</th>
                                             <th>电话/手机</th>
                                             <th>邮编</th>
-                                            <th>操作</th>
+                                            <th>是否默认</th>
+                                            <th>添加时间</th>
+                                            <!-- <th>操作</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -65,7 +67,17 @@
                                             <td><?php echo $value['address'];?></td>
                                             <td><?php echo $value['phone'];?></td>
                                             <td><?php echo $value['zipcode'];?></td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <td><?php if($value['default'] == 1){echo '是';}else{echo '否';}?></td>
+                                            <td><?php echo date('Y-m-d H:i:s',$value['modtime']);?></td>
+                                            <!-- <td>
+                                                <a href="javascript:;" class="btn btn-success m-r-5">
+                                                    <i class="fa fa-edit"></i> 修改
+                                                </a>
+                                                <a href="javascript:;" class="btn btn-danger m-r-5"
+                                                   onclick="return confirm('确定删除吗?')">
+                                                    <i class="fa fa-trash-o"></i> 删除
+                                                </a>
+                                            </td> -->
                                         </tr>
                                     <?php endforeach;?>
                                     </tbody>
@@ -163,14 +175,3 @@
         <!-- end scroll to top btn -->
     </div>
     <!-- end page container -->
-    <script>
-    function confir()
-    {
-        if(confirm('确定删除吗?'))
-        {
-            alert(111);
-        }else{
-            alert(222);
-        }
-    }
-    </script>

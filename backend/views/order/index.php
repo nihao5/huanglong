@@ -1,15 +1,36 @@
-        
+<?php
+use yii\helpers\Url;
+use yii\bootstrap\Alert;
+?>        
         <!-- begin #content -->
         <div id="content" class="content">
+        <?php
+            if( Yii::$app->getSession()->hasFlash('success') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-success', //这里是提示框的class
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('success'), //消息体
+                ]);
+            }
+            if( Yii::$app->getSession()->hasFlash('error') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-error',
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('error'),
+                ]);
+            }
+        ?>
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Tables</a></li>
-                <li class="active">Managed Tables</li>
+                <li><a href="javascript:;">订单管理</a></li>
+                <li class="active">未发货订单</li>
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
-            <h1 class="page-header">Managed Tables <small>header small text goes here...</small></h1>
+            <h1 class="page-header">未发货订单 <small>header small text goes here...</small></h1>
             <!-- end page-header -->
             
             <!-- begin row -->
@@ -25,18 +46,18 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <div class="btn-group pull-right">
+                            <!-- <div class="btn-group pull-right">
                                 <button class="btn btn-success btn-xs" type="button">操作</button>
                                 <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="../order/add.html">新建</a>
+                                        <a href="../order/add.html">修改</a>
                                     </li>
                                 </ul>
-                            </div>
-                            <h4 class="panel-title">Data Table - Default</h4>
+                            </div> -->
+                            <h4 class="panel-title">Managed Tables</h4>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -44,13 +65,14 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>收货人</th>
-                                            <th>省</th>
-                                            <th>市</th>
-                                            <th>县/区</th>
-                                            <th>详细地址</th>
-                                            <th>电话/手机</th>
-                                            <th>邮编</th>
+                                            <th>用户id</th>
+                                            <th>商品id</th>
+                                            <th>地址id</th>
+                                            <th>订单号</th>
+                                            <th>订单状态</th>
+                                            <th>购买数量</th>
+                                            <th>支付金额</th>
+                                            <th>下单时间</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
@@ -58,14 +80,24 @@
                                     <?php foreach($list as $value): ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $value['id'];?></td>
-                                            <td><?php echo $value['consignee'];?></td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>4</td>
-                                            <td>Win 95+</td>
-                                            <td>4</td>
-                                            <td>X</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <td><?php echo $value['uid'];?></td>
+                                            <td><?php echo $value['gid'];?></td>
+                                            <td><?php echo $value['addid'];?></td>
+                                            <td><?php echo $value['sn'];?></td>
+                                            <td><?php echo $value['state'];?></td>
+                                            <td><?php echo $value['num'];?></td>
+                                            <td><?php echo $value['express_money'];?></td>
+                                            <td><?php echo $value['addtime'];?></td>
+                                            <td><a href="<?= Url::toRoute(['order/edit-delivery',
+                                                    'id'=>$value['id'],'state'=>$value['state']+1]);?>"
+                                                   class="btn btn-success m-r-5"
+                                                   onclick="return confirm('确定发货吗?')">发货</a>
+                                                <a href="<?= Url::toRoute(['order/details',
+                                                    'id'=>$value['id']]);?>" class="btn btn-warning m-r-5">详细</a>
+                                                <a href="<?= Url::toRoute(['order/edit-delivery','id'=>$value['id'],'state'=>5]);?>"
+                                                   class="btn btn-danger m-r-5"
+                                                   onclick="return confirm('确定取消订单吗?')">
+                                                    <i class="fa fa-trash-o"></i> 取消订单</a></td>
                                         </tr>
                                     <?php endforeach;?>
                                     </tbody>
@@ -163,14 +195,3 @@
         <!-- end scroll to top btn -->
     </div>
     <!-- end page container -->
-    <script>
-    function confir()
-    {
-        if(confirm('确定删除吗?'))
-        {
-            alert(111);
-        }else{
-            alert(222);
-        }
-    }
-    </script>

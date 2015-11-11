@@ -25,8 +25,8 @@ use yii\bootstrap\Alert;
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Tables</a></li>
-                <li class="active">Managed Tables</li>
+                <li><a href="javascript:;">订单管理</a></li>
+                <li class="active">退货订单</li>
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
@@ -46,18 +46,18 @@ use yii\bootstrap\Alert;
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <div class="btn-group pull-right">
+                            <!-- <div class="btn-group pull-right">
                                 <button class="btn btn-success btn-xs" type="button">操作</button>
                                 <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="../goods/add.html">新建</a>
+                                        <a href="../order/add.html">修改</a>
                                     </li>
                                 </ul>
-                            </div>
-                            <h4 class="panel-title">Data Table - Default</h4>
+                            </div> -->
+                            <h4 class="panel-title">Managed Tables</h4>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -65,37 +65,37 @@ use yii\bootstrap\Alert;
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>分类</th>
-                                            <th>货号</th>
-                                            <th>商品名</th>
-                                            <th>品牌</th>
-                                            <th>价格</th>
-                                            <th>折扣价</th>
-                                            <th>库存</th>
-                                            <th>销量</th>
-                                            <th>收藏量</th>
-                                            <th>上架时间</th>
+                                            <th>用户id</th>
+                                            <th>商品id</th>
+                                            <th>地址id</th>
+                                            <th>订单号</th>
+                                            <th>订单状态</th>
+                                            <th>购买数量</th>
+                                            <th>支付金额</th>
+                                            <th>下单时间</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($goods as $value): ?>
+                                    <?php foreach($list as $value): ?>
                                         <tr class="odd gradeX">
-                                            <td><?= $value['id'];?></td>
-                                            <td><?= $value['style'][0]['name'];?></td>
-                                            <td><?= $value['number'];?></td>
-                                            <td><?= $value['sname'];?></td>
-                                            <td><?= $value['brand'];?></td>
-                                            <td><?= $value['price'];?></td>
-                                            <td><?= $value['sale'];?></td>
-                                            <td><?= $value['inventory'];?></td>
-                                            <td><?= $value['sale_num'];?></td>
-                                            <td><?= $value['favorite_num'];?></td>
-                                            <td><?= $value['recycle'];?></td>
-                                            <td style="width:135px;"><a href="<?= Url::toRoute(['goods/update','id'=>$value['id']])?>" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="<?= Url::toRoute(['goods/del','id'=>$value['id']])?>" class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <td><?php echo $value['id'];?></td>
+                                            <td><?php echo $value['uid'];?></td>
+                                            <td><?php echo $value['gid'];?></td>
+                                            <td><?php echo $value['addid'];?></td>
+                                            <td><?php echo $value['sn'];?></td>
+                                            <td><?php echo $value['state'];?></td>
+                                            <td><?php echo $value['num'];?></td>
+                                            <td><?php echo $value['express_money'];?></td>
+                                            <td><?php echo $value['addtime'];?></td>
+                                            <td><a href="<?= Url::toRoute(['order/details','id'=>$value['id']]);?>"
+                                                   class="btn btn-warning m-r-5">详细</a>
+                                                <a href="<?= Url::toRoute(['order/edit-delivery','id'=>$value['id'],'state'=>5]);?>"
+                                                   class="btn btn-danger m-r-5" onclick="return confirm('确定取消订单吗?')">
+                                                    <i class="fa fa-trash-o"></i> 取消订单</a>
+                                            </td>
                                         </tr>
-                                    <?php endforeach ?>
-                                        
+                                    <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>

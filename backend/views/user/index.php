@@ -1,6 +1,27 @@
-        
+<?php
+use yii\helpers\Url;
+use yii\bootstrap\Alert;
+?>        
         <!-- begin #content -->
         <div id="content" class="content">
+        <?php
+            if( Yii::$app->getSession()->hasFlash('success') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-success', //这里是提示框的class
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('success'), //消息体
+                ]);
+            }
+            if( Yii::$app->getSession()->hasFlash('error') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-error',
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('error'),
+                ]);
+            }
+        ?>
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
@@ -25,17 +46,6 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <div class="btn-group pull-right">
-                                <button class="btn btn-success btn-xs" type="button">操作</button>
-                                <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="../user/add.html">新建</a>
-                                    </li>
-                                </ul>
-                            </div>
                             <h4 class="panel-title">Data Table - Default</h4>
                         </div>
                         <div class="panel-body">
@@ -45,6 +55,7 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>账号</th>
+                                            <th>手机</th>
                                             <th>邮箱</th>
                                             <th>性别</th>
                                             <th>操作</th>
@@ -55,9 +66,10 @@
                                         <tr class="odd gradeX">
                                             <td><?php echo $value['id'];?></td>
                                             <td><?php echo $value['name'];?></td>
+                                            <td><?php echo $value['phone'];?></td>
                                             <td><?php echo $value['email'];?></td>
-                                            <td><?php echo $value['sex'];?></td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <td><?php if($value['sex']==1){echo '男';}else if($value['sex']==2){echo '保密';}else{echo '女';};?></td>
+                                            <td><a href="<?= Url::toRoute(['user/update','id'=>$value['id']]);?>" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="<?= Url::toRoute(['user/del','id'=>$value['id']]);?>" class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')"><i class="fa fa-trash-o"></i> 删除</a></td>
                                         </tr>
                                     <?php endforeach;?>
                                     </tbody>
@@ -155,14 +167,3 @@
         <!-- end scroll to top btn -->
     </div>
     <!-- end page container -->
-    <script>
-    function confir()
-    {
-        if(confirm('确定删除吗?'))
-        {
-            alert(111);
-        }else{
-            alert(222);
-        }
-    }
-    </script>

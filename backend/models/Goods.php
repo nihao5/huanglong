@@ -32,12 +32,13 @@ use Yii;
  */
 class Goods extends \yii\db\ActiveRecord
 {
+    const TABLE_NAME = '{{%m_goods}}';
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%m_goods}}';
+        return self::TABLE_NAME;
     }
 
     /**
@@ -46,7 +47,7 @@ class Goods extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sid', 'shopid', 'number', 'sname', 'brand', 'key', 'details', 'price', 'sale', 'sale_date', 'addtime'], 'required'],
+            [['sid', 'number', 'sname', 'brand', 'key', 'details', 'price', 'sale', 'addtime'], 'required'],
             [['sid', 'shopid', 'number', 'price', 'sale', 'sale_date', 'inventory', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'is_hot', 'is_new', 'is_suggest', 'is_check', 'recycle', 'addtime'], 'integer'],
             [['sname', 'brand', 'key'], 'string', 'max' => 30],
             [['details'], 'string', 'max' => 255]
@@ -79,8 +80,8 @@ class Goods extends \yii\db\ActiveRecord
             'is_new' => '新品',
             'is_suggest' => '推荐',
             'is_check' => '是否审核',
-            'recycle' => '上架时间',
-            'addtime' => '商品是否回收',
+            'recycle' => '商品是否回收',
+            'addtime' => '上架时间',
         ];
     }
 

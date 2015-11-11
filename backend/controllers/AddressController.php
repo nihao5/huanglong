@@ -12,8 +12,4 @@ class AddressController extends Controller
         $list = AddressService::show();
         return $this->render('index',['list'=>$list]);
     }
-    public function actionAdd()
-    {
-        return $this->render('add');
-    }
 }

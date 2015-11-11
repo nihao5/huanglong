@@ -16,12 +16,13 @@ use Yii;
  */
 class User extends \yii\db\ActiveRecord
 {
+    const TABLE_NAME = '{{%m_user}}';
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%m_user}}';
+        return self::TABLE_NAME;
     }
 
     /**
@@ -46,12 +47,12 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'phone' => 'Phone',
-            'name' => 'Name',
-            'password' => 'Passward',
-            'email' => 'Email',
-            'sex' => 'Sex',
-            'img' => '澶村儚',
+            'phone' => '手机',
+            'name' => '账号',
+            'password' => '密码',
+            'email' => '邮箱',
+            'sex' => '性别',
+            'img' => '头像',
         ];
     }
 }

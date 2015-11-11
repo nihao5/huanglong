@@ -1,22 +1,44 @@
-<!-- begin #content -->
+<?php
+use yii\helpers\Url;
+use yii\bootstrap\Alert;
+?>        
+        <!-- begin #content -->
         <div id="content" class="content">
+        <?php
+            if( Yii::$app->getSession()->hasFlash('success') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-success', //这里是提示框的class
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('success'), //消息体
+                ]);
+            }
+            if( Yii::$app->getSession()->hasFlash('error') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-error',
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('error'),
+                ]);
+            }
+        ?>
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Form Stuff</a></li>
-                <li class="active">Form Validation</li>
+                <li><a href="javascript:;">订单管理</a></li>
+                <li class="active">已收货订单</li>
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
-            <h1 class="page-header">Form Validation <small>header small text goes here...</small></h1>
+            <h1 class="page-header">已收货订单 <small>header small text goes here...</small></h1>
             <!-- end page-header -->
             
             <!-- begin row -->
             <div class="row">
-                <!-- begin col-6 -->
+                <!-- begin col-12 -->
                 <div class="col-md-12">
                     <!-- begin panel -->
-                    <div class="panel panel-inverse" data-sortable-id="form-validation-1">
+                    <div class="panel panel-inverse">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
@@ -24,77 +46,70 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <h4 class="panel-title">Basic Form Validation</h4>
+                            <!-- <div class="btn-group pull-right">
+                                <button class="btn btn-success btn-xs" type="button">操作</button>
+                                <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="../order/add.html">修改</a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                            <h4 class="panel-title">Managed Tables</h4>
                         </div>
-                        <div class="panel-body panel-form">
-                            <form class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="fullname">Full Name * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="email">Email * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">Website :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="url" id="website" name="website" data-parsley-type="url" placeholder="url" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">Required Select Box :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
-                                            <option value="">Please choose</option>
-                                            <option value="foo">Foo</option>
-                                            <option value="bar">Bar</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Message (20 chars min, 200 max) :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <textarea class="form-control" id="message" name="message" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Digits :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="digits" name="digits" data-parsley-type="digits" placeholder="Digits" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Number :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="number" name="number" data-parsley-type="number" placeholder="Number" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Phone :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="data-phone" data-parsley-type="number" placeholder="(XXX) XXXX XXX" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4"></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <button type="submit" class="btn btn-primary">确认</button>
-                                        <button type="reset" class="btn btn-default">取消</button>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>用户id</th>
+                                            <th>商品id</th>
+                                            <th>地址id</th>
+                                            <th>订单号</th>
+                                            <th>订单状态</th>
+                                            <th>购买数量</th>
+                                            <th>支付金额</th>
+                                            <th>下单时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach($list as $value): ?>
+                                        <tr class="odd gradeX">
+                                            <td><?php echo $value['id'];?></td>
+                                            <td><?php echo $value['uid'];?></td>
+                                            <td><?php echo $value['gid'];?></td>
+                                            <td><?php echo $value['addid'];?></td>
+                                            <td><?php echo $value['sn'];?></td>
+                                            <td><?php echo $value['state'];?></td>
+                                            <td><?php echo $value['num'];?></td>
+                                            <td><?php echo $value['express_money'];?></td>
+                                            <td><?php echo $value['addtime'];?></td>
+                                            <td>
+                                                <a href="<?= Url::toRoute(['order/details','id'=>$value['id']]);?>"
+                                                   class="btn btn-warning m-r-5">详细</a>
+                                                <a href="<?= Url::toRoute(['order/edit-delivery','id'=>$value['id'],'state'=>5]);?>"
+                                                   class="btn btn-danger m-r-5" onclick="return confirm('确定取消订单吗?')">
+                                                    <i class="fa fa-trash-o"></i> 取消订单</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <!-- end panel -->
                 </div>
-                <!-- end col-6 -->
-               
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+        </div>
         <!-- end #content -->
+        
         <!-- begin theme-panel -->
         <div class="theme-panel">
             <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
@@ -171,6 +186,7 @@
             </div>
         </div>
         <!-- end theme-panel -->
+        
         <!-- begin scroll to top btn -->
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         <!-- end scroll to top btn -->

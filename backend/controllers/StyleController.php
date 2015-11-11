@@ -56,17 +56,6 @@ class StyleController extends BaseController
         //查询出当前分类的名称，以及pid
         $style = StyleService::showAll($id);
         $path = $this->Classify($style['pid']);
-        // $posts = StyleService::command();
-        // $path = '';
-        // $path .= '<option value="0">--根分类--</option>';
-        // foreach($posts as $k=>$v){
-        //     $selected = '';
-        //     $deep = count(explode(',',$v['path']))-1;
-        //     if($v['id'] == $style['pid']){
-        //         $selected = 'selected';
-        //     }
-        //     $path .='<option value="'.$v['id'].'" '.$selected.'>'.str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp',$deep).'|-'.$v['name'].'</option>';
-        // }
         return $this->render('update',['path'=>$path,'style'=>$style]);
     }
 

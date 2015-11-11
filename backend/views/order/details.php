@@ -1,26 +1,10 @@
 <?php
-use yii\bootstrap\Alert;
-?>    
+use yii\helpers\Url;
+use backend\models\Order;
+use backend\models\User;
+?>   
 <!-- begin #content -->
         <div id="content" class="content">
-        <?php
-            if( Yii::$app->getSession()->hasFlash('success') ) {
-                echo Alert::widget([
-                    'options' => [
-                        'class' => 'alert-success', //这里是提示框的class
-                    ],
-                    'body' => Yii::$app->getSession()->getFlash('success'), //消息体
-                ]);
-            }
-            if( Yii::$app->getSession()->hasFlash('error') ) {
-                echo Alert::widget([
-                    'options' => [
-                        'class' => 'alert-error',
-                    ],
-                    'body' => Yii::$app->getSession()->getFlash('error'),
-                ]);
-            }
-        ?>
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
@@ -48,112 +32,117 @@ use yii\bootstrap\Alert;
                             <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
                         <div class="panel-body panel-form">
-                            <form action="../goods/insert.html" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                            <form class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">商品分类 :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="fullname">id :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" name="sid" data-parsley-required="true">
-                                            <?= $path;?>
-                                        </select>
+                                        <label class="control-label" for="fullname"><?= $list['id']?></label>
+                                        <!-- <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" /> -->
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="email">商品货号 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="email">用户 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="number" placeholder="number" data-parsley-required="true" />
+                                        <label class="control-label" for="fullname"><?= $list->getUser()['name']?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">商品名 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="email">收货人 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="sname" placeholder="sname" data-parsley-required="true"/>
-                                        <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
+                                        <label class="control-label" for="fullname"><?= $list->getAddress()['consignee']?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">品牌 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="email">手机/电话 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="brand" placeholder="brand" data-parsley-required="true"/>
+                                        <label class="control-label" for="fullname"><?= $list->getAddress()['phone']?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">搜索关键字 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4">地址 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="key" placeholder="key" data-parsley-required="true"/>
+                                        <label class="control-label" for="fullname">
+                                            <?= $list->getAddress()['province'].'省 '.$list->getAddress()['cite'].'市 '.
+                                            $list->getAddress()['county'].'县/区 '.$list->getAddress()['address'];?>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">商品描述 (20 chars min, 200 max) *:</label>
+                                    <label class="control-label col-md-4 col-sm-4">邮编 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <textarea class="form-control" name="details" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200" data-parsley-required="true"></textarea>
+                                        <label class="control-label" for="fullname"><?= $list->getAddress()['zipcode'];?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">价格 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="website">商品名称 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="price" placeholder="price" data-parsley-required="true"/>
+                                        <label class="control-label" for="fullname"><?= $list->getGoods()['sname'];?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">促销价 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="website">商品品牌 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="sale" placeholder="sale" data-parsley-required="true"/>
+                                        <label class="control-label" for="fullname"><?= $list->getGoods()['brand'];?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">促销日期 :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="message">订单号 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="sale_date" placeholder="sale_date" data-parsley-required="true"/>
+                                        <label class="control-label" for="fullname"><?= $list['sn']?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">库存 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="message">单价 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="inventory" placeholder="inventory" data-parsley-required="true"/>
+                                        <label class="control-label" for="fullname"><?= $list->getGoods()['price'];?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">推荐 :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="message">购买数量 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" name="ishot" data-parsley-required="true">
-                                            <option value="1">是</option>
-                                            <option value="0" selected="selected">否</option>
-                                        </select>
+                                        <label class="control-label" for="fullname"><?= $list['num'];?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">新品 :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="message">折扣 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" name="isnew" data-parsley-required="true">
-                                            <option value="1" selected="selected">是</option>
-                                            <option value="0">否</option>
-                                        </select>
+                                        <label class="control-label" for="fullname"><?= $list->getGoods()['sale'];?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">推荐 :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="message">支付金额 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" name="issuggest" data-parsley-required="true">
-                                            <option value="1">是</option>
-                                            <option value="0" selected="selected">否</option>
-                                        </select>
+                                        <label class="control-label" for="fullname"><?= $list['money'];?></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">是否审核 * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="message">快递费 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" name="ischeck" data-parsley-required="true">
-                                            <option value="1">是</option>
-                                            <option value="0" selected="selected">否</option>
-                                        </select>
+                                        <label class="control-label" for="fullname"><?= $list['express_money'];?></label>
                                     </div>
                                 </div>
-                               
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="message">订单留言 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="control-label" for="fullname"><?= $list['message'];?></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="message">下单时间 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="control-label" for="fullname"><?= $list['addtime'];?></label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="message">最近处理时间 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="control-label" for="fullname"><?= $list['edittime'];?></label>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4"></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <button type="submit" class="btn btn-primary">确认</button>
-                                        <button type="reset" class="btn btn-default">取消</button>
+                                        <a href="<?= Url::toRoute(['order/index']);?>" class="btn btn-default m-r-5">返回</a>
                                     </div>
                                 </div>
                             </form>
@@ -244,4 +233,4 @@ use yii\bootstrap\Alert;
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         <!-- end scroll to top btn -->
     </div>
-    <!-- end page container
+    <!-- end page container -->
