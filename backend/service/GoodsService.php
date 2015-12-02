@@ -71,18 +71,20 @@ class GoodsService
     //删除图片
     public static function delImg($path)
     {
-        $dh = opendir($path);
-        while ($file = readdir($dh)) {
-            if ($file != '.' && $file != '..') {
-                $filepath = $path.'/'.$file;
-                if (!is_dir($filepath)) {
-                    unlink($filepath);
-                } else {
-                    self::delImg($filepath);
+        if (is_dir($path)){
+            $dh = opendir($path);
+            while ($file = readdir($dh)) {
+                if ($file != '.' && $file != '..') {
+                    $filepath = $path.'/'.$file;
+                    if (!is_dir($filepath)) {
+                        unlink($filepath);
+                    } else {
+                        self::delImg($filepath);
+                    }
                 }
             }
+            rmdir($path);
+            closedir($dh);
         }
-        rmdir($path);
-        closedir($dh);
     }
 }

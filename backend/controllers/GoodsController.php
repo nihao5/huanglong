@@ -91,7 +91,7 @@ class GoodsController extends BaseController
         $del = GoodsService::del($id);
         $imgWaresPath = dirname($_SERVER['SCRIPT_FILENAME']).GoodsImg::UPLOAD_IMAGE_WARES.$id;
         $imgExtraPath = dirname($_SERVER['SCRIPT_FILENAME']).GoodsImg::UPLOAD_IMAGE_EXTRA.$id;
-        if ($del) {
+        if ($id) {
             //删除商品图片
             GoodsService::delImg($imgWaresPath);
             //删除展示图片
