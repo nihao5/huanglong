@@ -1,6 +1,7 @@
 <?php
 namespace backend\service;
 use backend\models\Goods;
+use backend\models\Style;
 
 class GoodsService
 {
@@ -40,6 +41,12 @@ class GoodsService
         return Goods::findOne(['id'=>$id]);
     }
 
+    //查询分类名称
+    public static function showStyle($id)
+    {
+        return Style::findOne(['id'=>$id]);
+    }
+
     /**
      * 修改数据库
      */
@@ -55,8 +62,27 @@ class GoodsService
         return $model->save();
     }
 
+    //删除数据库的数据
     public static function del($id)
     {
         return Goods::findOne($id)->delete();
+    }
+
+    //删除图片
+    public static function delImg($path)
+    {
+        $dh = opendir($path);
+        while ($file = readdir($dh)) {
+            if ($file != '.' && $file != '..') {
+                $filepath = $path.'/'.$file;
+                if (!is_dir($filepath)) {
+                    unlink($filepath);
+                } else {
+                    self::delImg($filepath);
+                }
+            }
+        }
+        rmdir($path);
+        closedir($dh);
     }
 }

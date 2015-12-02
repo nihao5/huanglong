@@ -30,10 +30,14 @@ use yii\helpers\Url;
     <link href="/wnmp/yii2test/backend/web/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
     <link href="/wnmp/yii2test/backend/web/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/wnmp/yii2test/backend/web/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" />
+    <link href="/wnmp/yii2test/backend/web/assets/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
     <link href="/wnmp/yii2test/backend/web/assets/css/animate.min.css" rel="stylesheet" />
     <link href="/wnmp/yii2test/backend/web/assets/css/style.min.css" rel="stylesheet" />
     <link href="/wnmp/yii2test/backend/web/assets/css/style-responsive.min.css" rel="stylesheet" />
     <link href="/wnmp/yii2test/backend/web/assets/css/theme/default.css" rel="stylesheet" />
+    
     <!-- ================== END BASE CSS STYLE ================== -->
     <link href="/wnmp/yii2test/backend/web/assets/plugins/DataTables/css/data-table.css" rel="stylesheet" />
     <link href="/wnmp/yii2test/backend/web/assets/plugins/jquery-tag-it/css/jquery.tagit.css" rel="stylesheet" />

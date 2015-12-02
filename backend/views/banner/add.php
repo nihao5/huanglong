@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <!-- begin #content -->
         <div id="content" class="content">
             <!-- begin breadcrumb -->
@@ -27,57 +30,18 @@
                             <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
                         <div class="panel-body panel-form">
-                            <form class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                            <form action="<?= Url::toRoute(['banner/insert']);?>" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="fullname">Full Name * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="fullname">Url * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
+                                        <input class="form-control" type="text" id="fullname" name="url" placeholder="Required" data-parsley-required="true" />
+                                        <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="email">Email * :</label>
+                                    <label class="control-label col-md-4 col-sm-4" for="email">轮播图地址 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">Website :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="url" id="website" name="website" data-parsley-type="url" placeholder="url" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">Required Select Box :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" id="select-required" name="selectBox" data-parsley-required="true">
-                                            <option value="">Please choose</option>
-                                            <option value="foo">Foo</option>
-                                            <option value="bar">Bar</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Message (20 chars min, 200 max) :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <textarea class="form-control" id="message" name="message" rows="4" data-parsley-range="[20,200]" placeholder="Range from 20 - 200"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Digits :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="digits" name="digits" data-parsley-type="digits" placeholder="Digits" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Number :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="number" name="number" data-parsley-type="number" placeholder="Number" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">Phone :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" id="data-phone" data-parsley-type="number" placeholder="(XXX) XXXX XXX" />
+                                        <input class="form-control" type="text" id="email" name="img" placeholder="图片地址" />
                                     </div>
                                 </div>
                                 <div class="form-group">

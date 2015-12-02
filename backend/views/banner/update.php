@@ -49,7 +49,7 @@ use yii\bootstrap\Alert;
                             <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
                         <div class="panel-body panel-form">
-                            <form action="<?= Url::toRoute(['link/edit','id'=>$list['id']]);?>" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                            <form action="<?= Url::toRoute(['banner/edit','id'=>$list['id']]);?>" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4" for="fullname">Url * :</label>
                                     <div class="col-md-6 col-sm-6">

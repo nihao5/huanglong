@@ -1,9 +1,9 @@
 <?php
 namespace backend\controllers;
-use yii\web\Controller;
+use backend\controllers\BaseController;
 use backend\service\AddressService;
 
-class AddressController extends Controller
+class AddressController extends BaseController
 {
     public $enableCsrfValidation = false;
     

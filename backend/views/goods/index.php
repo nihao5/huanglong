@@ -53,7 +53,7 @@ use yii\bootstrap\Alert;
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="../goods/add.html">新建</a>
+                                        <a href="<?= Url::toRoute(['goods/add']);?>">新建</a>
                                     </li>
                                 </ul>
                             </div>
@@ -65,7 +65,7 @@ use yii\bootstrap\Alert;
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>分类</th>
+                                            <!-- <th>分类</th> -->
                                             <th>货号</th>
                                             <th>商品名</th>
                                             <th>品牌</th>
@@ -74,7 +74,7 @@ use yii\bootstrap\Alert;
                                             <th>库存</th>
                                             <th>销量</th>
                                             <th>收藏量</th>
-                                            <th>上架时间</th>
+                                            <!-- <th>上架时间</th> -->
                                             <th>操作</th>
                                         </tr>
                                     </thead>
@@ -82,7 +82,7 @@ use yii\bootstrap\Alert;
                                     <?php foreach ($goods as $value): ?>
                                         <tr class="odd gradeX">
                                             <td><?= $value['id'];?></td>
-                                            <td><?= $value['style'][0]['name'];?></td>
+                                            <?php //$value['style'][0]['name'];?>
                                             <td><?= $value['number'];?></td>
                                             <td><?= $value['sname'];?></td>
                                             <td><?= $value['brand'];?></td>
@@ -91,8 +91,20 @@ use yii\bootstrap\Alert;
                                             <td><?= $value['inventory'];?></td>
                                             <td><?= $value['sale_num'];?></td>
                                             <td><?= $value['favorite_num'];?></td>
-                                            <td><?= $value['recycle'];?></td>
-                                            <td style="width:135px;"><a href="<?= Url::toRoute(['goods/update','id'=>$value['id']])?>" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="<?= Url::toRoute(['goods/del','id'=>$value['id']])?>" class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <?php// $value['recycle'];?>
+                                            <td>
+                                                <a href="<?= Url::toRoute(['goods/details','id'=>$value['id']])?>"
+                                             class="btn btn-warning m-r-5">详情</a>
+                                                <a href="<?= Url::toRoute(['goods/update','id'=>$value['id']])?>"
+                                             class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a>
+                                                <a href="<?= Url::toRoute(['goods/del','id'=>$value['id']])?>" 
+                                             class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')">
+                                             <i class="fa fa-trash-o"></i> 删除</a>
+                                                <a href="<?= Url::toRoute(['goods-img/index','id'=>$value['id']])?>"
+                                             class="btn btn-primary m-r-5">商品图片</a>
+                                                <a href="<?= Url::toRoute(['goods-img/imgextra','id'=>$value['id']])?>"
+                                             class="btn btn-primary m-r-5">展示图片</a>
+                                             </td>
                                         </tr>
                                     <?php endforeach ?>
                                         

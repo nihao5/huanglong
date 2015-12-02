@@ -3,6 +3,7 @@ namespace backend\controllers;
 use Yii;
 use backend\controllers\BaseController;
 use backend\service\GoodsService;
+use backend\models\GoodsImg;
 
 class GoodsController extends BaseController
 {
@@ -17,6 +18,18 @@ class GoodsController extends BaseController
     {
         $path = $this->Classify();
         return $this->render('add',['path'=>$path]);
+    }
+
+    //查看商品详情
+    public function actionDetails()
+    {
+        $id = Yii::$app->request->get('id');
+        //查询出当前商品信息
+        $goods = GoodsService::show($id);
+        $style = GoodsService::showStyle($goods['sid']);
+        $goods['sid'] = $style['name'];
+        // print_r($list);exit;
+        return $this->render('details',['goods'=>$goods]);
     }
 
     /**
@@ -61,7 +74,7 @@ class GoodsController extends BaseController
         $id = Yii::$app->request->get('id');
         $goods = Yii::$app->request->post();
         $data = GoodsService::editGoods($id,$goods);
-        if($data){
+        if ($data) {
             Yii::$app->getSession()->setFlash('success', '更新成功');
             return $this->redirect(['goods/index']);
         }
@@ -70,16 +83,22 @@ class GoodsController extends BaseController
     }
 
     /**
-     * 删除
+     * 删除商品信息，同时删除上传的图片
      */
     public function actionDel()
     {
-        $id = Yii::$app->request->get('id');
+        $id = (int)Yii::$app->request->get('id');
         $del = GoodsService::del($id);
-        if($del){
+        $imgWaresPath = dirname($_SERVER['SCRIPT_FILENAME']).GoodsImg::UPLOAD_IMAGE_WARES.$id;
+        $imgExtraPath = dirname($_SERVER['SCRIPT_FILENAME']).GoodsImg::UPLOAD_IMAGE_EXTRA.$id;
+        if ($del) {
+            //删除商品图片
+            GoodsService::delImg($imgWaresPath);
+            //删除展示图片
+            GoodsService::delImg($imgExtraPath);
             Yii::$app->getSession()->setFlash('success', '删除成功');
-        }else{
-           Yii::$app->getSession()->setFlash('error', '删除失败'); 
+        } else {
+           Yii::$app->getSession()->setFlash('error', '删除失败');
         }
         return $this->redirect(['goods/index']);
     }

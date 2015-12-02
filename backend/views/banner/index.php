@@ -1,15 +1,36 @@
-        
+<?php
+use yii\helpers\Url;
+use yii\bootstrap\Alert;
+?>            
         <!-- begin #content -->
         <div id="content" class="content">
+        <?php
+            if( Yii::$app->getSession()->hasFlash('success') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-success', //这里是提示框的class
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('success'), //消息体
+                ]);
+            }
+            if( Yii::$app->getSession()->hasFlash('error') ) {
+                echo Alert::widget([
+                    'options' => [
+                        'class' => 'alert-error',
+                    ],
+                    'body' => Yii::$app->getSession()->getFlash('error'),
+                ]);
+            }
+        ?>
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Tables</a></li>
-                <li class="active">Managed Tables</li>
+                <li><a href="javascript:;">首页banner</a></li>
+                <li class="active">轮播图列表</li>
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
-            <h1 class="page-header">Managed Tables <small>header small text goes here...</small></h1>
+            <h1 class="page-header">轮播图列表 <small>header small text goes here...</small></h1>
             <!-- end page-header -->
             
             <!-- begin row -->
@@ -32,11 +53,11 @@
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="../banner/add.html">新建</a>
+                                        <a href="<?= Url::toRoute(['banner/add']);?>">新建</a>
                                     </li>
                                 </ul>
                             </div>
-                            <h4 class="panel-title">Data Table - Default</h4>
+                            <h4 class="panel-title">Managed Tables</h4>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -44,33 +65,30 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>省</th>
-                                            <th>市</th>
-                                            <th>县/区</th>
-                                            <th>详细地址</th>
-                                            <th>邮编</th>
+                                            <th>url</th>
+                                            <th>轮播图地址</th>
+                                            <th>添加时间</th>
+                                            <th>修改时间</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($list as $key => $value): ?>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>4</td>
-                                            <td>X</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
+                                            <td><?= $value->id;?></td>
+                                            <td><?= $value['url'];?></td>
+                                            <td><?= $value['img'];?></td>
+                                            <td><?= date('Y-m-d H:i:s',$value['create_time']);?></td>
+                                            <td><?= date('Y-m-d H:i:s',$value['update_time']);?></td>
+                                            <td>
+                                                <a href="<?= Url::toRoute(['banner/update','id'=>$value['id']]);?>" class="btn btn-success m-r-5">
+                                                    <i class="fa fa-edit"></i> 修改</a>
+                                                <a href="<?= Url::toRoute(['banner/del','id'=>$value['id']]);?>" class="btn btn-danger m-r-5" 
+                                                onclick="return confirm('确定删除吗?')">
+                                                    <i class="fa fa-trash-o"></i> 删除</a>
+                                            </td>
                                         </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td>Win 95+</td>
-                                            <td>5</td>
-                                            <td>C</td>
-                                            <td><a href="javascript:;" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="javascript:;" class="btn btn-danger m-r-5" onclick="confir()"><i class="fa fa-trash-o"></i> 删除</a></td>
-                                        </tr>
+                                    <?php endforeach ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -166,14 +184,3 @@
         <!-- end scroll to top btn -->
     </div>
     <!-- end page container -->
-    <script>
-    function confir()
-    {
-        if(confirm('确定删除吗?'))
-        {
-            alert(111);
-        }else{
-            alert(222);
-        }
-    }
-    </script>

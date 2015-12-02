@@ -3,7 +3,7 @@
 namespace backend\models;
 
 use Yii;
-
+use yii\db\ActiveRecord;
 /**
  * This is the model class for table "{{%m_goodsimg}}".
  *
@@ -12,14 +12,17 @@ use Yii;
  * @property string $image
  * @property string $xqimage
  */
-class GoodsImg extends \yii\db\ActiveRecord
+class GoodsImg extends ActiveRecord
 {
+    const TABLE_NAME = '{{%m_goodsimg}}';
+    const UPLOAD_IMAGE_WARES = '/static/uploaded/wares/i';
+    const UPLOAD_IMAGE_EXTRA = '/static/uploaded/imgextra/i';
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%m_goodsimg}}';
+        return self::TABLE_NAME;
     }
 
     /**
@@ -28,9 +31,9 @@ class GoodsImg extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['gid', 'image', 'xqimage'], 'required'],
+            [['gid', 'image'], 'required'],
             [['gid'], 'integer'],
-            [['image', 'xqimage'], 'string', 'max' => 200]
+            [['image'], 'string', 'max' => 200]
         ];
     }
 
@@ -43,7 +46,6 @@ class GoodsImg extends \yii\db\ActiveRecord
             'id' => 'ID',
             'gid' => 'Gid',
             'image' => '商品图片地址',
-            'xqimage' => '详情图片地址',
         ];
     }
 }

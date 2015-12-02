@@ -114,7 +114,7 @@ use yii\helpers\Url;
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">推荐 :</label>
+                                    <label class="control-label col-md-4 col-sm-4">热销 :</label>
                                     <div class="col-md-6 col-sm-6">
                                         <select class="form-control" name="is_hot" data-parsley-required="true">
                                             <option value="1" <?php if($goods['is_hot'] == 1){echo 'selected';}?>>是</option>

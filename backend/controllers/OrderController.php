@@ -47,7 +47,6 @@ class OrderController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $list = OrderService::showId($id);
-        // print_r($list[0]['goods']);exit;
         if(!$list){
             Yii::$app->getSession()->setFlash('error', '非法操作');
             return $this->redirect(['order/index']);
