@@ -1,6 +1,10 @@
 <?php
 namespace backend\service;
+
+use Yii;
 use backend\models\Goods;
+use backend\models\GoodsColor;
+use backend\models\GoodsInventory;
 use backend\models\Style;
 
 class GoodsService
@@ -71,7 +75,26 @@ class GoodsService
     //删除数据库的数据
     public static function del($id)
     {
-        return Goods::findOne($id)->delete();
+        $connection = Yii::$app->db;
+
+        //开启事务
+        $transaction = $connection->beginTransaction();
+
+        try {
+            Goods::findOne($id)->delete();
+
+            GoodsColor::deleteAll(['gid' => $id]);
+
+            GoodsInventory::deleteAll(['gid' => $id]);
+
+            //提交
+            $transaction->commit();
+
+            return true;
+        } catch (Exception $e) {
+            $transaction->rollBack();
+            return false;
+        }
     }
 
     //删除图片

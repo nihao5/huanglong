@@ -53,7 +53,7 @@ use yii\bootstrap\Alert;
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="<?= Url::toRoute(['goods/add']);?>">新建</a>
+                                        <a href="<?= Url::toRoute(['goods-inventory/add', 'id'=>$id]);?>">新建</a>
                                     </li>
                                 </ul>
                             </div>
@@ -65,47 +65,27 @@ use yii\bootstrap\Alert;
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <!-- <th>分类</th> -->
-                                            <th>货号</th>
                                             <th>商品名</th>
-                                            <th>品牌</th>
-                                            <th>价格</th>
-                                            <th>折扣价</th>
-                                            <th>库存</th>
-                                            <th>销量</th>
-                                            <th>收藏量</th>
-                                            <!-- <th>上架时间</th> -->
+                                            <th>商品图片</th>
+                                            <th>颜色</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($goods as $value): ?>
+                                    <?php foreach ($color as $value): ?>
                                         <tr class="odd gradeX">
                                             <td><?= $value['id'];?></td>
-                                            <?php //$value['style'][0]['name'];?>
-                                            <td><?= $value['number'];?></td>
-                                            <td><?= $value['sname'];?></td>
-                                            <td><?= $value['brand'];?></td>
-                                            <td><?= $value['price'];?></td>
-                                            <td><?= $value['sale'];?></td>
-                                            <td><?= $value['inventory'];?></td>
-                                            <td><?= $value['sale_num'];?></td>
-                                            <td><?= $value['favorite_num'];?></td>
-                                            <?php// $value['recycle'];?>
+                                            <td><?= $value['gid'];?></td>
+                                            <td><img style="width:80px;" src="<?= $value['img'];?>"></td>
+                                            <td><?= $value['color'];?></td>
                                             <td>
-                                                <a href="<?= Url::toRoute(['goods/details','id'=>$value['id']])?>"
-                                             class="btn btn-warning m-r-5">详情</a>
-                                                <a href="<?= Url::toRoute(['goods/update','id'=>$value['id']])?>"
-                                             class="btn btn-success m-r-5">修改</a>
-                                             <a href="<?= Url::toRoute(['goods-inventory/index','id'=>$value['id']])?>"
-                                             class="btn btn-success m-r-5">分类库存</a>
-                                                <a href="<?= Url::toRoute(['goods/del','id'=>$value['id']])?>" 
+                                                <a href="<?= Url::toRoute([
+                                                'goods-inventory/inventory', 'id'=>$value['id'], 'gid'=>$value['gid']
+                                                ])?>"
+                                             class="btn btn-success m-r-5">添加库存属性</a>
+                                                <a href="<?= Url::toRoute(['goods-inventory/del','id'=>$value['id']])?>" 
                                              class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')">
                                              删除</a>
-                                                <a href="<?= Url::toRoute(['goods-img/index','id'=>$value['id']])?>"
-                                             class="btn btn-primary m-r-5">放大镜图</a>
-                                                <a href="<?= Url::toRoute(['goods-img/imgextra','id'=>$value['id']])?>"
-                                             class="btn btn-primary m-r-5">展示图</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

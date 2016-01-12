@@ -1,37 +1,41 @@
 <?php
 namespace backend\controllers;
+
 use Yii;
 use backend\controllers\BaseController;
-use backend\service\GoodsService;
-use backend\models\Goods;
+use backend\service\InventoryService;
 
-class GoodsController extends BaseController
+class GoodsInventoryController extends BaseController
 {
     //上传文件大小限制5M
     const MAX_FILE_SIZE = 5242880;
 
     public function actionIndex()
     {
-        $goods = GoodsService::showGoods();
-        return $this->render('index',['goods'=>$goods]);
+        //商品id
+        $gid = (int)Yii::$app->request->get('id');
+
+        //查询商品颜色分类
+        $color = InventoryService::showColor($gid);
+
+        if (empty($color)) {
+            return $this->redirect(['goods-inventory/add', 'id'=>$gid]);
+        }
+
+        foreach ($color as $k=>$v) {
+            $color[$k]['img'] = 'http://'.$_SERVER['SERVER_NAME'].str_replace('backend', 'frontend', dirname($_SERVER['DOCUMENT_URI'])).$v['img'];
+        }
+
+        return $this->render('index',['color'=>$color, 'id' => $gid]);
     }
 
     // 添加商品
     public function actionAdd()
     {
-        $path = $this->Classify();
-        return $this->render('add',['path'=>$path]);
-    }
+        //商品id
+        $id = (int)Yii::$app->request->get('id');
 
-    //查看商品详情
-    public function actionDetails()
-    {
-        $id = Yii::$app->request->get('id');
-        //查询出当前商品信息
-        $goods = GoodsService::show($id);
-        $style = GoodsService::showStyle($goods['sid']);
-        $goods['sid'] = $style['name'];
-        return $this->render('details',['goods'=>$goods]);
+        return $this->render('add',['id'=>$id]);
     }
 
     /**
@@ -40,13 +44,16 @@ class GoodsController extends BaseController
     */
     public function actionInsert()
     {
+        //获取值
+        $color = Yii::$app->request->Post();
+
         $rand = rand(1, 9);
 
         $imgType = ['image/jpeg', 'image/png', 'image/jpg', 'image/bmp', 'image/gif'];
         //判断是否有上传文件
         if (!is_uploaded_file($_FILES['img']['tmp_name'])) {
             Yii::$app->getSession()->setFlash('error', '请通过post方式上传文件');
-            return $this->redirect(['goods/add']);
+            return $this->redirect(['goods/index']);
         }
 
         $file = $_FILES['img'];
@@ -54,19 +61,19 @@ class GoodsController extends BaseController
         //判断上传文件大小
         if ($file['size'] >= self::MAX_FILE_SIZE) {
             Yii::$app->getSession()->setFlash('error', '上传文件太大');
-            return $this->redirect(['goods/add']);
+            return $this->redirect(['goods/index']);
         }
 
         //判断上传文件类型
         if (!in_array($file['type'], $imgType)) {
             Yii::$app->getSession()->setFlash('error', '上传文件类型不符');
-            return $this->redirect(['goods/add']);
+            return $this->redirect(['goods/index']);
         }
 
         //判断是否上传的是否是图片
         if (!getimagesize($file['tmp_name'])) {
             Yii::$app->getSession()->setFlash('error', '上传图片错误');
-            return $this->redirect(['goods/add']);
+            return $this->redirect(['goods/index']);
         }
 
         //获取上传时错误
@@ -91,7 +98,7 @@ class GoodsController extends BaseController
                     Yii::$app->getSession()->setFlash('error', '文件写入失败');
                     break;
             }
-            return $this->redirect(['goods/add']);
+            return $this->redirect(['goods/index']);
         }
 
         //上传地址
@@ -103,25 +110,17 @@ class GoodsController extends BaseController
             chmod($dir, 0777);
         }
 
-        //获取值
-        $goods = Yii::$app->request->Post();
-
         $file['name'] = md5(substr($file['name'], 0, strrpos($file['name'], '.')).microtime().rand()).substr($file['name'], strrpos($file['name'], '.'));
 
-        $goods['img'] = '/static/uploaded/_o/f'.$rand.'/'.$file['name'];
-
-        if ($goods['sid'] == 0) {
-            Yii::$app->getSession()->setFlash('error', '添加失败，请选择商品分类');
-            return $this->redirect(['goods/add']);
-        }
+        $color['img'] = '/static/uploaded/_o/f'.$rand.'/'.$file['name'];
 
         //插入数据库
-        $goods = GoodsService::insertGoods($goods);
+        $color = InventoryService::insertColor($color);
 
         //如果失败，则返回
-        if (!$goods) {
+        if (!$color) {
             Yii::$app->getSession()->setFlash('error', '添加失败');
-            return $this->redirect(['goods/add']);
+            return $this->redirect(['goods/index']);
         }
         
         //移动文件到指定目录
@@ -132,22 +131,36 @@ class GoodsController extends BaseController
         return $this->redirect(['goods/index']);
     }
 
-
     /**
      * 修改商品页
      */
-    public function actionUpdate()
+    public function actionInventory()
     {
         $id = Yii::$app->request->get('id');
+        $gid = Yii::$app->request->get('gid');
 
-        //查询出当前商品信息
-        $goods = GoodsService::show($id);
+        return $this->render('inventory', ['id'=>$id, 'gid'=>$gid]);
+    }
 
-        $goods['img'] = 'http://'.$_SERVER['SERVER_NAME'].str_replace('backend', 'frontend', dirname($_SERVER['DOCUMENT_URI'])).$goods['img'];
- 
-        //查询分类名称
-        $path = $this->Classify($goods['sid']);
-        return $this->render('update', ['path'=>$path, 'goods'=>$goods]);
+    /**
+     * 添加商品属性和库存到数据库
+     */
+    public function actionSaveInven()
+    {
+        $inventory = Yii::$app->request->Post();
+
+        $inventory['colorid'] = $inventory['id'];
+
+        //添加到数据库
+        $inven = InventoryService::insertInventory($inventory);
+
+        if (!$inven) {
+            Yii::$app->getSession()->setFlash('error', '添加失败');
+        } else {
+            Yii::$app->getSession()->setFlash('success', '添加成功');
+        }
+
+        return $this->redirect(['goods-inventory/index', 'id'=>$inventory['gid']]);
     }
 
     /**
@@ -249,16 +262,12 @@ class GoodsController extends BaseController
         $id = (int)Yii::$app->request->get('id');
 
         //获取图片地址
-        $goods = GoodsService::show($id);
+        $colorImg = InventoryService::showImgPath($id);
 
-        $imgPath = str_replace('backend', 'frontend', dirname($_SERVER['SCRIPT_FILENAME'])).$goods['img'];
+        $imgPath = str_replace('backend', 'frontend', dirname($_SERVER['SCRIPT_FILENAME'])).$colorImg['img'];
 
-        //删除数据库数据
-        $del = GoodsService::del($id);
-
-        //上传图片路径
-        $imgWaresPath = str_replace('backend', 'frontend', dirname($_SERVER['SCRIPT_FILENAME'])).Goods::UPLOAD_IMAGE_WARES.$id;
-        $imgExtraPath = str_replace('backend', 'frontend', dirname($_SERVER['SCRIPT_FILENAME'])).Goods::UPLOAD_IMAGE_EXTRA.$id;
+        //删除goods_color,goods_inventory数据库数据
+        $del = InventoryService::del($id);
 
         if ($del) {
             //删除数据库存储图片
@@ -266,10 +275,6 @@ class GoodsController extends BaseController
                 unlink($imgPath);
             }
             
-            //删除商品图片
-            GoodsService::delImg($imgWaresPath);
-            //删除展示图片
-            GoodsService::delImg($imgExtraPath);
             Yii::$app->getSession()->setFlash('success', '删除成功');
         } else {
            Yii::$app->getSession()->setFlash('error', '删除失败');

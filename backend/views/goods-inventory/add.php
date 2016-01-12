@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Url;
 use yii\bootstrap\Alert;
-?>        
-        <!-- begin #content -->
+?>    
+<!-- begin #content -->
         <div id="content" class="content">
         <?php
             if( Yii::$app->getSession()->hasFlash('success') ) {
@@ -25,20 +25,20 @@ use yii\bootstrap\Alert;
             <!-- begin breadcrumb -->
             <ol class="breadcrumb pull-right">
                 <li><a href="javascript:;">Home</a></li>
-                <li><a href="javascript:;">Tables</a></li>
-                <li class="active">Managed Tables</li>
+                <li><a href="javascript:;">Form Stuff</a></li>
+                <li class="active">Form Validation</li>
             </ol>
             <!-- end breadcrumb -->
             <!-- begin page-header -->
-            <h1 class="page-header">Managed Tables <small>header small text goes here...</small></h1>
+            <h1 class="page-header">Form Validation <small>header small text goes here...</small></h1>
             <!-- end page-header -->
             
             <!-- begin row -->
             <div class="row">
-                <!-- begin col-12 -->
+                <!-- begin col-6 -->
                 <div class="col-md-12">
                     <!-- begin panel -->
-                    <div class="panel panel-inverse">
+                    <div class="panel panel-inverse" data-sortable-id="form-validation-1">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
@@ -46,83 +46,39 @@ use yii\bootstrap\Alert;
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <div class="btn-group pull-right">
-                                <button class="btn btn-success btn-xs" type="button">操作</button>
-                                <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="<?= Url::toRoute(['goods/add']);?>">新建</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4 class="panel-title">Data Table - Default</h4>
+                            <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table id="data-table" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <!-- <th>分类</th> -->
-                                            <th>货号</th>
-                                            <th>商品名</th>
-                                            <th>品牌</th>
-                                            <th>价格</th>
-                                            <th>折扣价</th>
-                                            <th>库存</th>
-                                            <th>销量</th>
-                                            <th>收藏量</th>
-                                            <!-- <th>上架时间</th> -->
-                                            <th>操作</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php foreach ($goods as $value): ?>
-                                        <tr class="odd gradeX">
-                                            <td><?= $value['id'];?></td>
-                                            <?php //$value['style'][0]['name'];?>
-                                            <td><?= $value['number'];?></td>
-                                            <td><?= $value['sname'];?></td>
-                                            <td><?= $value['brand'];?></td>
-                                            <td><?= $value['price'];?></td>
-                                            <td><?= $value['sale'];?></td>
-                                            <td><?= $value['inventory'];?></td>
-                                            <td><?= $value['sale_num'];?></td>
-                                            <td><?= $value['favorite_num'];?></td>
-                                            <?php// $value['recycle'];?>
-                                            <td>
-                                                <a href="<?= Url::toRoute(['goods/details','id'=>$value['id']])?>"
-                                             class="btn btn-warning m-r-5">详情</a>
-                                                <a href="<?= Url::toRoute(['goods/update','id'=>$value['id']])?>"
-                                             class="btn btn-success m-r-5">修改</a>
-                                             <a href="<?= Url::toRoute(['goods-inventory/index','id'=>$value['id']])?>"
-                                             class="btn btn-success m-r-5">分类库存</a>
-                                                <a href="<?= Url::toRoute(['goods/del','id'=>$value['id']])?>" 
-                                             class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')">
-                                             删除</a>
-                                                <a href="<?= Url::toRoute(['goods-img/index','id'=>$value['id']])?>"
-                                             class="btn btn-primary m-r-5">放大镜图</a>
-                                                <a href="<?= Url::toRoute(['goods-img/imgextra','id'=>$value['id']])?>"
-                                             class="btn btn-primary m-r-5">展示图</a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach ?>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="panel-body panel-form">
+                            <form action="<?= Url::toRoute(['goods-inventory/insert']);?>" method="post" class="form-horizontal form-bordered" enctype="multipart/form-data" data-parsley-validate="true" name="demo-form">
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">商品颜色 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="text" name="color" placeholder="color" data-parsley-required="true"/>
+                                        <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
+                                        <input type="hidden" name="gid" value="<?php echo $id;?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">分类图片 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="file" name="img" value="上传图片" data-parsley-required="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4"></label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <button type="submit" class="btn btn-primary">确认</button>
+                                        <button type="reset" class="btn btn-default">取消</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <!-- end panel -->
                 </div>
-                <!-- end col-12 -->
-            </div>
-            <!-- end row -->
-        </div>
+                <!-- end col-6 -->
+               
         <!-- end #content -->
-        
         <!-- begin theme-panel -->
         <div class="theme-panel">
             <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
@@ -199,9 +155,8 @@ use yii\bootstrap\Alert;
             </div>
         </div>
         <!-- end theme-panel -->
-        
         <!-- begin scroll to top btn -->
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         <!-- end scroll to top btn -->
     </div>
-    <!-- end page container -->
+    <!-- end page container-->

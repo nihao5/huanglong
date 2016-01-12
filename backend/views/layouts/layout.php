@@ -478,7 +478,7 @@ use yii\helpers\Url;
 
     <?php $this->beginBody() ?>
         <?= $content ?>
-    <?php $this->endBody() ?>
+    <?php //$this->endBody() ?>
 <!-- ================== BEGIN BASE JS ================== -->
     
     <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
