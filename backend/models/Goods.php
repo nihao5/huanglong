@@ -33,6 +33,13 @@ use Yii;
 class Goods extends \yii\db\ActiveRecord
 {
     const TABLE_NAME = '{{%m_goods}}';
+
+    //展示图片地址
+    const UPLOAD_IMAGE_WARES = '/static/uploaded/wares/i';
+
+    //商品放大图片地址
+    const UPLOAD_IMAGE_EXTRA = '/static/uploaded/imgextra/i';
+
     /**
      * @inheritdoc
      */
@@ -47,10 +54,10 @@ class Goods extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sid', 'number', 'sname', 'brand', 'key', 'details', 'price', 'sale', 'addtime'], 'required'],
-            [['sid', 'shopid', 'number', 'price', 'sale', 'sale_date', 'inventory', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'is_hot', 'is_new', 'is_suggest', 'is_check', 'recycle', 'addtime'], 'integer'],
-            [['sname', 'brand', 'key'], 'string', 'max' => 30],
-            [['details'], 'string', 'max' => 255]
+            [['sid', 'number', 'sname', 'img', 'brand', 'key', 'details', 'price', 'sale', 'addtime'], 'required'],
+            [['sid', 'shopid', 'sale_date', 'inventory', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'is_show', 'is_hot', 'is_new', 'is_suggest', 'is_check', 'recycle', 'addtime'], 'integer'],
+            [['sname', 'number', 'price', 'sale', 'brand', 'key'], 'string', 'max' => 30],
+            [['img', 'details'], 'string', 'max' => 255]
         ];
     }
 
@@ -65,6 +72,7 @@ class Goods extends \yii\db\ActiveRecord
             'shopid' => '店铺id',
             'number' => '商品货号',
             'sname' => '商品名',
+            'img' => '商品展示图',
             'brand' => '商品品牌',
             'key' => '商品关键字',
             'details' => '商品描述',
@@ -76,6 +84,7 @@ class Goods extends \yii\db\ActiveRecord
             'click_num' => '点击量',
             'favorite_num' => '收藏量',
             'evaluate_num' => '评论量',
+            'is_show' => '是否显示在首页',
             'is_hot' => '热销',
             'is_new' => '新品',
             'is_suggest' => '推荐',

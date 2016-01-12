@@ -49,7 +49,7 @@ use yii\helpers\Url;
                             <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
                         <div class="panel-body panel-form">
-                            <form action="<?= Url::toRoute(['goods/edit','id'=>$goods['id']])?>" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                            <form action="<?= Url::toRoute(['goods/edit','id'=>$goods['id']])?>" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4">商品分类 :</label>
                                     <div class="col-md-6 col-sm-6">
@@ -69,6 +69,13 @@ use yii\helpers\Url;
                                     <div class="col-md-6 col-sm-6">
                                         <input class="form-control" value="<?= $goods['sname'];?>" type="text" name="sname" placeholder="sname" data-parsley-required="true"/>
                                         <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">商品展示图 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <img style="height:120px;" src="<?= $goods['img'];?>" alt="商品图">
+                                        <input class="form-control" type="file" name="img" value="上传图片"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -104,13 +111,22 @@ use yii\helpers\Url;
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4" for="website">促销日期 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" value="<?= $goods['sale_date'];?>" type="text" name="sale_date" placeholder="sale_date" data-parsley-required="true"/>
+                                        <input id="datepicker-autoClose" value="<?= $goods['sale_date'];?>" class="form-control" type="text" name="sale_date" placeholder="sale_date"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4" for="website">库存 * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" value="<?= $goods['inventory'];?>" type="text" name="inventory" placeholder="inventory" data-parsley-required="true"/>
+                                        <input class="form-control" value="<?= $goods['inventory'];?>" type="text" name="inventory" data-parsley-type="number" placeholder="inventory" data-parsley-required="true"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4">显示在首页 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <select class="form-control" name="is_hot" data-parsley-required="true">
+                                            <option value="1" <?php if($goods['is_hot'] == 1){echo 'selected';}?>>是</option>
+                                            <option value="0" <?php if($goods['is_hot'] == 0){echo 'selected';}?>>否</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">

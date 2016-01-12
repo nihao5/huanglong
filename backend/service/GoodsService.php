@@ -23,13 +23,23 @@ class GoodsService
         foreach($goods as $k=>$v){
             if($v != null){
                 if($k != '_csrf'){
-                   $good[$k] = "$v"; 
+                    //判断促销日期是否存在
+                    if ($k == 'sale_date') {
+                        //把日期变成时间戳
+                        $good[$k] = strtotime($v);
+                    } else {
+                        $good[$k] = "$v"; 
+                    }
                 }
             }
         }
+
         $good['addtime'] = time();
+
         $model = new Goods();
+
         $model->setAttributes($good);
+
         return $model->save();
     }
 
@@ -50,16 +60,12 @@ class GoodsService
     /**
      * 修改数据库
      */
-    public static function editGoods($id,$goods)
+    public static function editGoods($showGoods, $goods)
     {
-        $model = Goods::findOne($id);
-        if(!$model){
-            return false;
-        }
-        $model->setAttributes(
+        $showGoods->setAttributes(
             $goods
         );
-        return $model->save();
+        return $showGoods->save();
     }
 
     //删除数据库的数据

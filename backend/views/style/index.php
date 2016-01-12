@@ -45,7 +45,8 @@ use yii\bootstrap\Alert;
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
                             <div class="btn-group pull-right">
-                                <button class="btn btn-success btn-xs" type="button">操作</button>
+                                <a class="btn btn-white m-r-6" href="../style/add.html">新建</a>
+                                <!-- <button class="btn btn-success btn-xs" type="button">操作</button>
                                 <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                     <span class="caret"></span>
                                 </button>
@@ -53,7 +54,7 @@ use yii\bootstrap\Alert;
                                     <li>
                                         <a href="../style/add.html">新建</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </div>
                             <h4 class="panel-title">Data Table - Default</h4>
                         </div>
@@ -77,7 +78,7 @@ use yii\bootstrap\Alert;
                                             <td><?= str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp',count(explode(',',$v['path']))-1).'|- '.$v['name'];?></td>
                                             <td><?= $v['pid'];?></td>
                                             <td><?= $v['isshow'];?></td>
-                                            <td><?= $v['modtime'];?></td>
+                                            <td><?= date('Y-m-d', $v['modtime']);?></td>
                                             <td><a href="../style/update.html?id=<?= $v['id'];?>" class="btn btn-success m-r-5"><i class="fa fa-edit"></i> 修改</a><a href="../style/del.html?id=<?= $v['id'];?>" class="btn btn-danger m-r-5" onclick="return confirm('确定删除吗?')"><i class="fa fa-trash-o"></i> 删除</a></td>
                                         </tr>
                                     <?php endforeach ?>  

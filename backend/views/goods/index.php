@@ -104,7 +104,7 @@ use yii\bootstrap\Alert;
                                              class="btn btn-primary m-r-5">商品图片</a>
                                                 <a href="<?= Url::toRoute(['goods-img/imgextra','id'=>$value['id']])?>"
                                              class="btn btn-primary m-r-5">展示图片</a>
-                                             </td>
+                                            </td>
                                         </tr>
                                     <?php endforeach ?>
                                         

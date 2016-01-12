@@ -2,11 +2,26 @@
 namespace frontend\controllers;
 use Yii;
 use yii\web\Controller;
+use frontend\service\BaseService;
 
 class IndexController extends Controller
 {
 	public function actionIndex()
 	{
-		return $this->render('index');
+        $goods = BaseService::getGoods();
+
+        foreach ($goods as $k=>$v) {
+            if ($goods[$k] == 'is_suggest') {
+                if ($goods['is_suggest'] == 0) {
+                    continue;
+                }
+                //print_r($v);
+            }
+            
+        }
+        // print_r($s);
+        // exit;
+        // print_r($goods);exit;
+		return $this->render('index', ['goods' => $goods]);
 	}
 }

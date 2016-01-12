@@ -3,7 +3,7 @@ namespace backend\controllers;
 use Yii;
 use backend\controllers\BaseController;
 use backend\service\UploadHandler;
-use backend\models\GoodsImg;
+use backend\models\Goods;
 
 class GoodsImgController extends BaseController
 {
@@ -26,6 +26,7 @@ class GoodsImgController extends BaseController
     {
         $gid = Yii::$app->request->get('gid');
         $zs = Yii::$app->request->get('zs');
+        
         if (!$gid) {
             Yii::$app->getSession()->setFlash('error', '查看图片时缺少必要的参数');
             return $this->redirect(['goods/index']);
@@ -33,10 +34,13 @@ class GoodsImgController extends BaseController
 
         //如果为真，上传展示图片，否则上传商品图片
         if ($zs) {
-            $path = GoodsImg::UPLOAD_IMAGE_EXTRA.$gid.'/';
+            //上传图片路径
+            $path = Goods::UPLOAD_IMAGE_EXTRA.$gid.'/';
+
+            //请求上传图片接口
             $uploadHandler = new UploadHandler($gid,$path);
         } else {
-            $path = GoodsImg::UPLOAD_IMAGE_WARES.$gid.'/';
+            $path = Goods::UPLOAD_IMAGE_WARES.$gid.'/';
             $uploadHandler = new UploadHandler($gid,$path);
         }
     }

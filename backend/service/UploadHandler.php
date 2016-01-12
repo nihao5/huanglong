@@ -49,10 +49,12 @@ class UploadHandler
         $this->options = array(
             'gid' => $gid,
             'script_url' => $this->get_full_url().'/goods-img/uploaded.html?gid='.$gid,//删除请求路径//.basename($this->get_server_var('SCRIPT_NAME')),
-            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).$path,//'/files/'.$id.'/',
-            'upload_url' => $this->get_full_url().$path,//'/files/'.$id.'/',
-            // 'upload_dir' => $path.'/',
-            // 'upload_url' => $path.'/',
+            //上传文件目录
+            'upload_dir' => str_replace('backend', 'frontend', dirname($this->get_server_var('SCRIPT_FILENAME'))).$path,//'/files/'.$id.'/',
+            // 展示图片时，请求目录
+            'upload_url' => str_replace('backend', 'frontend', $this->get_full_url()).$path,//'/files/'.$id.'/',
+            // 'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).$path,
+            // 'upload_url' =>  $this->get_full_url().$path,
             'user_dirs' => false,
             'mkdir_mode' => 0755,
             'param_name' => 'files',
@@ -1405,7 +1407,12 @@ class UploadHandler
                     if (!empty($version)) {
                         $file = $this->get_upload_path($file_name, $version);
                         if (is_file($file)) {
+                            //删除文件
                             unlink($file);
+                            //删除上传小图目录
+                            rmdir($this->options['upload_dir'].'/thumbnail');
+                            //删除上传大图pull
+                            rmdir($this->options['upload_dir']);
                         }
                     }
                 }

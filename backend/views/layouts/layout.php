@@ -504,6 +504,23 @@ use yii\helpers\Url;
     <script src="/wnmp/yii2test/backend/web/assets/plugins/DataTables/js/dataTables.colVis.js"></script>
     <script src="/wnmp/yii2test/backend/web/assets/js/table-manage-colvis.demo.min.js"></script>
     <script src="/wnmp/yii2test/backend/web/assets/plugins/parsley/dist/parsley.js"></script>
+
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/masked-input/masked-input.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/password-indicator/js/password-indicator.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-combobox/js/bootstrap-combobox.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/plugins/select2/dist/js/select2.min.js"></script>
+    <script src="/wnmp/yii2test/backend/web/assets/js/form-plugins.demo.min.js"></script>
+
     <script src="/wnmp/yii2test/backend/web/assets/js/apps.min.js"></script>
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
      <!-- <script src="/wnmp/yii2test/backend/web/assets/js/inbox.demo.min.js"></script>
@@ -515,11 +532,12 @@ use yii\helpers\Url;
     <!-- ================== END PAGE LEVEL JS ================== -->
 
     
-    
     <script>
         $(document).ready(function() {
             App.init();
+            FormPlugins.init();
             TableManageColVis.init();
+            
         });
     </script>
     <script>

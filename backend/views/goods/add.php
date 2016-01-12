@@ -48,7 +48,7 @@ use yii\bootstrap\Alert;
                             <h4 class="panel-title">Basic Form Validation</h4>
                         </div>
                         <div class="panel-body panel-form">
-                            <form action="../goods/insert.html" method="post" class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form">
+                            <form action="../goods/insert.html" method="post" class="form-horizontal form-bordered" enctype="multipart/form-data" data-parsley-validate="true" name="demo-form">
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4">商品分类 :</label>
                                     <div class="col-md-6 col-sm-6">
@@ -68,6 +68,12 @@ use yii\bootstrap\Alert;
                                     <div class="col-md-6 col-sm-6">
                                         <input class="form-control" type="text" name="sname" placeholder="sname" data-parsley-required="true"/>
                                         <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4" for="website">商品展示图 * :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="form-control" type="file" name="img" value="上传图片"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -103,17 +109,26 @@ use yii\bootstrap\Alert;
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4" for="website">促销日期 :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="sale_date" placeholder="sale_date" data-parsley-required="true"/>
+                                        <input id="datepicker-autoClose" class="form-control" type="text" name="sale_date" placeholder="sale_date"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4" for="website">库存 * :</label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" type="text" name="inventory" placeholder="inventory" data-parsley-required="true"/>
+                                        <input class="form-control" type="text" name="inventory" data-parsley-type="number" placeholder="inventory" data-parsley-required="true"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4">推荐 :</label>
+                                    <label class="control-label col-md-4 col-sm-4">显示在首页 :</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <select class="form-control" name="isshow" data-parsley-required="true">
+                                            <option value="1">是</option>
+                                            <option value="0" selected="selected">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4 col-sm-4">热销 :</label>
                                     <div class="col-md-6 col-sm-6">
                                         <select class="form-control" name="ishot" data-parsley-required="true">
                                             <option value="1">是</option>
@@ -244,4 +259,4 @@ use yii\bootstrap\Alert;
         <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
         <!-- end scroll to top btn -->
     </div>
-    <!-- end page container
+    <!-- end page container-->

@@ -510,105 +510,160 @@ use yii\helpers\Html;
                 <h2 class="tle"><span class="ico1"></span>人气推荐单品</h2>
             </div>
             <ul class="rec_sku recommend">
+               
                 <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="anglebaby同款 6种颜色半价包邮咯"><img src="/img/fb9503783aeb276025d3bdd84eaf_640_919.cg.jpg_91f2f1dc_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="anglebaby同款 6种颜色半价包邮咯">
+                            <img src="/img/fb9503783aeb276025d3bdd84eaf_640_919.cg.jpg_91f2f1dc_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">anglebaby同款 6种颜色半价包邮咯</a></p>
                     <p class="price_box">
-                    <span class="price_red">¥88.00</span>            
-                    <span class="price">¥258.00</span>        
+                        <span class="price_red">¥88.00</span>
+                        <span class="price">¥258.00</span>        
                     </p>
                     <p>55人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="韩版显瘦长款T恤 好评如潮"><img src="/img/a39d9fbb619e7ebe8c7f5369340e_640_900.cg.jpg_53e53c35_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="韩版显瘦长款T恤 好评如潮">
+                            <img src="/img/a39d9fbb619e7ebe8c7f5369340e_640_900.cg.jpg_53e53c35_s2_180_255.jpg">
+                        </a>
                     </div>
-                    <p class="txt"><a href="#" target="_blank">韩版显瘦长款T恤 好评如潮</a></p><p class="price_box"><span class="price_red">¥69.00</span><span class="price">¥269.00</span></p>
+                    <p class="txt"><a href="#" target="_blank">韩版显瘦长款T恤 好评如潮</a></p>
+                    <p class="price_box">
+                        <span class="price_red">¥69.00</span>
+                        <span class="price">¥269.00</span>
+                    </p>
                     <p>910人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
                         <a class="s_pic imgBox" href="#" target="_blank" title="BlingBling小凉拖 限时折扣闪亮夏日">
-                        <img src="/img/c540dd41099d0719f959e77e9393_640_900.ch.jpg_247c2e5f_s2_180_255.jpg">
+                            <img src="/img/c540dd41099d0719f959e77e9393_640_900.ch.jpg_247c2e5f_s2_180_255.jpg">
                         </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">BlingBling小凉拖 限时折扣闪亮夏日</a></p>
-                    <p class="price_box"><span class="price_red">¥79.00</span><span class="price">¥238.00</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥79.00</span>
+                        <span class="price">¥238.00</span>
+                    </p>
                     <p>510人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="酒红美裙特别火  气质白富美首选"><img src="/img/c0e74422838249eae86e3e8ae4a8_640_832.cf.jpg_e720f22a_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="酒红美裙特别火  气质白富美首选">
+                            <img src="/img/c0e74422838249eae86e3e8ae4a8_640_832.cf.jpg_e720f22a_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">酒红美裙特别火  气质白富美首选</a></p>
-                    <p class="price_box"><span class="price_red">¥89.00</span><span class="price">¥356.00</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥89.00</span>
+                        <span class="price">¥356.00</span>
+                    </p>
                     <p>187人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="美丽淘货  小清新镂空爱心细腰带"><img src="/img/20879b2b11664eebd5a8e969b5d9_692_1038.cf.jpg_fd8e8906_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="美丽淘货  小清新镂空爱心细腰带">
+                            <img src="/img/20879b2b11664eebd5a8e969b5d9_692_1038.cf.jpg_fd8e8906_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">美丽淘货  小清新镂空爱心细腰带</a></p>
-                    <p class="price_box"><span class="price_red">¥9.90</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥9.90</span>
+                    </p>
                     <p>586人已购买</p>
                 </li>
                 <li class="last">
                     <div class="s_picBox">
-                    <a class="s_pic imgBox" href="#" target="_blank" title="提前party on 显瘦九分小脚裤"><img src="/img/34de518d803c0ee8b7893c0608d4_640_900.cg.png_b55b7bc7_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="提前party on 显瘦九分小脚裤">
+                            <img src="/img/34de518d803c0ee8b7893c0608d4_640_900.cg.png_b55b7bc7_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">提前party on 显瘦九分小脚裤</a></p>
-                    <p class="price_box"><span class="price_red">¥47.85</span><span class="price">¥165.00</span>        </p><p>389人已购买</p></li>
-                    <li>
+                    <p class="price_box">
+                        <span class="price_red">¥47.85</span>
+                        <span class="price">¥165.00</span>
+                    </p>
+                    <p>389人已购买</p>
+                </li>
+                <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="8倍补水，有效改善肌肤干燥！百雀羚 8杯水面膜5片"><img src="/img/fa7b952ec195156c6479098b40a2_640_832.cf.jpg_55293c02_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="8倍补水，有效改善肌肤干燥！百雀羚 8杯水面膜5片">
+                            <img src="/img/fa7b952ec195156c6479098b40a2_640_832.cf.jpg_55293c02_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">8倍补水，有效改善肌肤干燥！百雀羚 8杯水面膜5片</a></p>
-                    <p class="price_box"><span class="price_red">¥21.90</span><span class="price">¥68.60</span>        
+                    <p class="price_box">
+                        <span class="price_red">¥21.90</span>
+                        <span class="price">¥68.60</span>        
                     </p>
                     <p>2136人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="面膜+面膜的完美组合。俪兰 蜗牛原液两段式面膜"><img src="/img/0c053d3b6184d442805c7cc2521e_640_900.cc.jpg_fc04d176_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="面膜+面膜的完美组合。俪兰 蜗牛原液两段式面膜">
+                            <img src="/img/0c053d3b6184d442805c7cc2521e_640_900.cc.jpg_fc04d176_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">面膜+面膜的完美组合。俪兰 蜗牛原液两段式面膜</a></p>
-                    <p class="price_box"><span class="price_red">¥48.00</span><span class="price">¥96.00</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥48.00</span>
+                        <span class="price">¥96.00</span>
+                    </p>
                     <p>1194人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="植物面膜，去黄美白。美康粉黛 汉方睡眠面膜"><img src="/img/d60681b2541c64da07f9b6fe5a67_640_832.cg.jpg_c7bec051_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="植物面膜，去黄美白。美康粉黛 汉方睡眠面膜">
+                            <img src="/img/d60681b2541c64da07f9b6fe5a67_640_832.cg.jpg_c7bec051_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">植物面膜，去黄美白。美康粉黛 汉方睡眠面膜</a></p>
-                    <p class="price_box"><span class="price_red">¥19.90</span><span class="price">¥78.00</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥19.90</span>
+                        <span class="price">¥78.00</span>
+                    </p>
                     <p>1230人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="化妆怎能没有两把好刷子？丝雨 8支化妆刷套装"><img src="/img/e7f6e95e4fad9351421ae78d9235_640_900.cf.jpg_65d0cbea_s2_180_255.jpg"></a>
+                        <a class="s_pic imgBox" href="#" target="_blank" title="化妆怎能没有两把好刷子？丝雨 8支化妆刷套装">
+                            <img src="/img/e7f6e95e4fad9351421ae78d9235_640_900.cf.jpg_65d0cbea_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">化妆怎能没有两把好刷子？丝雨 8支化妆刷套装</a></p>
-                    <p class="price_box"><span class="price_red">¥39.00</span><span class="price">¥88.00</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥39.00</span>
+                        <span class="price">¥88.00</span>
+                    </p>
                     <p>375人已购买</p>
                 </li>
                 <li>
                     <div class="s_picBox">
                         <a class="s_pic imgBox" href="#" target="_blank" title="刘海也能DIY！爱丽小屋 刘海剪套装">
-                    <img src="/img/77ea0760e231e53e1291cf7bca28_640_900.c8.jpg_fa7dad8b_s2_180_255.jpg"></a>
+                            <img src="/img/77ea0760e231e53e1291cf7bca28_640_900.c8.jpg_fa7dad8b_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">刘海也能DIY！爱丽小屋 刘海剪套装</a></p>
-                    <p class="price_box"><span class="price_red">¥35.00</span><span class="price">¥65.00</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥35.00</span>
+                        <span class="price">¥65.00</span>
+                    </p>
                     <p>169人已购买</p>
                 </li>
                 <li class="last">
                     <div class="s_picBox">
                         <a class="s_pic imgBox" href="#" target="_blank" title="光面护肤，网面卸妆。沙织小姐 双色双效卸妆棉">
-                    <img src="/img/50533e7c5a162fd338fbbf4fe5dd_640_833.ch.jpg_db26111e_s2_180_255.jpg"></a>
+                            <img src="/img/50533e7c5a162fd338fbbf4fe5dd_640_833.ch.jpg_db26111e_s2_180_255.jpg">
+                        </a>
                     </div>
                     <p class="txt"><a href="#" target="_blank">光面护肤，网面卸妆。沙织小姐 双色双效卸妆棉</a></p>
-                    <p class="price_box"><span class="price_red">¥22.00</span><span class="price">¥108.00</span></p>
+                    <p class="price_box">
+                        <span class="price_red">¥22.00</span>
+                        <span class="price">¥108.00</span>
+                    </p>
                     <p>337人已购买</p>
                 </li>
             </ul>
