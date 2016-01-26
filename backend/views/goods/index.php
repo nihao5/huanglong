@@ -71,7 +71,6 @@ use yii\bootstrap\Alert;
                                             <th>品牌</th>
                                             <th>价格</th>
                                             <th>折扣价</th>
-                                            <th>库存</th>
                                             <th>销量</th>
                                             <th>收藏量</th>
                                             <!-- <th>上架时间</th> -->
@@ -88,7 +87,6 @@ use yii\bootstrap\Alert;
                                             <td><?= $value['brand'];?></td>
                                             <td><?= $value['price'];?></td>
                                             <td><?= $value['sale'];?></td>
-                                            <td><?= $value['inventory'];?></td>
                                             <td><?= $value['sale_num'];?></td>
                                             <td><?= $value['favorite_num'];?></td>
                                             <?php// $value['recycle'];?>

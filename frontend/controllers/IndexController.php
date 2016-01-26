@@ -12,9 +12,6 @@ class IndexController extends Controller
 
         foreach ($goods as $k=>$v) {
             if ($goods[$k] == 'is_suggest') {
-                if ($goods['is_suggest'] == 0) {
-                    continue;
-                }
                 //print_r($v);
             }
             

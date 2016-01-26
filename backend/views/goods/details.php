@@ -95,12 +95,6 @@ use yii\helpers\Url;
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="message">库存 * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <label class="control-label" for="fullname"><?= $goods['inventory'];?></label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4" for="message">销量 * :</label>
                                     <div class="col-md-6 col-sm-6">
                                         <label class="control-label" for="fullname"><?= $goods['sale_num'];?></label>

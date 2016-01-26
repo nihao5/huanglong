@@ -115,12 +115,6 @@ use yii\helpers\Url;
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4 col-sm-4" for="website">库存 * :</label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" value="<?= $goods['inventory'];?>" type="text" name="inventory" data-parsley-type="number" placeholder="inventory" data-parsley-required="true"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label class="control-label col-md-4 col-sm-4">显示在首页 :</label>
                                     <div class="col-md-6 col-sm-6">
                                         <select class="form-control" name="is_hot" data-parsley-required="true">

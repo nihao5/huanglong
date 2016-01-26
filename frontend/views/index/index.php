@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 // $this->register($this);
 ?>
 
@@ -9,6 +10,8 @@ use yii\helpers\Html;
                             <a class="pic" href="#" target="_blank" style="background: url(&quot;/img/35cc319fbf7b43ce1a0db3c578a4_2000_420.cf.jpg&quot;) repeat scroll center top transparent;"></a></li>
                         <li style="position: absolute; top: 0px; left: 0px; z-index: 0; display: list-item;">
                             <a class="pic" href="#" target="_blank" style="background: url(&quot;/img/027e9f3a9684b29395468fc01c82_2000_420.ch.jpg&quot;) repeat scroll center top transparent;"></a></li>
+                        <li style="position: absolute; top: 0px; left: 0px; z-index: 0; display: list-item;">
+                            <a class="pic" href="#" target="_blank" style="background: url(&quot;/img/b80a735603152aaba072ce89d358_960_420.cj.jpg&quot;) repeat scroll center top transparent;"></a></li>
                         <li style="position: absolute; top: 0px; left: 0px; z-index: 0; display: list-item;">
                             <a class="pic" href="#" target="_blank" style="background: url(&quot;/img/e349df799daeaa522deec56a7201_2000_420.cf.jpg&quot;) repeat scroll center top transparent;"></a></li>
                         <li style="position: absolute; top: 0px; left: 0px; z-index: 0; display: list-item;">
@@ -510,21 +513,23 @@ use yii\helpers\Html;
                 <h2 class="tle"><span class="ico1"></span>人气推荐单品</h2>
             </div>
             <ul class="rec_sku recommend">
-               
-                <li>
+               <?php foreach ($goods as $key => $value): ?>
+                <?php $rand = rand(10000000,99999999);?>
+                   <li>
                     <div class="s_picBox">
-                        <a class="s_pic imgBox" href="#" target="_blank" title="anglebaby同款 6种颜色半价包邮咯">
-                            <img src="/img/fb9503783aeb276025d3bdd84eaf_640_919.cg.jpg_91f2f1dc_s2_180_255.jpg">
+                        <a class="s_pic imgBox" href="<?php echo Url::toRoute(['detail/index', $rand => $value['id']])?>" target="_blank" title="<?php echo $value['sname'];?>s">
+                            <img src="<?php echo $value['img'];?>">
                         </a>
                     </div>
-                    <p class="txt"><a href="#" target="_blank">anglebaby同款 6种颜色半价包邮咯</a></p>
+                    <p class="txt"><a href="<?php echo Url::toRoute(['detail/index', $rand => $value['id']])?>" target="_blank"><?php echo $value['sname'];?></a></p>
                     <p class="price_box">
-                        <span class="price_red">¥88.00</span>
-                        <span class="price">¥258.00</span>        
+                        <span class="price_red">¥<?php echo $value['sale'];?></span>
+                        <span class="price">¥<?php echo $value['price'];?></span>        
                     </p>
-                    <p>55人已购买</p>
+                    <p><?php echo $value['sale_num'];?>人已购买</p>
                 </li>
-                <li>
+               <?php endforeach ?>
+                <!-- <li>
                     <div class="s_picBox">
                         <a class="s_pic imgBox" href="#" target="_blank" title="韩版显瘦长款T恤 好评如潮">
                             <img src="/img/a39d9fbb619e7ebe8c7f5369340e_640_900.cg.jpg_53e53c35_s2_180_255.jpg">
@@ -665,7 +670,7 @@ use yii\helpers\Html;
                         <span class="price">¥108.00</span>
                     </p>
                     <p>337人已购买</p>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="auto_wrap">

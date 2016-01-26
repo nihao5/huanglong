@@ -55,7 +55,7 @@ class Goods extends \yii\db\ActiveRecord
     {
         return [
             [['sid', 'number', 'sname', 'img', 'brand', 'key', 'details', 'price', 'sale', 'addtime'], 'required'],
-            [['sid', 'shopid', 'sale_date', 'inventory', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'is_show', 'is_hot', 'is_new', 'is_suggest', 'is_check', 'recycle', 'addtime'], 'integer'],
+            [['sid', 'shopid', 'sale_date', 'sale_num', 'click_num', 'favorite_num', 'evaluate_num', 'is_show', 'is_hot', 'is_new', 'is_suggest', 'is_check', 'recycle', 'addtime'], 'integer'],
             [['sname', 'number', 'price', 'sale', 'brand', 'key'], 'string', 'max' => 30],
             [['img', 'details'], 'string', 'max' => 255]
         ];
@@ -79,7 +79,6 @@ class Goods extends \yii\db\ActiveRecord
             'price' => '商品价格',
             'sale' => '商品折扣价格',
             'sale_date' => '促销日期',
-            'inventory' => '商品数量',
             'sale_num' => '销量',
             'click_num' => '点击量',
             'favorite_num' => '收藏量',

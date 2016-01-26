@@ -53,7 +53,7 @@ AppAsset::register($this);
                         <li><a href="#"><em class="i_QQ">&nbsp;</em> QQ登录</a></li>
                         <li><a href="../user/login">登录</a></li>
                         <li><a href="../user/register">注册</a></li>
-                        <li><a href="../cart/index" target="_blank" class="mycart"><em class="i_cart">&nbsp;</em>我的购物车<span class="num_bgc num_bgc_none">1</span></a></li>
+                        <li><a href="../cart/index" target="_blank" class="mycart"><em class="i_cart">&nbsp;</em>我的购物车<span class="num_bgc num_bgc_none">0</span></a></li>
                         <li><a href="../order/index" target="_blank"><em class="i_order">&nbsp;</em>我的订单</a></li>
                         <li><a href="#" target="_blank"><em class="i_mob">&nbsp;</em>下载App</a></li>
                         <li><a class="last" href="#">帮助中心</a></li>

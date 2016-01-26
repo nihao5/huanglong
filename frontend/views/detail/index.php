@@ -1,60 +1,1012 @@
-		
-	<link rel="stylesheet" type="text/css" href="/css/detail/sale.css">		
-	<script async="" src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/gw.js"></script>
-	<script async="" src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/wb.js"></script>
-	<script type="text/javascript" src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/fml"></script>	
-	<script>	fml.setOptions({'sversion' : '1506171736.8832.0008','defer' : true ,'modulebase' : 'http://s.meilishuo.net/script-min/'}); var Meilishuo = { 'config' : {			nt : '1yQyN1tU7ssTVQ5GeZ16w9OVekNfix4d323BmfmconDCqfM3841lcH+cHL5FMKyo',			main_site_domain: 'http://www.meilishuo.com',			server_url : '/',			picture_url : 'http://i.meilishuo.net/css/',			captcha_url : 'http://captcha.meilishuo.com/',			im_url : 'http://im.meilishuo.com/',			user_id : 0 ,			nickname : "",			fairy_id : 219,			forSale : true,			qzone_notfans : undefined,			is_actived : '1',			controller : '',			avatar_c : 'http://i.meilishuo.net/css/images/0.gif',			level : 0,			weibo_bind : 'undefined',			weibo_act : 'undefined',			block_remain : 0,			mobile_is_actived : 0,			need_active : 0,			is_iPad : false,			is_service : 0,			apiHost : {"default":"http://dootaapi.meilishuo.com","m-promotion":"http://m-promotion.meilishuo.com"},			proxyPath : '/ja/proxy/'		} };		
-	</script>
-	
-	 <!-- <script src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/a.txt" type="text/javascript"></script>
-	// <script src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/bundle.js" charset="UTF-8"></script>
-	// <script src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/iframeWidget.js" charset="UTF-8"></script> -->
-	</head>	
-	<body>
-	<iframe id="sina_anywhere_iframe" style="display: none;"></iframe>
-	<!-- // <script src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/503139774.js" type="text/javascript"></script> -->
-			
-	<script type="text/javascript">			
-	var style = document.createElement('style'),				
-	head = document.head || document.getElementsByTagName('head')[0],				
-	css = '#promo_nav{overflow:hidden;margin-bottom:5px;background-color:#ffa71d;}
-	#promo_nav .itemswrap{width:1200px;margin-left:auto;margin-right:auto;}
-	#promo_nav li{font-size:14px;padding-left:10px;padding-right:10px;line-height:57px;height:57px;}#promo_nav .nav-items-main:hover,#promo_nav .nav-items-branch:hover{background-color:#dd1011;}
-	#promo_nav .nav-items-main{font-size:18px;padding-right:8px;}#promo_nav .main-a{padding-left:97px;background:url(/img/detail/119411d0ed6cc3ec87bb1662667f_78_26.ch.png)
-	 left center no-repeat;}#promo_nav a{display:block;}#promo_nav span{padding-right:10px;background:url(/img/detail/58ed12205d780b8261e1f952e8eb_5_9.cf.png) right center no-repeat;background-size:auto 64%;color:#ffffff;}#promo_nav .nav-items-main,#promo_nav .nav-items-branch{float:left;}#promo_nav .nav-items-itemright{float:right;padding-right:0;}#promo_nav .nav-items:after{content:".";clear:both;display:block;height:0;visibility:hidden;}#promo_nav .nav-items-itemright a{padding-top:6px;height:45px;}#promo_nav .nav-items-itemright img{height:100%;}';
-	 			style.type = 'text/css';			
-	 			if(style.styleSheet){ 				
-	 				style.styleSheet.cssText = css;			
-	 			}else{				
-	 				style.appendChild(document.createTextNode(css));
-	 			}			
-	 			head.appendChild(style);		
-	 </script>		
-	 
-
-
+<?php
+$this->registerCssFile('/css/detail/sale.css');
+?>	
 <div style="position: fixed; top: 0px; height: auto; left: 0px;" id="navbar">		
 	<div class="sec_nav">	</div>		
 </div>
 <div id="shop-hd" class="shop-hd">  
-	<a class="top-banner" style="background-image:url(/img/detail/8a39d50e39e9c9230b85d7a41122_2000_120.ch.jpg)" target="_blank" href="/shop/110158"> </a>
-	</div>
+	<a class="top-banner" style="background-image:url(/img/detail/1/8a39d50e39e9c9230b85d7a41122_2000_120.ch.jpg)" target="_blank" href="/shop/110158"> </a>
+</div>
 
 
-<div class="main ">  
-<div class="item-box" data-tid="3709539531"> 
-<div class="content twitter" twitter_id="3709539531"> 
-<div class="item-sale"> 
-<h3 class="item-title">正版T恤+半身裙 套装</h3>  
-<h4 class="item-sub-title">正版T恤+半身裙 套装</h4>  
-<div class="item-price-info"> 
-<span class="price-now">￥<i id="price-now" class="num" data-price-min="89.90" data-price-max="89.90">89.90</i></span>  
-<span class="price-original">￥<i id="price-original" class="num" data-price-min="364.00" data-price-max="364.00">364.00</i></span>   
-<span class="label-text js-label" style="background-color:#ff9933" data-text="免运费">免运费</span>  
-</div> <!-- big promote --> 
-<div class="big-promote-notice"> 
-<p> <i class="logo"></i> <span class="preheat-text"> 领券后购买本商品最优惠，请提前加入购物车！ </span><span class="now-text"> 领券后购买本商品最优惠，错过再等一年！ </span> </p> 
-<a href="#" target="_blank">立即领取250元美丽说全场通用券&nbsp;&gt;&gt;</a> 
-</div> <!-- big promote end -->  
-<ul class="item-promote-infos js-shop-promote">  
-<li class="js-promote-item"> <i class="label-mark-limit">团</i> 距离恢复原价仅剩<span class="countdown" data-remain="155747.66100001335"><i class="day countdown-time">1</i>天<i class="hour countdown-time">19</i>小时<i class="minute countdown-time">6</i>分<i class="second countdown-time">17</i>秒</span> </li>   </ul>  <div class="item-freight"> <label>运 费</label> 浙江杭州<span class="gray_f pl6_f">至</span><a id="js-dest-city" class="pl6_f pr6_f city-name" href="#"><span class="js-city-name">北京</span><i class="arrow-down"></i></a> <span id="js-freight-text">免运费</span> </div> <ul class="item-data"> <li>销量 <span class="item-data-wrap"> 103件 </span> </li> <li class="item-data-middle">好评率 <span class="item-data-wrap"> <a href="#" id="js-comment">100%</a> (10人) </span> </li> <li>喜欢 <span class="item-data-wrap"> 185人 </span> </li> </ul>  <ul class="sku_meta">   </ul> <div class="sku_info"> <div class="skin">  <p class="text none_f"><span class="close_z"></span><span class="msg_ico"></span>请选择您要的商品信息</p>  <dl class="prop"> <dt> 颜 色<span></span> </dt> <dd> <ul id="colorList" class="item-colorlist "> <li><a href="#" class="js-item item-color-text active" data-type="color" data-id="10001" data-index="1">图片色</a></li> </ul> </dd> </dl>   <dl class="prop"> <dt> 尺 码<span></span> </dt> <dd> <ul id="sizeList" class="item-size-types">  <li><a href="#" class="js-item item-size-type" data-type="size" data-id="33691" data-index="1">S</a></li>  <li><a href="#" class="js-item item-size-type" data-type="size" data-id="33693" data-index="2">M</a></li>  <li><a href="#" class="js-item item-size-type" data-type="size" data-id="33695" data-index="3">L</a></li>  </ul> </dd> </dl>  <dl class="amount"> <dt>数 量</dt> <dd> <div class="item-stock js-stock"> <input class="item-stock-num js-stock-num" title="请输入购买数量" value="1" type="text"> <span class="item-stock-btns"> <span class="item-stock-plus js-stock-plus "><i class="icon-up"></i></span> <span class="item-stock-minus js-stock-minus "><i class="icon-down"></i></span> </span> <span class="item-stock-reserve js-stock-reserve">  (库存<span>1467</span>件)  </span> </div> </dd> </dl>  <dl class="mt10_f"> <dt>客 服</dt> <dd>  <a class="goqq knilmi" href="###--103525-2-3709539531" target="_blank"><em class="qqico">&nbsp;</em>联系客服</a>  </dd> </dl>   <div class="msg_box"> <p style="display: none;" class="msg_limit"><span class="msg_ico"></span>对不起！每人最多限购100件！</p> <p style="display: none;" class="msg_zero"><span class="msg_ico"></span>对不起，这件宝贝已经卖光啦！</p> <p style="display: none;" class="msg_over"><span class="msg_ico"></span>您所填写的宝贝数量超过库存！</p> </div>  <div class="btn_box">   <a class="define" title="确定">确定</a> <div class="same_btn"> <a class="add_cart" title="加入购物车"><em class="cartico">&nbsp;</em>加入购物车</a> <a class="buy_btn" title="立即购买"><em class="rmbico">&nbsp;</em>立即购买</a> </div>   </div> </div> </div>  <div class="item-spread">  <div class="item-like-wrap"> <a class="item-like-btn js-like-btn" data-liked="0" isshowlike="1" like_twitter_id="3709539531">  <i class="icon-like"></i>喜欢  <i class="item-like-num">(185)</i> </a> <span class="addOneLike">+1</span> </div> <a class="item-share-btn js-item-share-btn"> <i class="icon-share"></i>分享 </a> <a id="twitter_magazi" class="add-in-magazine-btn"> <i class="icon-magazine" title="收进杂志"></i> </a> </div>  </div> <div id="picture" class="item-pic"> <div class="item-pic-origin" style="max-height:615px;">  <img class="j-big-pic twitter_pic" alt="正版T恤+半身裙 套装" src="/img/detail/981a90266f2e5d35aa8a75ddfe51_640_875.jpg">  <div style="bottom: 13px; opacity: 0;" class="js-pop-tip item-pop-tip" data-num="22"><i class="icon-people"></i><i class="num">22</i> 人最近已购买</div>  </div> <div class="item-pic-thumb js-pic-thumb">  <span class="active"><img src="/img/detail/981a90266f2e5d35aa8a75ddfe51_640_875_002.jpg" bsrc="http://d03.res.meilishuo.net/pic/_o/9e/6e/981a90266f2e5d35aa8a75ddfe51_640_875.ch.jpg_3b3f2ba6_s7_450_680.jpg" width="68"></span>  </div> </div> </div> <div class="sidebar">  <div class="shop star-shop"> <a class="shop-avatar" href="http://www.meilishuo.com/shop/rating/?shop_id=103525&amp;frm=rate_to_rateall" target="_blank"><img src="/img/detail/781d1f5f1beb648d365f573420bf_200_200.jpg" width="48"></a> <i class="icon-shop"></i> <div class="shop-wrap"> <a href="http://www.meilishuo.com/shop/103525?pos=guangNick" target="_blank" class="shop-name">小丹家</a> <div class="shop-follow-state js-follow-shop"> <a class="shop-follow-btn is-not-followed">  <i class="icon-plus">+</i>关注  </a> <span class="shop-fans-wrap"><i class="shop-fans js-fans">17080</i>粉丝</span> </div> </div> <ul class="shop-assess">  <li class="shop-assess-first"> 描述 <a href="http://www.meilishuo.com/shop/rating/?shop_id=103525&amp;frm=rate_to_rateall" class="shop-point down" target="_blank"><i class="arrow-ico">--</i>4.6</a> </li>  <li class="shop-assess-middle"> 质量 <a href="http://www.meilishuo.com/shop/rating/?shop_id=103525&amp;frm=rate_to_rateall" class="shop-point down" target="_blank"><i class="arrow-ico">--</i>4.6</a> </li>  <li class="shop-assess-middle"> 服务 <a href="http://www.meilishuo.com/shop/rating/?shop_id=103525&amp;frm=rate_to_rateall" class="shop-point down" target="_blank"><i class="arrow-ico">--</i>4.7</a> </li>  <li class="shop-assess-last"> 发货 <a href="http://www.meilishuo.com/shop/rating/?shop_id=103525&amp;frm=rate_to_rateall" class="shop-point down" target="_blank"><i class="arrow-ico">--</i>4.7</a> </li>  </ul> <ul class="shop-info"> <li>所在地区：浙江杭州</li> <li>商品数量：341</li> <li>销售数量：189516</li> <li>店铺资质：<i class="icon-approve" title="美丽说认证 2013.11.21"></i></li> <li>联系客服：<a class="knilmi" href="###--103525-2-3709539531" target="_blank"><i class="icon-contact"></i></a></li> </ul> <a href="http://www.meilishuo.com/shop/103525?frm=rate_to_shop" class="into-shop-btn" target="_blank"><i class="into-shop-ico"></i>进入店铺</a> </div>   <div class="maybe-like"> <h3 class="hd">你可能还喜欢</h3> <ul>  <li class="odd"> <a href="http://www.meilishuo.com/share/item/3716749127?d_r=6__0-1-1-1-r_hdtpairbuy-t_shop-abtest_1-ot_3709539531" target="_blank" title="时尚渐变条纹宽松针织T恤"><img src="/img/detail/989bae39c867f3320b8bced555ba_640_907.jpg"></a> <p class="price">￥79.00</p> </li>  <li class="even"> <a href="http://www.meilishuo.com/share/item/3716728067?d_r=6__0-1-1-2-r_hdtpairbuy-t_shop-abtest_1-ot_3709539531" target="_blank" title="潮不规则宽松显瘦长款T恤"><img src="/img/detail/63a5793c1150e30342a9758a718d_640_1005_002.jpg"></a> <p class="price">￥59.00</p> </li>  <li class="odd"> <a href="http://www.meilishuo.com/share/item/3716129031?d_r=6__0-1-1-3-r_hdtpairbuy-t_shop-abtest_1-ot_3709539531" target="_blank" title="不规则针织宽松显瘦连衣裙"><img src="/img/detail/a6fe23d6d0bb5b81b1af444aab31_640_965_002.jpg"></a> <p class="price">￥79.00</p> </li>  <li class="even"> <a href="http://www.meilishuo.com/share/item/3716127019?d_r=6__0-1-1-4-r_hdtpairbuy-t_shop-abtest_1-ot_3709539531" target="_blank" title="名媛性感宽松针织衫T恤"><img src="/img/detail/1c9cc925b56d7a0d9582438861b0_640_955_002.jpg"></a> <p class="price">￥79.00</p> </li>  </ul> </div>  </div> </div> <!-- 搭配人气展示 开始-->   <div class="tab_match"> <h2 class="tab_top">  <a href="javascript:void(0)" class="tabArea1 cur">人气单品</a> </h2> </div>   <div class="contentArea1 "> <div class="may_like">  <ul class="like_list">		<li class="first">	<div class="s_picBox">		<a class="s_pic" href="http://www.meilishuo.com/share/item/3460425215?d_r=6__0-1-1-1-r_hdtmid-t_rs" target="_blank" title="正版跑量 打底衫修身t恤"><img src="/img/detail/8d1340ee3cbc3545c349a2d9e338_640_832.jpg"></a>	</div>	<a class="txt" href="http://www.meilishuo.com/share/item/3460425215?d_r=6__0-1-1-1-r_hdtmid-t_rs" target="_blank">正版跑量 打底衫修身t恤</a>	<div class="info-box">		<span class="info-box-price">¥ 63.00</span>		<span class="info-box-num">2013人购买</span>	</div>	</li>		<li>	<div class="s_picBox">		<a class="s_pic" href="http://www.meilishuo.com/share/item/3477239913?d_r=6__0-1-1-2-r_hdtmid-t_rs" target="_blank" title="复古优雅女人头短袖T恤"><img src="/img/detail/6704dd2f70e9898f6e1c2c7aa25f_640_832.jpg"></a>	</div>	<a class="txt" href="http://www.meilishuo.com/share/item/3477239913?d_r=6__0-1-1-2-r_hdtmid-t_rs" target="_blank">复古优雅女人头短袖T恤</a>	<div class="info-box">		<span class="info-box-price">¥ 57.50</span>		<span class="info-box-num">683人购买</span>	</div>	</li>		<li>	<div class="s_picBox">		<a class="s_pic" href="http://www.meilishuo.com/share/item/3605798237?d_r=6__1-1-1-3-r_hdtmid-t_rs" target="_blank" title="正版简约纯色百搭短袖T恤"><img src="/img/detail/c55bd91f6fbe263a3c3a4e04a5d5_640_918.jpg"></a>	</div>	<a class="txt" href="http://www.meilishuo.com/share/item/3605798237?d_r=6__1-1-1-3-r_hdtmid-t_rs" target="_blank">正版简约纯色百搭短袖T恤</a>	<div class="info-box">		<span class="info-box-price">¥ 39.00</span>		<span class="info-box-num">5140人购买</span>	</div>	</li>		<li>	<div class="s_picBox">		<a class="s_pic" href="http://www.meilishuo.com/share/item/3625392671?d_r=6__1-1-1-4-r_hdtmid-t_rs" target="_blank" title="简约百搭显瘦短袖T恤"><img src="/img/detail/c9353bbedd23531c6f908f85616e_640_898.jpg"></a>	</div>	<a class="txt" href="http://www.meilishuo.com/share/item/3625392671?d_r=6__1-1-1-4-r_hdtmid-t_rs" target="_blank">简约百搭显瘦短袖T恤</a>	<div class="info-box">		<span class="info-box-price">¥ 59.00</span>		<span class="info-box-num">5076人购买</span>	</div>	</li>		<li>	<div class="s_picBox">		<a class="s_pic" href="http://www.meilishuo.com/share/item/3622356483?d_r=6__1-1-1-5-r_hdtmid-t_rs" target="_blank" title="简约嘴贴布短袖T恤"><img src="/img/detail/cf98e0b6ac7857577e05394e7fe3_640_897.jpg"></a>	</div>	<a class="txt" href="http://www.meilishuo.com/share/item/3622356483?d_r=6__1-1-1-5-r_hdtmid-t_rs" target="_blank">简约嘴贴布短袖T恤</a>	<div class="info-box">		<span class="info-box-price">¥ 43.00</span>		<span class="info-box-num">4984人购买</span>	</div>	</li>		<li class="last">	<div class="s_picBox">		<a class="s_pic" href="http://www.meilishuo.com/share/item/3605708821?d_r=6__1-1-1-6-r_hdtmid-t_rs" target="_blank" title="正版字母印花短袖T恤"><img src="/img/detail/136005561d98c61fda37ccc70c4c_640_906.jpg"></a>	</div>	<a class="txt" href="http://www.meilishuo.com/share/item/3605708821?d_r=6__1-1-1-6-r_hdtmid-t_rs" target="_blank">正版字母印花短袖T恤</a>	<div class="info-box">		<span class="info-box-price">¥ 59.00</span>		<span class="info-box-num">4629人购买</span>	</div>	</li>	</ul><div class="clear_f"></div>  </div> </div>   <!--搭配人气展示 结束--> <div class="box item-detail js-item-detail"> <div class="content wrap js-ceiling-tab"> <div style="height: auto;" class="js-tab-wrap"><div class="tab_tle"> <h2 class="tab_top"> <a href="javascript:void(0)" class="tabArea cur">商品详情</a> <a href="javascript:void(0)" class="tabArea eva">购买评价（<span class="twitter_comment_num">10</span>）</a>   <a href="javascript:void(0)" class="tabArea deal">成交记录（<span class="twitter_comment_num">103</span>）</a>  <span class="js-item-price subtab-item-price"></span> <span class="add_cart"><em class="cartico">&nbsp;</em>加入购物车</span> </h2> <div class="detail_items">				<a href="#da0" class="js-anchor-btn">规格尺码</a>			<a href="#da1" class="js-anchor-btn">商品细节</a>			<a href="#da2" class="js-anchor-btn">商品实拍</a>	</div> </div>  </div> <div class="contentArea"> <div class="recom-banner"> <a href="http://promotion.meilishuo.com/promotion/sale_1503/act_venue/?aid=2664&amp;cid=11403&amp;pid=3420&amp;mid=115&amp;nid=4" target="_blank"><img src="/img/detail/8e890c36cc5e78db5e55683fe23b_948_300.jpg"> </a></div><div id="handpick-comments" class="handpick-comments"> <a id="anchor-handpick-comments"></a> <h2 class="comm_tle"><span>精选好评</span></h2> <ul class="handpic-comments-handle"><li></li><li></li><li></li></ul> <ul class="handpick-comments-list js-comments-list"></ul> <div class="item-satisfy-rate"> <div class="content-wrap"> <i class="dashed-border"></i> <i class="rate-num">100</i> <i class="label-percent">%</i>满意度 <p>- 来自 <i class="num">10</i> 个用户的评价 -</p> </div> </div> <div class="item-features js-feature-list"></div> <div class="item-shoppingshow js-item-shoppingshow"> <div class="item-shoppingshow-title"> <h3><span>买家晒单</span></h3> </div> <ul class="item-shoppingshow-list"></ul> </div></div><a name="da0" id="da0"></a><h2 class="comm_tle"><span>规格尺码</span></h2><ul class="format">  <li title="雪纺">材质：雪纺</li> </ul><a name="da1" id="da1"></a><h2 class="comm_tle"><span>商品细节</span></h2> <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/cd5ed1a14ece5e2f324463649ff8_640_1883_3_1.jpg"> </div>   <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/cd5ed1a14ece5e2f324463649ff8_640_1883_3_2.jpg"> </div>   <div class="more_pic"> <img style="height: 463px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/cd5ed1a14ece5e2f324463649ff8_640_1883_3_3.jpg"> </div>   <p class="pro_txt"></p>   <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/82820ce9a8db15d934e001288097_640_1883_3_1.jpg"> </div>   <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/82820ce9a8db15d934e001288097_640_1883_3_2.jpg"> </div>  <div class="item-need-collapse js-item-collapse"> <div class="more_pic"> <img style="height: 463px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/82820ce9a8db15d934e001288097_640_1883_3_3.jpg"> </div>   <p class="pro_txt"></p>   <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/5a3ac2f3f02cd5a48a406623873f_640_1896_3_1.jpg"> </div>   <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/5a3ac2f3f02cd5a48a406623873f_640_1896_3_2.jpg"> </div>   <div class="more_pic"> <img style="height: 476px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/5a3ac2f3f02cd5a48a406623873f_640_1896_3_3.jpg"> </div>   <p class="pro_txt"></p>   <a name="da2" id="da2"></a><h2 class="comm_tle"><span>商品实拍</span></h2> <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/846465f328c2d1b981c58ab556ab_640_1256_2_1.jpg"> </div>   <div class="more_pic"> <img style="height: 546px; width: 640px;" class="load_img" alt="正版T恤+半身裙 套装" src="/img/detail/846465f328c2d1b981c58ab556ab_640_1256_2_2.jpg"> </div>   <p class="pro_txt"></p>    </div> <a href="#" id="item-check-more" class="btn-check-more">查看更多详情<i class="icon-arrow-down"></i></a> <a id="anchor-boundry-sentry" style="visibility: hidden;"></a> <div id="short_show">  <h2 class="detail_tle">购买评价（<span class="twitter_comment_num">10</span>）</h2> <div class="pro_line"></div> <div class="goods-star" id="goods-star">		<div class="goods-star-right js-star-right">		<div class="goods-star-title">			店铺评分（最近90天共13797人评分）		</div>		<ul>						<li>				<label>描述一致:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:91.99999999999999%;"></i>				</span>				4.6			</li>						<li>				<label>质量满意:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:91.99999999999999%;"></i>				</span>				4.6			</li>						<li>				<label>服务态度:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:94%;"></i>				</span>				4.7			</li>						<li>				<label>发货速度:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:94%;"></i>				</span>				4.7			</li>					</ul>	</div>	<div class="goods-star-left js-star-left"> 		<div class="goods-star-title js-star-title">			商品好评率				<span class="goods-praise-ratio red_f pre">					100%				</span>		</div> 		<ul class="goods-tags js-goods-tags">		</ul>	</div>	</div> <div class="comments twitter" twitter_author_uid="0" twitter_id="3709539531"> <ul class="list short_eva_comments"> </ul> </div> <p class="evaLink">查看更多评价 &gt;</p>     <h2 class="detail_tle">成交记录（103）</h2> <table class="deal-all w100"> <thead class="j-deal-comments"> <tr> <th class="deal-buyer">买家</th> <th class="deal-time">成交时间</th> <th class="deal-style">款式和型号</th> </tr> </thead> </table> <table class="deal-all w100"> <tbody class="deal-comments j-deal-comments">  <tr> <td class="deal-buyer"> <img src="%E6%AD%A3%E7%89%88T%E6%81%A4+%E5%8D%8A%E8%BA%AB%E8%A3%99%20%E5%A5%97%E8%A3%85%20-%20%E7%BE%8E%E4%B8%BD%E8%AF%B4_files/a9bd4116df36c3f648b7a16f2796_640_640.jpeg" height="32px" width="32px"> <span>w***黄</span> <span>（匿名）</span> </td> <td class="deal-time"> 2015-07-18 12:56:55 </td> <td class="deal-style"> 图片色/S </td> </tr>  <tr> <td class="deal-buyer"> <img src="/img/detail/19e804632c91d96c684320171e31_256_256.jpg" height="32px" width="32px"> <span>清***缘</span> <span>（匿名）</span> </td> <td class="deal-time"> 2015-07-17 23:27:03 </td> <td class="deal-style"> 图片色/M </td> </tr>  <tr> <td class="deal-buyer"> <img src="/img/detail/19e804632c91d96c684320171e31_256_256.jpg" height="32px" width="32px"> <span>N***s</span> <span>（匿名）</span> </td> <td class="deal-time"> 2015-07-17 23:25:16 </td> <td class="deal-style"> 图片色/L </td> </tr>  <tr> <td class="deal-buyer"> <img src="/img/detail/19e804632c91d96c684320171e31_256_256.jpg" height="32px" width="32px"> <span>y***2</span> <span>（匿名）</span> </td> <td class="deal-time"> 2015-07-17 23:22:37 </td> <td class="deal-style"> 图片色/M </td> </tr>  <tr> <td class="deal-buyer"> <img src="/img/detail/19e804632c91d96c684320171e31_256_256.jpg" height="32px" width="32px"> <span>浮***王</span> <span>（匿名）</span> </td> <td class="deal-time"> 2015-07-17 23:19:56 </td> <td class="deal-style"> 图片色/S </td> </tr> </tbody> </table> <p class="dealLink">查看更多记录 &gt;</p>  </div> </div> <div class="contentArea shpcmt none_f">  <div class="goods-star" id="goods-star">		<div class="goods-star-right js-star-right">		<div class="goods-star-title">			店铺评分（最近90天共13797人评分）		</div>		<ul>						<li>				<label>描述一致:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:91.99999999999999%;"></i>				</span>				4.6			</li>						<li>				<label>质量满意:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:91.99999999999999%;"></i>				</span>				4.6			</li>						<li>				<label>服务态度:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:94%;"></i>				</span>				4.7			</li>						<li>				<label>发货速度:</label>				<span class="item-tag-progressbar">					<i class="item-tag-progress" style="width:94%;"></i>				</span>				4.7			</li>					</ul>	</div>	<div class="goods-star-left js-star-left"> 		<div class="goods-star-title js-star-title">			商品好评率				<span class="goods-praise-ratio red_f pre">					100%				</span>		</div> 		<ul class="goods-tags js-goods-tags">		</ul>	</div>	</div>  <div class="comments twitter" twitter_author_uid="0" twitter_id="3709539531"> <div class="clear_f"></div>  <ul class="eva_comments_filter_tab">  <li class="item cur">全部评价 (10)</li>  <li class="item ">好评 (10)</li>  <li class="item ">中评 (0)</li>  <li class="item ">差评 (0)</li>  <li class="item ">有追评 (0)</li>  <li class="last_item"><label><input class="all_rate_btn" checked="checked" type="checkbox"> 只看有内容的评价</label></li></ul>  <div class="clear_f"></div> <div id="shop_comments_null">暂无购物评价。</div> <ul class="list eva_comments" id="eva_comments"> </ul> <div class="clear_f"></div> <div id="shopPagingNav"> </div> <div class="clear_f"></div> </div> </div> <!-- 购物晒单 start -->  <!-- 购物晒单 end --> <div class="contentArea none_f"> <div class="comments twitter" twitter_author_uid="0" twitter_id="3709539531"> <div class="clear_f"></div> <div id="shop_deal_null">30天内暂无成交记录。</div>  <table class="deal-all w100"> <thead class="j-deal-comments deal-head"> <tr> <th class="deal-buyer">买家</th> <th class="deal-time">成交时间</th> <th class="deal-style">款式和型号</th> </tr> </thead> </table>  <table class="deal-all w100"> <tbody class="deal-comments j-deal-comments" id="j-deal-comments"> </tbody> </table> <div class="clear_f"></div> <div id="dealPagingNav"> </div> <div class="clear_f"></div> </div> </div>  <div class="hot_sale"> <h2 class="like_tle">本店热卖</h2> <ul class="all_goods">    <li class="poster_grid" twitter_id="3624161019" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3624161019"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3624161019?d_r=6__1-1-1-1-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/517bd10944ab14900fdc84a846fc_640_900.jpg"></a> <span class="price">109.00</span> <div class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3624161019?d_r=6__1-1-1-1-r_hdtbottom" target="_blank">条纹短袖T恤+休闲裤套装</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">1114</span> </a> <span class="gray_f right_f">销量（3052）</span> </p>  </li>   <li class="poster_grid" twitter_id="3554815027" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3554815027"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3554815027?d_r=6__1-1-1-2-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/5fd7f1658a789c985f0e7f06f120_640_853.jpg"></a> <span class="price">82.00</span> <div class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3554815027?d_r=6__1-1-1-2-r_hdtbottom" target="_blank">韩版破洞星星短袖T恤</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">6560</span> </a> <span class="gray_f right_f">销量（3045）</span> </p>  </li>   <li class="poster_grid" twitter_id="3612993503" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3612993503"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3612993503?d_r=6__1-1-1-3-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/56f0e945e8e00a07986150c30ff0_640_873.jpg"></a> <span class="price">49.00</span> <div style="display: none;" class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3612993503?d_r=6__1-1-1-3-r_hdtbottom" target="_blank">小香风气质百搭雪纺衫</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">7669</span> </a> <span class="gray_f right_f">销量（1901）</span> </p>  </li>   <li class="poster_grid" style="margin-right:0" twitter_id="3631391079" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3631391079"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3631391079?d_r=6__1-1-1-4-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/8cc3e9ef382f8ecfeba182b9642f_640_908.jpg"></a> <span class="price">79.00</span> <div class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3631391079?d_r=6__1-1-1-4-r_hdtbottom" target="_blank">欧美镂空蕾丝花边短袖T恤</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">3052</span> </a> <span class="gray_f right_f">销量（1634）</span> </p>  </li>   <li class="poster_grid" twitter_id="3554854149" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3554854149"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3554854149?d_r=6__1-1-1-5-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/b160c572a5536007479725d0c070_640_900.jpg"></a> <span class="price">59.00</span> <div class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3554854149?d_r=6__1-1-1-5-r_hdtbottom" target="_blank">卡通可爱印花宽松短袖T恤</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">10009</span> </a> <span class="gray_f right_f">销量（1531）</span> </p>  </li>   <li class="poster_grid" twitter_id="3625215969" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3625215969"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3625215969?d_r=6__1-1-1-6-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/9da335c19cf6e1ef8c9cb197614f_640_946.jpg"></a> <span class="price">69.00</span> <div class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3625215969?d_r=6__1-1-1-6-r_hdtbottom" target="_blank">夏季新品三色卡通连衣裙</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">931</span> </a> <span class="gray_f right_f">销量（1526）</span> </p>  </li>   <li class="poster_grid" twitter_id="3607028691" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3607028691"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3607028691?d_r=6__1-1-1-7-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/63a0b6c54b4ec154bc8b00436f71_640_977.jpg"></a> <span class="price">89.00</span> <div class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3607028691?d_r=6__1-1-1-7-r_hdtbottom" target="_blank">韩版气质不规则连衣裙</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">875</span> </a> <span class="gray_f right_f">销量（1454）</span> </p>  </li>   <li class="poster_grid" style="margin-right:0" twitter_id="3548982735" twitter_author_uid="25570609" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3548982735"> <div class="hover_pic"> <a href="http://www.meilishuo.com/share/item/3548982735?d_r=6__0-1-1-8-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/b7d5e0cd37d8b6aa57cbbc032b80_640_838.jpg"></a> <span class="price">69.00</span> <div class="like_merge"> <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> </div> </div> <p class="tle"><a href="http://www.meilishuo.com/share/item/3548982735?d_r=6__0-1-1-8-r_hdtbottom" target="_blank">2015夏季新款简约短裤</a></p> <p class="comm_num"> <a isshowlike="1" s_uid="25570609" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">3192</span> </a> <span class="gray_f right_f">销量（1385）</span> </p>  </li>  </ul> </div>   <div class="shop_box">  <h3 class="sp_tle"><a href="http://www.meilishuo.com/shop/103525" target="_blank"><span class="sp_ico">&nbsp;</span>小丹家</a></h3>   <a class="goqq knilmi" href="###--103525-2-3709539531" target="_blank"><em class="qqico">&nbsp;</em>联系客服</a>  <a class="attention no_att"> <i class="plus-ico"></i>关注本店 </a> <div class="fans_bottom j_fans"> <i>17080</i>粉丝 </div> <div class="clear_f"></div>  <p class="sp_link"><a href="http://www.meilishuo.com/shop/103525" target="_blank">http://www.meilishuo.com/shop/103525</a></p> <a href="http://www.meilishuo.com/shop/?frm=banner_to_shop" target="_blank" class="check-more-shop"><i class="right-arrow-ico"></i>查看更多店铺</a>  </div>  </div> <div class="sidebar"> <div class="js-shop-cover shop-cover"> <h3 class="title"></h3> <a target="_blank"><img height="226" width="226"></a> </div>  <div class="cat"> <h3 class="hd">商品分类</h3> <div class="cat-wrap">  <h4>查看所有商品</h4> <ul class="cat-list-horizon">  <li><a href="http://www.meilishuo.com/shop/103525?order=new&amp;sharecat_to_shop" target="_blank">最新上架</a></li>   <li><a href="http://www.meilishuo.com/shop/103525?order=hot&amp;sharecat_to_shop" target="_blank">热卖单品</a></li>   </ul>  <h4>全部商品</h4> <ul class="cat-list">  <li><a href="http://www.meilishuo.com/shop/103525?category_id=313124&amp;sharecat_to_shop" target="_blank">上衣</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=30709&amp;sharecat_to_shop" target="_blank">防晒衫</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=23091&amp;sharecat_to_shop" target="_blank">●衬衫○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=23081&amp;sharecat_to_shop" target="_blank">●T恤○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=30273&amp;sharecat_to_shop" target="_blank">●雪纺衫○●蕾丝衫○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=23079&amp;sharecat_to_shop" target="_blank">●背心○●吊带○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=23085&amp;sharecat_to_shop" target="_blank">●套装○</a></li>   <li><a href="http://www.meilishuo.com/shop/103525?category_id=411082&amp;sharecat_to_shop" target="_blank">裙装</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411084&amp;sharecat_to_shop" target="_blank">●连衣裙○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411086&amp;sharecat_to_shop" target="_blank">●半身裙○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411088&amp;sharecat_to_shop" target="_blank">●长裙○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411662&amp;sharecat_to_shop" target="_blank">●衣裙套装○</a></li>   <li><a href="http://www.meilishuo.com/shop/103525?category_id=411090&amp;sharecat_to_shop" target="_blank">下装</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411092&amp;sharecat_to_shop" target="_blank">●短裤/热裤○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411094&amp;sharecat_to_shop" target="_blank">●打底裤○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411096&amp;sharecat_to_shop" target="_blank">●小脚裤○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411098&amp;sharecat_to_shop" target="_blank">●牛仔裤○</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=411664&amp;sharecat_to_shop" target="_blank">●休闲裤○</a></li>   <li><a href="http://www.meilishuo.com/shop/103525?category_id=507246&amp;sharecat_to_shop" target="_blank">套装</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=507248&amp;sharecat_to_shop" target="_blank">衣裙套装</a></li>  <li><a href="http://www.meilishuo.com/shop/103525?category_id=507250&amp;sharecat_to_shop" target="_blank">衣裤套装</a></li>   <li><a href="http://www.meilishuo.com/shop/103525?category_id=508696&amp;sharecat_to_shop" target="_blank">白菜价特价区</a></li>   </ul>  </div> </div>   <div class="buy-more"> <h3 class="hd">买了本商品还买了</h3> <ul>  <li class="item"> <div class="wrap"> <a href="http://www.meilishuo.com/share/item/3716749127?d_r=6__0-1-1-1-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank"><img src="/img/detail/989bae39c867f3320b8bced555ba_640_907_002.jpg"></a> <span class="price">￥79.00</span> </div> <p class="title"><a href="http://www.meilishuo.com/share/item/3716749127?d_r=6__0-1-1-1-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank">时尚渐变条纹宽松针织T恤</a></p> <div class="buy-more-info"> <span class="sales">销量 ( 0 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>0人已喜欢</span> </div> </li>  <li class="item"> <div class="wrap"> <a href="http://www.meilishuo.com/share/item/3716728067?d_r=6__0-1-1-2-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank"><img src="/img/detail/63a5793c1150e30342a9758a718d_640_1005.jpg"></a> <span class="price">￥59.00</span> </div> <p class="title"><a href="http://www.meilishuo.com/share/item/3716728067?d_r=6__0-1-1-2-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank">潮不规则宽松显瘦长款T恤</a></p> <div class="buy-more-info"> <span class="sales">销量 ( 0 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>0人已喜欢</span> </div> </li>  <li class="item"> <div class="wrap"> <a href="http://www.meilishuo.com/share/item/3716129031?d_r=6__0-1-1-3-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank"><img src="/img/detail/a6fe23d6d0bb5b81b1af444aab31_640_965.jpg"></a> <span class="price">￥79.00</span> </div> <p class="title"><a href="http://www.meilishuo.com/share/item/3716129031?d_r=6__0-1-1-3-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank">不规则针织宽松显瘦连衣裙</a></p> <div class="buy-more-info"> <span class="sales">销量 ( 0 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>0人已喜欢</span> </div> </li>  <li class="item"> <div class="wrap"> <a href="http://www.meilishuo.com/share/item/3716127019?d_r=6__0-1-1-4-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank"><img src="/img/detail/1c9cc925b56d7a0d9582438861b0_640_955.jpg"></a> <span class="price">￥79.00</span> </div> <p class="title"><a href="http://www.meilishuo.com/share/item/3716127019?d_r=6__0-1-1-4-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank">名媛性感宽松针织衫T恤</a></p> <div class="buy-more-info"> <span class="sales">销量 ( 0 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>0人已喜欢</span> </div> </li>  <li class="item"> <div class="wrap"> <a href="http://www.meilishuo.com/share/item/3716070929?d_r=6__0-1-1-5-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank"><img src="/img/detail/c7b379b52c1660fd3d1880924e7e_640_901.jpg"></a> <span class="price">￥79.00</span> </div> <p class="title"><a href="http://www.meilishuo.com/share/item/3716070929?d_r=6__0-1-1-5-r_hdtcobuy-t_shop-abtest_1-ot_3709539531" target="_blank">秋装新款收腰雪纺衫衬衫</a></p> <div class="buy-more-info"> <span class="sales">销量 ( 2 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>80人已喜欢</span> </div> </li>  </ul> </div>  </div> </div></div><div class="pro_line"></div><div class="promise ">	<ul>			<li>			<a href="http://www.meilishuo.com/help/return/" target="_blank" class="pro_ico"><img src="/img/detail/pc_seven_new.png"></a>			<p class="pro_tle"><a href="http://www.meilishuo.com/help/return/" target="_blank">7天无理由退货</a></p>			<p><a href="http://www.meilishuo.com/help/return/" target="_blank">轻松购物有保障</a></p>		</li>				<li>			<a href="http://www.meilishuo.com/help/return/" target="_blank" class="pro_ico"><img src="/img/detail/pc_pei_new.png"></a>			<p class="pro_tle"><a href="http://www.meilishuo.com/help/return/" target="_blank">先行赔付</a></p>			<p><a href="http://www.meilishuo.com/help/return/" target="_blank">轻松购物有保障</a></p>		</li>				<li class="last">			<a href="http://www.meilishuo.com/help/return/" target="_blank" class="pro_ico"><img src="/img/detail/pc_fan_new.png"></a>			<p class="pro_tle"><a href="http://www.meilishuo.com/help/return/" target="_blank">退货补贴运费</a></p>			<p><a href="http://www.meilishuo.com/help/return/" target="_blank">轻松购物有保障</a></p>		</li>				</ul></div><div id="js-cities" class="cities"></div><div class="item-share-panel-wrap js-item-share-panel"> <div class="item-share-panel label-arrow-top"> <a id="share-sina" class="i_sina">&nbsp;</a> <a id="share-tx" class="i_tx">&nbsp;</a> <a id="share-qzone" class="i_qzone">&nbsp;</a> </div></div>
+<div class="main ">
+    <div class="item-box" data-tid="3478365879"> 
+        <div class="content twitter" twitter_id="3478365879"> 
+            <div class="item-sale"> 
+                <h3 class="item-title"><a href="#" id="js-shopping-show" class="label-show"></a><?php echo $goods['sname'];?></h3>  
+                <!-- <h4 class="item-sub-title">轻薄提亮  韩束防晒乳SPF30</h4>   -->
+                <div class="item-price-info"> 
+                    <span class="price-now">￥<i id="price-now" class="num" data-price-min="99.00" data-price-max="99.00"><?php echo $goods['sale'];?></i></span>  
+                    <span class="price-original">￥<i id="price-original" class="num" data-price-min="190.00" data-price-max="190.00"><?php echo $goods['price'];?></i></span>   
+                    <span class="label-text js-label" style="background-color:#ff9933" data-text="免运费">免运费</span>  
+                </div> <!-- big promote --> 
+                <div class="big-promote-notice"> 
+                    <p> <i class="logo"></i> <span class="preheat-text"> 领券后购买本商品最优惠，请提前加入购物车！ </span><span class="now-text"> 领券后购买本商品最优惠，错过再等一年！ </span> </p> 
+                    <a href="http://promotion.meilishuo.com/promotion/sale_1506/act616/#coupon_rg" target="_blank">立即领取250元美丽说全场通用券&nbsp;&gt;&gt;</a> 
+                </div> <!-- big promote end -->  
+                <ul class="item-promote-infos js-shop-promote">
+                    <li class="js-promote-item">
+                        <i class="label-mark-limit">限</i> 距离恢复原价仅剩<span class="countdown" data-remain="491966.0690000057"><i class="day countdown-time">5</i>天<i class="hour countdown-time">16</i>小时<i class="minute countdown-time">38</i>分<i class="second countdown-time">48</i>秒</span> 
+                    </li>
+                    <li> <i class="label-mark-coupon">券</i> 
+                        <ol class="item-promotion">  
+                            <li class="item-promotion-single">满0减5元优惠券可领取  
+                                <div class="dropdown-wrap js-coupon coupon-wrap"> <a class="red_f dropdown-wrap-btn js-coupon-btn" href="javascript:%20void%200;">立即领取&nbsp;▾</a> 
+                                    <div class="js-coupon-panel dropdown-panel label-arrow-top"> 
+                                        <div class="hd">领券下单，更多优惠等你拿</div> 
+                                        <ul class="bd"> </ul> 
+                                        <span class="info js-info red_f"></span> 
+                                    </div> 
+                                </div>  
+                            </li>  
+                        </ol>
+                    </li>    
+                    <li> <i class="label-mark-discount">折</i> <a class="js-promote-discount-btn item-promote-btn" href="#">单笔订单满1件打9折&nbsp;<i>▾</i></a> 
+                        <div class="js-promote-discount-panel item-promote-panel label-arrow-top"> 单笔订单满<i>1件</i>打<i>9折</i> <p class="note">时间：2015.07.01 -- 2015.07.23</p> 
+                        </div> 
+                    </li>
+                </ul>  
+                <div class="item-freight"> <label>运 费</label> 江苏南京<span class="gray_f pl6_f">至</span><a id="js-dest-city" class="pl6_f pr6_f city-name" href="#"><span class="js-city-name">北京</span><i class="arrow-down"></i></a> <span id="js-freight-text">免运费</span> 
+                </div> 
+                <ul class="item-data"> 
+                    <li>销量 <span class="item-data-wrap"> <?php echo $goods['sale_num'];?>件 </span> </li> 
+                    <li class="item-data-middle">好评率 <span class="item-data-wrap"> <a href="#" id="js-comment">97.58%</a> (425人) </span> </li> 
+                    <li>喜欢 <span class="item-data-wrap"> <?php echo $collectNum;?>人 </span> </li> 
+                </ul>  
+                <ul class="sku_meta">   </ul> 
+                <div class="sku_info"> 
+                    <div class="skin">  <p class="text none_f"><span class="close_z"></span><span class="msg_ico"></span>请选择您要的商品信息</p>  
+                        <dl class="prop">
+                            <dt> 颜色<span></span> </dt> 
+                            <dd>
+                                <ul id="colorList" class="item-colorlist has-image-color">
+                                    <?php foreach ($color as $key => $value): ?>
+                                        <li class="img_list">
+                                            <a class="js-item item-color-img" data-index="1" data-id="<?php echo $value['id'];?>" data-type="color" href="javascript:;" onclick="color(this)">
+                                                <img alt="<?php echo $value['color'];?>" title="<?php echo $value['color'];?>" bsrc="
+                                                    http://d05.res.meilishuo.net/pic/_o/ba/81/e0618ba7af5087bf1b8bb17562ba_640_842.cg.jpg_3e7e786f_s7_450_680.jpg"
+                                                    src="<?php echo $value['img'];?>">
+                                                <i class="icon-outofstock-mask"></i>
+                                            </a>
+                                        </li>
+                                    <?php endforeach ?>
+                                    <input type="hidden" id="_csrf" name="_csrf" value="<?php echo yii::$app->request->csrfToken;?>">
+                                </ul>
+                            </dd> 
+                        </dl>
+                        <?php if (!empty($size)): ?>
+                            <dl class="prop">
+                                <dt>尺 码<span></span></dt>
+                                <dd>
+                                    <ul id="sizeList" class="item-size-types">
+                                        <?php foreach ($size as $key => $value): ?>
+                                            <li>
+                                                <a class="js-item item-size-type" onclick="color(this)" data-index="1" data-id="33691" data-type="size" href="javascript:;"><?php echo $value;?></a>
+                                            </li>
+                                        <?php endforeach ?>
+                                       <!--  <li>
+                                            <a class="js-item item-size-type" data-index="2" data-id="33693" data-type="size" href="#">M</a>
+                                        </li> -->
+                                    </ul>
+                                </dd>
+                            </dl>   
+                        <?php endif ?>
+                        <dl class="amount"> <dt>数 量</dt> 
+                            <dd> 
+                                <div class="item-stock js-stock">
+                                    <input class="item-stock-num js-stock-num" title="请输入购买数量" value="1" type="text">
+                                    <span class="item-stock-btns">
+                                        <span class="item-stock-plus js-stock-plus ">
+                                            <i class="icon-up"></i>
+                                        </span>
+                                        <span class="item-stock-minus js-stock-minus ">
+                                            <i class="icon-down"></i>
+                                        </span> 
+                                    </span> 
+                                    <span class="item-stock-reserve js-stock-reserve">  (库存<span id="inventory"><?php echo $inventory;?></span>件)  </span> 
+                                </div> 
+                            </dd> 
+                        </dl>  
+                        <dl class="mt10_f"> <dt>客 服</dt> 
+                            <dd>  <a class="goqq knilmi" href="###--110158-2-3478365879" target="_blank"><em class="qqico">&nbsp;</em>联系客服</a>  </dd> 
+                        </dl>   
+                        <div class="msg_box"> 
+                            <p style="display: none;" class="msg_limit"><span class="msg_ico"></span>对不起！每人最多限购100件！</p> 
+                            <p style="display: none;" class="msg_zero"><span class="msg_ico"></span>对不起，这件宝贝已经卖光啦！</p> 
+                            <p style="display: none;" class="msg_over"><span class="msg_ico"></span>您所填写的宝贝数量超过库存！</p> 
+                        </div>  
+                        <div class="btn_box">   
+                            <a class="define" title="确定">确定</a> 
+                            <div class="same_btn"> 
+                                <a class="add_cart" title="加入购物车"><em class="cartico">&nbsp;</em>加入购物车</a> <a class="buy_btn" title="立即购买"><em class="rmbico">&nbsp;</em>立即购买</a> 
+                            </div>   
+                        </div> 
+                    </div> 
+                </div>  
+                <div class="item-spread">  
+                    <div class="item-like-wrap"> <a class="item-like-btn js-like-btn" data-liked="0" isshowlike="1" like_twitter_id="3478365879">  <i class="icon-like"></i>喜欢  <i class="item-like-num">(2911)</i> </a> <span class="addOneLike">+1</span> 
+                    </div> 
+                    <a class="item-share-btn js-item-share-btn"> <i class="icon-share"></i>分享 </a> 
+                    <a id="twitter_magazi" class="add-in-magazine-btn"> <i class="icon-magazine" title="收进杂志"></i> </a> 
+                </div>  
+            </div> 
+            <div id="picture" class="item-pic"> 
+                <div class="item-pic-origin" style="height:585px;">  
+                    <img class="j-big-pic twitter_pic" alt="<?php echo $goods['sname'];?>" src="../<?php echo $waresFile[0];?>">  
+                    <div style="bottom: 13px; opacity: 0;" class="js-pop-tip item-pop-tip" data-num="29"><i class="icon-people"></i><i class="num">29</i> 人最近已购买
+                    </div>  
+                </div> 
+                <div class="item-pic-thumb js-pic-thumb">
+                <?php foreach ($waresFile as $key => $value): ?>
+                     <span <?php if ($key == 0) {echo 'class="active"';}?>>
+                        <img width="68" height="68" src="../<?php echo $value?>" bsrc="../<?php echo $value?>">
+                    </span>
+                <?php endforeach ?>
+                    <!-- <span class="active">
+                        <img src="/img/detail/1/e8d8d47d9f949b811d7207c931bc_640_832_002.jpg" 
+                        bsrc="http://d06.res.meilishuo.net/pic/_o/81/1c/e8d8d47d9f949b811d7207c931bc_640_832.cg.jpg_84e1680e_s7_450_680.jpg" width="68">
+                    </span>  
+                    <span>
+                        <img src="/img/detail/1/f4372cd06efa84115755bc9b96af_640_832.jpg" 
+                         width="68">
+                    </span> -->
+                </div> 
+            </div> 
+        </div> 
+        <div class="sidebar">  
+            <div class="shop "> 
+                <a class="shop-avatar" href="http://www.meilishuo.com/shop/rating/?shop_id=110158&amp;frm=rate_to_rateall" target="_blank"><img src="/img/detail/1/b08db634737943fe81f95a01c81d_200_200.jpg" width="48"></a> <i class="icon-shop"></i> 
+                <div class="shop-wrap"> <a href="http://www.meilishuo.com/shop/110158?pos=guangNick" target="_blank" class="shop-name">韩束官方旗舰店</a> 
+                    <div class="shop-follow-state js-follow-shop"> 
+                        <a class="shop-follow-btn is-not-followed">  <i class="icon-plus">+</i>关注  </a> <span class="shop-fans-wrap"><i class="shop-fans js-fans">23679</i>粉丝</span> 
+                    </div> 
+                </div> 
+                <ul class="shop-assess">  
+                    <li class="shop-assess-first"> 描述 <a href="http://www.meilishuo.com/shop/rating/?shop_id=110158&amp;frm=rate_to_rateall" class="shop-point fair" target="_blank"><i class="arrow-ico">--</i>4.6</a> </li>  
+                    <li class="shop-assess-middle"> 质量 <a href="http://www.meilishuo.com/shop/rating/?shop_id=110158&amp;frm=rate_to_rateall" class="shop-point fair" target="_blank"><i class="arrow-ico">--</i>4.6</a> </li>  
+                    <li class="shop-assess-middle"> 服务 <a href="http://www.meilishuo.com/shop/rating/?shop_id=110158&amp;frm=rate_to_rateall" class="shop-point up" target="_blank"><i class="arrow-ico">--</i>4.7</a> </li>  
+                    <li class="shop-assess-last"> 发货 <a href="http://www.meilishuo.com/shop/rating/?shop_id=110158&amp;frm=rate_to_rateall" class="shop-point fair" target="_blank"><i class="arrow-ico">--</i>4.6</a> </li>  
+                </ul> 
+                <ul class="shop-info"> 
+                    <li>所在地区：江苏南京</li> 
+                    <li>商品数量：104</li> 
+                    <li>销售数量：109232</li> 
+                    <li>店铺资质：<i class="icon-approve" title="美丽说认证 2014.03.24"></i></li> 
+                    <li>联系客服：<a class="knilmi" href="###--110158-2-3478365879" target="_blank"><i class="icon-contact"></i></a></li> 
+                </ul> 
+                <a href="http://www.meilishuo.com/shop/110158?frm=rate_to_shop" class="into-shop-btn" target="_blank"><i class="into-shop-ico"></i>进入店铺</a> 
+            </div>   
+            <div class="maybe-like"> <h3 class="hd">你可能还喜欢</h3> 
+                <ul>  
+                    <li class="odd"> <a href="http://www.meilishuo.com/share/item/3685900953?d_r=6__0-1-1-1-r_hdtpairbuy-t_shop-abtest_2-ot_3478365879" target="_blank" title="韩束 墨菊深度补水精华素"><img src="/img/detail/1/90245809aa1ea9fee9c3bc417d20_640_832.jpg"></a> <p class="price">￥149.00</p> </li>  
+                    <li class="even"> <a href="http://www.meilishuo.com/share/item/3685911701?d_r=6__0-1-1-2-r_hdtpairbuy-t_shop-abtest_2-ot_3478365879" target="_blank" title="韩束 吾尊磨砂洁面啫哩"><img src="/img/detail/1/1c60164adb67557b0e8615cde76f_640_832_002.jpg"></a> <p class="price">￥39.00</p> </li>  
+                    <li class="odd"> <a href="http://www.meilishuo.com/share/item/3685921075?d_r=6__0-1-1-3-r_hdtpairbuy-t_shop-abtest_2-ot_3478365879" target="_blank" title="韩束 吾尊合动能水凝乳"><img src="/img/detail/1/91b90be3f2b4a1e9b656a84ee22b_640_832_002.jpg"></a> <p class="price">￥119.00</p> </li>  
+                    <li class="even"> <a href="http://www.meilishuo.com/share/item/3685880107?d_r=6__0-1-1-4-r_hdtpairbuy-t_shop-abtest_2-ot_3478365879" target="_blank" title="韩束 红石榴鲜活精华液"><img src="/img/detail/1/1478027ad0ebaa6803dedccac9c0_640_832_002.jpg"></a> <p class="price">￥89.00</p> </li>  
+                </ul> 
+            </div>  
+        </div> 
+    </div> 
+    <!-- 搭配人气展示 开始-->   
+    <div class="tab_match"> 
+        <h2 class="tab_top">  <a href="javascript:void(0)" class="tabArea1 cur">人气单品</a> </h2> 
+    </div>   
+    <div class="contentArea1 "> 
+        <div class="may_like">  
+            <ul class="like_list">		
+                <li class="first">	
+                    <div class="s_picBox">		
+                        <a class="s_pic" href="http://www.meilishuo.com/share/item/2935197873?d_r=6__0-1-1-1-r_hdtmid-t_rs" target="_blank" title="韩束 补水面膜组合20片"><img src="/img/detail/1/a74659db6cbb68216e86215b028a_640_900.jpg"></a>	
+                    </div>	
+                    <a class="txt" href="http://www.meilishuo.com/share/item/2935197873?d_r=6__0-1-1-1-r_hdtmid-t_rs" target="_blank">韩束 补水面膜组合20片</a>	
+                    <div class="info-box">		<span class="info-box-price">¥ 89.00</span>		<span class="info-box-num">3358人购买</span>	
+                    </div>	
+                </li>		
+                <li>	
+                    <div class="s_picBox">		
+                        <a class="s_pic" href="http://www.meilishuo.com/share/item/2690247278?d_r=6__0-1-1-2-r_hdtmid-t_rs" target="_blank" title="韩束 倍润亮颜修容霜"><img src="/img/detail/1/4b460e122e71828c198f03245769_640_832.jpg"></a>	
+                    </div>	
+                    <a class="txt" href="http://www.meilishuo.com/share/item/2690247278?d_r=6__0-1-1-2-r_hdtmid-t_rs" target="_blank">韩束 倍润亮颜修容霜</a>	
+                    <div class="info-box">		<span class="info-box-price">¥ 95.00</span>		<span class="info-box-num">2290人购买</span>	
+                    </div>	
+                </li>		
+                <li>	
+                    <div class="s_picBox">		
+                        <a class="s_pic" href="http://www.meilishuo.com/share/item/3342212507?d_r=8__0-1-1-3-r_hdtmid-t_rs" target="_blank" title="韩束 橄榄卸妆水"><img src="/img/detail/1/1d2746e4902118c56573b9551dc9_640_832.jpg"></a>	
+                    </div>	
+                    <a class="txt" href="http://www.meilishuo.com/share/item/3342212507?d_r=8__0-1-1-3-r_hdtmid-t_rs" target="_blank">韩束 橄榄卸妆水</a>	
+                    <div class="info-box">		<span class="info-box-price">¥ 48.90</span>		<span class="info-box-num">2465人购买</span>	
+                    </div>	
+                </li>		
+                <li>	
+                    <div class="s_picBox">		
+                        <a class="s_pic" href="http://www.meilishuo.com/share/item/2690254294?d_r=6__0-1-1-4-r_hdtmid-t_rs" target="_blank" title="韩束 玻尿酸面膜10片"><img src="/img/detail/1/341f17b49b70dbe421bf483618b6_640_832.jpg"></a>	
+                    </div>	
+                    <a class="txt" href="http://www.meilishuo.com/share/item/2690254294?d_r=6__0-1-1-4-r_hdtmid-t_rs" target="_blank">韩束 玻尿酸面膜10片</a>	
+                    <div class="info-box">		<span class="info-box-price">¥ 29.90</span>		<span class="info-box-num">20096人购买</span>	
+                    </div>	
+                </li>		
+                <li>	
+                    <div class="s_picBox">		
+                        <a class="s_pic" href="http://www.meilishuo.com/share/item/3177484441?d_r=6__0-1-1-5-r_hdtmid-t_rs" target="_blank" title="韩束 墨菊巨补水八件套"><img src="/img/detail/1/c9bda93005f94778d460d73a4c35_640_832.jpg"></a>	
+                    </div>	
+                    <a class="txt" href="http://www.meilishuo.com/share/item/3177484441?d_r=6__0-1-1-5-r_hdtmid-t_rs" target="_blank">韩束 墨菊巨补水八件套</a>	
+                    <div class="info-box">		<span class="info-box-price">¥ 359.00</span>		<span class="info-box-num">2975人购买</span>	
+                    </div>	
+                </li>		
+                <li class="last">	
+                    <div class="s_picBox">		
+                        <a class="s_pic" href="http://www.meilishuo.com/share/item/2690172100?d_r=6__0-1-1-6-r_hdtmid-t_rs" target="_blank" title="韩束 卸妆水200ml"><img src="/img/detail/1/e54f72c89585e3d90c82cd68093c_640_832.jpg"></a>	
+                    </div>	
+                    <a class="txt" href="http://www.meilishuo.com/share/item/2690172100?d_r=6__0-1-1-6-r_hdtmid-t_rs" target="_blank">韩束 卸妆水200ml</a>	
+                    <div class="info-box">		<span class="info-box-price">¥ 29.00</span>		<span class="info-box-num">10527人购买</span>	
+                    </div>	
+                </li>	
+            </ul>
+            <div class="clear_f"></div>  
+        </div> 
+    </div>   
+    <!--搭配人气展示 结束--> 
+    <div class="box item-detail js-item-detail"> 
+        <div class="content wrap js-ceiling-tab"> 
+            <div style="height: auto;" class="js-tab-wrap">
+                <div class="tab_tle"> 
+                    <h2 class="tab_top"> 
+                        <a href="javascript:void(0)" class="tabArea cur">商品详情</a> 
+                        <a href="javascript:void(0)" class="tabArea eva">购买评价（<span class="twitter_comment_num">425</span>）</a>  
+                        <!-- <a href="javascript:void(0)" class="tabArea shopping">购物晒单（<span class="twitter_comment_num">4</span>）</a>    -->
+                        <a href="javascript:void(0)" class="tabArea deal">成交记录（<span class="twitter_comment_num">466</span>）</a>  
+                        <span class="js-item-price subtab-item-price"></span> 
+                        <span class="add_cart"><em class="cartico">&nbsp;</em>加入购物车</span> 
+                    </h2> 
+                    <div class="detail_items">				
+                        <a href="#anchor-handpick-comments" class="js-anchor-btn">精选好评</a>
+                        <a href="#da0" class="js-anchor-btn">规格尺码</a>			
+                        <a href="#da1" class="js-anchor-btn">商品细节</a>			
+                        <a href="#da2" class="js-anchor-btn">商品实拍</a>	
+                    </div> 
+                </div>  
+            </div> 
+            <div class="contentArea"> 
+                <div class="daren">  
+                    <a class="avatar"> <img src="/img/detail/1/50355986ace8340b0169af809f12_200_200.jpg"> </a>  
+                    <div class="text"> 
+                        <p class="intro"> <span class="extra-desc">店主推荐</span> </p> 
+                        <p class="desc"> <?php echo $goods['details'];?> </p> 
+                    </div>
+                </div>
+                <div style="display: block;" id="handpick-comments" class="handpick-comments"> 
+                    <a id="anchor-handpick-comments"></a> 
+                    <h2 class="comm_tle"><span>精选好评</span></h2> 
+                    <ul class="handpic-comments-handle">
+                        <li class="current"></li>
+                        <li></li>
+                        <li></li>
+                    </ul> 
+                    <ul style="position: relative; overflow: hidden; cursor: pointer;" class="handpick-comments-list js-comments-list">  
+                        <li style="position: absolute; top: 0px; left: 0px; z-index: 2;"> 
+                            <div class="comment-wrap js-comment-show"> 
+                                <a class="comment-user-info" target="_blank"> <img src="/img/detail/1/b70d4658fb88861bdb1cb554d8e7_100_100.jpg"> <p class="comment-user-nickname">わ＂伱-是我_qq680</p> </a> 
+                                <p class="comment-content" style="font-size:17.6px;"> <i class="icon-quote-before"></i>买了好多东西  也很好用  买了好多次了<i class="icon-quote-after"></i> </p> 
+                                <p class="comment-date">2015.06.23</p> 
+                            </div> 
+                        </li> 
+                    </ul> 
+                    <div class="item-satisfy-rate"> 
+                        <div class="content-wrap"> <i class="dashed-border"></i> <i class="rate-num">97.58</i> <i class="label-percent">%</i>满意度 <p>- 来自 <i class="num">425</i> 个用户的评价 -</p> 
+                        </div> 
+                    </div> 
+                    <div class="item-features js-feature-list item-features-more"> 
+                        <ul class="item-features-list">  
+                            <li> <label>正品真货</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:79.5px;"></i> </span> <i class="icon-good"></i> 53 </li>  
+                            <li> <label>包装很好</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:66px;"></i> </span> <i class="icon-good"></i> 44 </li>  
+                            <li> <label>性价比高</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:51px;"></i> </span> <i class="icon-good"></i> 34 </li>  
+                            <li> <label>安全放心</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:46.5px;"></i> </span> <i class="icon-good"></i> 31 </li>  
+                            <li> <label>用着舒服</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:45px;"></i> </span> <i class="icon-good"></i> 30 </li>  
+                            <li> <label>效果很赞</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:43.5px;"></i> </span> <i class="icon-good"></i> 29 </li>  
+                        </ul>
+                    </div> 
+                    <div style="display: block;" class="item-shoppingshow js-item-shoppingshow"> 
+                        <div class="item-shoppingshow-title"> <h3><span>买家晒单</span></h3> </div> 
+                        <ul class="item-shoppingshow-list">  
+                            <li>  
+                                <img src="/img/detail/1/e3b36e53b4f67206ab88b8ba77aa_479_479.jpg" alt="" height="160" width="160">  
+                                <div class="item-shoppingshow-avatar"> 
+                                    <div class="avatar-wrap"> <img src="/img/detail/1/e0ffbbce7912374ba2391cd68842_640_640.jpeg" alt="weixin_client_爱天爱柔" width="48"> 
+                                    </div> 
+                                    <span class="item-shoppingshow-nickname">weixin_client_爱天爱柔</span> 
+                                </div> 
+                            </li>  
+                            <li>  
+                                <img src="/img/detail/1/4a90beaaea9db91335d10ccd7ec3_1136_1136.jpg" alt="很好很好还送了面膜，么么" height="160" width="160">  
+                                <div class="item-shoppingshow-avatar"> 
+                                    <div class="avatar-wrap"> <img src="/img/detail/1/b797793981695c82a926ac11e00e_160_160.jpg" alt="mammamy" width="48"> 
+                                    </div> 
+                                    <span class="item-shoppingshow-nickname">mammamy</span> 
+                                </div> 
+                            </li>  
+                            <li>  
+                                <img src="/img/detail/1/7d0e5efd9ab571dedd6b4f6d4971_480_480.jpg" alt="送的多，我天哪，老顾客就是福利好哈！" height="160" width="160">  
+                                <div class="item-shoppingshow-avatar"> 
+                                    <div class="avatar-wrap"> <img src="/img/detail/1/20e7a5425c5afa5664f6600d577b_100_100.jpeg" alt="°﹏Baek_qq292" width="48"> 
+                                    </div> 
+                                    <span class="item-shoppingshow-nickname">°﹏Baek_qq292</span> 
+                                </div> 
+                            </li>  
+                            <li>  
+                                <img src="/img/detail/1/c1a172850100d1442d2a746faf9d_720_720.jpg" alt="宝贝真的很棒，清透吧，提色，一抹就匀，喜欢的美美么就快快入手吧！呵呵，手不好看不要介意……" height="160" width="160">  
+                                <div class="item-shoppingshow-avatar"> 
+                                    <div class="avatar-wrap"> <img src="/img/detail/1/83a629c57bc6c81dcc1e854690d0_500_500.jpg" alt="边媳妇儿" width="48"> 
+                                    </div> 
+                                    <span class="item-shoppingshow-nickname">边媳妇儿</span> 
+                                </div> 
+                            </li> 
+                        </ul> 
+                    </div>
+                </div>
+                <a name="da0" id="da0"></a>
+                <h2 class="comm_tle"><span>规格尺码</span></h2>
+                <ul class="format">  
+                    <li title="韩束">品牌：韩束</li>  
+                    <li title="中国">产地：中国</li>  
+                    <li title="防水">功效：防水</li> 
+                </ul>
+                <a name="da1" id="da1"></a>
+                <h2 class="comm_tle"><span>商品细节</span></h2> 
+                <div class="more_pic"> 
+                    <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/d05e71acdc0fc4ed33c88eb91657_640_2302_4_1.jpg"> 
+                    </div>   
+                    <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/d05e71acdc0fc4ed33c88eb91657_640_2302_4_2.jpg"> 
+                    </div>   
+                    <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/d05e71acdc0fc4ed33c88eb91657_640_2302_4_3.jpg"> 
+                    </div>   
+                    <div class="more_pic"> <img style="height: 172px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/d05e71acdc0fc4ed33c88eb91657_640_2302_4_4.jpg"> 
+                    </div>   
+                    <p class="pro_txt"></p>   
+                    <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/72cee714de596747115be4eaaecc_640_1498_3_1.jpg"> 
+                    </div>  
+                    <div style="display: block;" class="item-need-collapse js-item-collapse">
+                        <?php foreach ($imgextraFile as $key => $imgextra): ?>
+                        <div class="more_pic">
+                            <img style="height: 710px; width: 640px;" class="load_img" alt="<?php echo $goods['sname'];?>" src="../<?php echo $imgextra?>"> 
+                        </div>
+                        <?php endforeach ?>
+                        
+                        <!-- <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/72cee714de596747115be4eaaecc_640_1498_3_2.jpg"> 
+                        </div> -->   
+                        <!-- <div class="more_pic"> <img style="height: 78px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/72cee714de596747115be4eaaecc_640_1498_3_3.jpg"> 
+                        </div>   
+                        <p class="pro_txt"></p>   
+                        <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/e383ef69c1dfa2392059cc1a1a1c_640_1514_3_1.jpg"> 
+                        </div>   
+                        <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/e383ef69c1dfa2392059cc1a1a1c_640_1514_3_2.jpg"> 
+                        </div>   
+                        <div class="more_pic"> <img style="height: 94px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/e383ef69c1dfa2392059cc1a1a1c_640_1514_3_3.jpg"> 
+                        </div>   -->
+                        <!-- <p class="pro_txt"></p>   
+                        <a name="da2" id="da2"></a>
+                        <h2 class="comm_tle"><span>商品实拍</span></h2> 
+                        <div class="more_pic"> <img style="height: 710px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/2484f84d88ce2c4d6ba125ce6012_640_1281_2_1.jpg"> 
+                        </div>   
+                        <div class="more_pic"> <img style="height: 571px; width: 640px;" class="load_img" alt="韩束 防晒乳SPF30" src="/img/detail/1/2484f84d88ce2c4d6ba125ce6012_640_1281_2_2.jpg"> 
+                        </div>   
+                        <p class="pro_txt"></p>   -->  
+                    </div> 
+                    <a style="display: none;" href="#" id="item-check-more" class="btn-check-more">查看更多详情<i class="icon-arrow-down"></i></a> 
+                    <a id="anchor-boundry-sentry" style="visibility: hidden;"></a> 
+                    <div id="short_show">  
+                        <h2 class="detail_tle">购买评价（<span class="twitter_comment_num">425</span>）</h2> 
+                        <div class="pro_line"></div> 
+                        <div class="goods-star" id="goods-star">		
+                            <div class="goods-star-right js-star-right">		
+                                <div class="goods-star-title">			店铺评分（最近90天共11855人评分）		</div>		
+                                <ul>						
+                                    <li>				
+                                        <label>描述一致:</label>				
+                                        <span class="item-tag-progressbar">					
+                                            <i class="item-tag-progress" style="width:91.99999999999999%;"></i>				
+                                        </span>				4.6			
+                                    </li>						
+                                    <li>				
+                                        <label>质量满意:</label>				
+                                        <span class="item-tag-progressbar">					
+                                            <i class="item-tag-progress" style="width:91.99999999999999%;"></i>				
+                                        </span>				4.6			
+                                    </li>						
+                                    <li>				
+                                        <label>服务态度:</label>				
+                                        <span class="item-tag-progressbar">					
+                                            <i class="item-tag-progress" style="width:94%;"></i>				
+                                        </span>				4.7			
+                                    </li>						
+                                    <li>				
+                                        <label>发货速度:</label>				
+                                        <span class="item-tag-progressbar">					
+                                            <i class="item-tag-progress" style="width:91.99999999999999%;"></i>				
+                                        </span>				4.6			
+                                    </li>					
+                                </ul>	
+                            </div>	
+                            <div class="goods-star-left js-star-left"> 		
+                                <div class="goods-star-title js-star-title">			商品好评率				<span class="goods-praise-ratio red_f pre">					97.58%				</span>		
+                                </div> 		
+                                <ul class="goods-tags js-goods-tags">  
+                                    <li> <label>正品真货:</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:79.5px;"></i> </span> 53 </li>  
+                                    <li> <label>包装很好:</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:66px;"></i> </span> 44 </li>  
+                                    <li> <label>性价比高:</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:51px;"></i> </span> 34 </li>  
+                                    <li> <label>安全放心:</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:46.5px;"></i> </span> 31 </li>  
+                                    <li> <label>用着舒服:</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:45px;"></i> </span> 30 </li>  
+                                    <li> <label>效果很赞:</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:43.5px;"></i> </span> 29 </li> 
+                                </ul>	
+                            </div>	
+                        </div> 
+                        <div class="comments twitter" twitter_author_uid="0" twitter_id="3478365879"> 
+                            <ul class="list short_eva_comments"> </ul> 
+                        </div> 
+                        <p class="evaLink">查看更多评价 &gt;</p>   
+                        <h2 class="detail_tle">购物晒单</h2> 
+                        <div class="shoppingshow_comments item-show">  
+                            <div class="item-show-li"> 
+                                <a href="http://www.meilishuo.com/person/u/325346489" target="_blank" class="left_f"> <img class="avatar" src="/img/detail/1/e0ffbbce7912374ba2391cd68842_640_640.jpeg" height="70" width="70"> <p class="nickname">weixin_client_爱天爱柔</p> </a> 
+                                <div class="content_cl item-show-content"> 
+                                    <div class="hd"> 
+                                        <span class="time">06月20日 17:59</span>  
+                                        <h3> <a href="http://www.meilishuo.com/club/single/6724067" target="_blank"> 【购物晒单】weixin_client_爱天爱柔来晒货啦 </a> </h3> 
+                                    </div> 
+                                    <div class="shop_detail"> 
+                                        <div class="clearfix_f mb20_f"> <p class="cnt_r"></p> </div> 
+                                        <div class="cnt_imgs clearfix_f">   
+                                            <a href="http://www.meilishuo.com/club/single/6724067" target="_blank"><img src="/img/detail/1/e3b36e53b4f67206ab88b8ba77aa_479_479.jpg" height="190" width="190"></a>   
+                                        </div> 
+                                    </div> 
+                                    <div class="item-show-toolbar">  
+                                        <a class="btn_bar cl_like" uid="325346489" aid="6724067" href="javascript:;"><em class="cl_unlove">&nbsp;</em>喜欢<em>1</em></a> 
+                                        <a class="btn_bar cl_reply" href="http://www.meilishuo.com/club/single/6724067#reply" target="_blank"><em class="cl_i_comment">&nbsp;</em>回复</a>  
+                                    </div> 
+                                </div> 
+                                <div class="clear_f"></div> 
+                            </div>  
+                            <div class="item-show-li"> 
+                                <a href="http://www.meilishuo.com/person/u/204466637" target="_blank" class="left_f"> <img class="avatar" src="/img/detail/1/b797793981695c82a926ac11e00e_160_160.jpg" height="70" width="70"> <p class="nickname">mammamy</p> </a> 
+                                <div class="content_cl item-show-content"> 
+                                    <div class="hd"> 
+                                        <span class="time">05月21日 20:27</span>  
+                                        <h3> <a href="http://www.meilishuo.com/club/single/6456601" target="_blank"> 【购物晒单】mammamy来晒货啦 </a> </h3> 
+                                    </div> 
+                                    <div class="shop_detail"> 
+                                        <div class="clearfix_f mb20_f"> 
+                                            <p class="cnt_r">很好很好还送了面膜，么么</p> 
+                                        </div> 
+                                        <div class="cnt_imgs clearfix_f">   
+                                            <a href="http://www.meilishuo.com/club/single/6456601" target="_blank"><img src="/img/detail/1/4a90beaaea9db91335d10ccd7ec3_1136_1136.jpg" height="190" width="190"></a>  
+                                        </div> 
+                                    </div> 
+                                    <div class="item-show-toolbar">  
+                                        <a class="btn_bar cl_like" uid="204466637" aid="6456601" href="javascript:;"><em class="cl_unlove">&nbsp;</em>喜欢<em>5</em></a> 
+                                        <a class="btn_bar cl_reply" href="http://www.meilishuo.com/club/single/6456601#reply" target="_blank"><em class="cl_i_comment">&nbsp;</em>回复</a>  
+                                    </div> 
+                                </div> 
+                                <div class="clear_f"></div> 
+                            </div> 
+                        </div> 
+                        <p class="shoppingLink">查看更多晒单 &gt;</p>    
+                        <h2 class="detail_tle">成交记录（466）</h2> 
+                        <table class="deal-all w100"> 
+                            <thead class="j-deal-comments"> 
+                                <tr> 
+                                    <th class="deal-buyer">买家</th> 
+                                    <th class="deal-time">成交时间</th> 
+                                    <th class="deal-style">款式和型号</th> 
+                                </tr> 
+                            </thead> 
+                        </table> 
+                        <table class="deal-all w100"> 
+                            <tbody class="deal-comments j-deal-comments">  
+                                <tr> 
+                                    <td class="deal-buyer"> <img src="/img/detail/1/cadbb25b90585d4b1cda3690bfdc_500_500.jpg" height="32px" width="32px"> <span>w***e</span> <span>（匿名）</span> </td> 
+                                    <td class="deal-time"> 2015-07-17 21:16:26 </td> <td class="deal-style"> 40ml </td> 
+                                </tr>  
+                                <tr> 
+                                    <td class="deal-buyer"> <img src="/img/detail/1/2d62450ffcb05428b958512bea22_100_100.jpeg" height="32px" width="32px"> <span>q***9</span> <span>（匿名）</span> </td> 
+                                    <td class="deal-time"> 2015-07-17 15:51:48 </td> <td class="deal-style"> 40ml </td> 
+                                </tr>  
+                                <tr> 
+                                    <td class="deal-buyer"> <img src="/img/detail/1/19e804632c91d96c684320171e31_256_256.jpg" height="32px" width="32px"> <span>q***虫</span> <span>（匿名）</span> </td> 
+                                    <td class="deal-time"> 2015-07-17 09:55:18 </td> <td class="deal-style"> 40ml </td> 
+                                </tr>  
+                                <tr> 
+                                    <td class="deal-buyer"> <img src="/img/detail/1/19e804632c91d96c684320171e31_256_256.jpg" height="32px" width="32px"> <span>m***0</span> <span>（匿名）</span> </td> 
+                                    <td class="deal-time"> 2015-07-17 09:42:17 </td> <td class="deal-style"> 40ml </td> 
+                                </tr>  
+                                <tr> 
+                                    <td class="deal-buyer"> <img src="/img/detail/1/19e804632c91d96c684320171e31_256_256.jpg" height="32px" width="32px"> <span>m***8</span> <span>（匿名）</span> </td> 
+                                    <td class="deal-time"> 2015-07-16 22:24:47 </td> <td class="deal-style"> 40ml </td> 
+                                </tr> 
+                            </tbody> 
+                        </table> 
+                        <p class="dealLink">查看更多记录 &gt;</p>  
+                    </div> 
+                </div> 
+                <div class="contentArea shpcmt none_f">  
+                    <div class="goods-star" id="goods-star">		
+                        <div class="goods-star-right js-star-right">		
+                            <div class="goods-star-title">			店铺评分（最近90天共11855人评分）		</div>		
+                            <ul>						
+                                <li>				
+                                    <label>描述一致:</label>				
+                                    <span class="item-tag-progressbar">					
+                                        <i class="item-tag-progress" style="width:91.99999999999999%;"></i>				
+                                    </span>				4.6			
+                                </li>						
+
+                                <li>				
+                                    <label>质量满意:</label>				
+                                        <span class="item-tag-progressbar">					
+                                            <i class="item-tag-progress" style="width:91.99999999999999%;"></i>				
+                                        </span>				4.6			
+                                </li>						
+                                <li>				
+                                    <label>服务态度:</label>				
+                                        <span class="item-tag-progressbar">					
+                                            <i class="item-tag-progress" style="width:94%;"></i>				
+                                        </span>				4.7			
+                                </li>						
+                                <li>				
+                                    <label>发货速度:</label>				
+                                        <span class="item-tag-progressbar">					
+                                            <i class="item-tag-progress" style="width:91.99999999999999%;"></i>				
+                                        </span>				4.6			
+                                </li>					
+                            </ul>	
+                        </div>	
+                        <div class="goods-star-left js-star-left"> 		
+                            <div class="goods-star-title js-star-title">			商品好评率				<span class="goods-praise-ratio red_f pre">					97.58%				</span>		
+                            </div> 		
+                            <ul class="goods-tags js-goods-tags">  
+                                <li> 
+                                    <label>正品真货:</label> 
+                                    <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:79.5px;"></i> </span> 53 
+                                </li>  
+                                <li> 
+                                    <label>包装很好:</label> 
+                                    <span class="item-tag-progressbar"> 
+                                        <i class="item-tag-progress" style="width:66px;"></i> 
+                                    </span> 44 
+                                </li>  
+                                <li> 
+                                    <label>性价比高:</label> 
+                                    <span class="item-tag-progressbar"> 
+                                        <i class="item-tag-progress" style="width:51px;"></i> 
+                                    </span> 34 
+                                </li>  
+                                <li> 
+                                    <label>安全放心:</label> 
+                                    <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:46.5px;"></i> </span> 31 
+                                </li>  
+                                <li> 
+                                    <label>用着舒服:</label> <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:45px;"></i> 
+                                    </span> 30 
+                                </li>  
+                                <li> 
+                                    <label>效果很赞:</label> 
+                                    <span class="item-tag-progressbar"> <i class="item-tag-progress" style="width:43.5px;"></i> </span> 29 
+                                </li> 
+                            </ul>	
+                        </div>	
+                    </div>  
+                    <div class="comments twitter" twitter_author_uid="0" twitter_id="3478365879"> 
+                        <div class="clear_f"></div>  
+                            <ul class="eva_comments_filter_tab">  
+                                <li class="item cur">全部评价 (425)</li>  
+                                <li class="item ">好评 (414)</li>  
+                                <li class="item ">中评 (6)</li>  
+                                <li class="item ">差评 (5)</li>  
+                                <li class="item ">有追评 (4)</li>  
+                                <li class="last_item"><label><input class="all_rate_btn" checked="checked" type="checkbox"> 只看有内容的评价</label></li>
+                            </ul>  
+                            <div class="clear_f"></div>
+                            <?php if (empty($discuss)) { ?>
+                                <div id="shop_comments_null">暂无购物评价。</div>
+                            <?php } else { ?>
+                            <ul class="list eva_comments" id="eva_comments">
+                                <?php foreach ($discuss as $key => $value): ?>
+                                <li class="show">
+                                    <span class="avatar">
+                                        <img src="http://d02.res.meilishuo.net/ap/a/c8/cb/11de06f34de6f2eb97b17a59ecf1_100_100.jpg">
+                                        <span class="twitter_comment_name">→***4</span>
+                                    </span>
+                                    <p class="twitter-comment-hd good-level">
+                                        <i class="icon-good-level"></i>
+                                        好评
+                                    </p>
+                                    <p class="l_con bgray_f"><?php echo $value['content'];?></p>
+                                    <p class="twitter_goods_style">
+                                        颜色:黑色 尺码:XXL
+                                        <span class="date-dis"><?php echo date('m月d日 H:i', $value['addtime']);?></span>
+                                    </p>
+                                    <?php if ($value['repay']) {?>
+                                    <div class="partner_reply">
+                                        <p class="partner_reply_content">[商家回复] <?php echo $value['repay'];?></p>
+                                        <p class="date-dis"><?php echo date('Y年m月d日', $value['addtime']);?></p>
+                                    </div>
+                                    <?php };?>
+                                </li>
+                                <?php endforeach ?>
+                            </ul> 
+                            <?php }?>
+                            <div class="clear_f"></div> 
+                            <div id="shopPagingNav"> </div> 
+                            <div class="clear_f"></div> 
+                            </div> 
+                        </div> 
+                        <!-- 购物晒单 start -->  
+                        <!-- <div class="contentArea none_f">  
+                            <div class="shoppingshow_null">暂无购物晒单</div> 
+                            <div class="shoppingshow_comments item-show" id="shoppingshow_comments"></div> 
+                            <div class="clear_f"></div> 
+                            <div id="shsPagingNav"></div> 
+                            <div class="clear_f"></div> 
+                        </div> -->  
+                        <!-- 购物晒单 end --> 
+                        <div class="contentArea none_f"> 
+                            <div class="comments twitter" twitter_author_uid="0" twitter_id="3478365879"> 
+                                <div class="clear_f"></div> 
+                                <div id="shop_deal_null">30天内暂无成交记录。</div>  
+                                <table class="deal-all w100"> 
+                                    <thead class="j-deal-comments deal-head"> 
+                                        <tr> 
+                                            <th class="deal-buyer">买家</th> 
+                                            <th class="deal-time">成交时间</th> 
+                                            <th class="deal-style">款式和型号</th> 
+                                        </tr> 
+                                    </thead> 
+                                </table>
+                                <table class="deal-all w100">
+                                    <tbody id="j-deal-comments" class="deal-comments j-deal-comments">
+                                        <tr>
+                                            <td class="deal-buyer">
+                                                <img width="32px" height="32px" src="http://d05.res.meilishuo.net/ap/a/56/de/19e804632c91d96c684320171e31_256_256.cc.jpg">
+                                                <span>开***g</span>
+                                                <span>（匿名）</span>
+                                            </td>
+                                            <td class="deal-time"> 2015-07-21 13:52:13 </td>
+                                            <td class="deal-style"> 300ml/NATUREREPUBLIC自然乐园 </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="deal-buyer">
+                                                <img width="32px" height="32px" src="http://imgtest.meiliworks.com/ap/a/ec/14/1ac4ec9a06a501b4c87ad2096215_100_100.jpeg">
+                                                <span>_***歌</span>
+                                                <span>（匿名）</span>
+                                            </td>
+                                            <td class="deal-time"> 2015-07-21 13:27:50 </td>
+                                            <td class="deal-style"> 300ml/NATUREREPUBLIC自然乐园 </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="deal-buyer">
+                                                <img width="32px" height="32px" src="http://imgtest.meiliworks.com/ap/a/ec/14/1ac4ec9a06a501b4c87ad2096215_100_100.jpeg">
+                                                <span>黑***3</span>
+                                                <span>（匿名）</span>
+                                            </td>
+                                            <td class="deal-time"> 2015-07-21 12:47:56 </td>
+                                            <td class="deal-style"> 300ml/NATUREREPUBLIC自然乐园 </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="deal-buyer">
+                                                <img width="32px" height="32px" src="http://d03.res.meilishuo.net/ap/a/54/68/771764b3b147d2d127be2814057c_500_500.cg.jpg">
+                                                <span>泡***瓜</span>
+                                                <span>（匿名）</span>
+                                            </td>
+                                            <td class="deal-time"> 2015-07-21 09:44:45 </td>
+                                            <td class="deal-style"> 300ml/NATUREREPUBLIC自然乐园 </td>
+                                        </tr>  
+                                    </tbody>
+                                </table>
+                                <div class="clear_f"></div> 
+                                <div id="dealPagingNav"> </div> 
+                                <div class="clear_f"></div> 
+                            </div> 
+                        </div>  
+                        <div class="hot_sale"> 
+                            <h2 class="like_tle">本店热卖</h2> 
+                            <ul class="all_goods">    
+                                <li class="poster_grid" twitter_id="2943426473" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="2943426473"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/2943426473?d_r=6__0-1-1-1-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/eedee9979274a230700c91bf9854_640_832.jpg"></a> 
+                                        <span class="price">29.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/2943426473?d_r=6__0-1-1-1-r_hdtbottom" target="_blank">韩束 芦荟凝胶 180g</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">26824</span> </a> <span class="gray_f right_f">销量（6326）</span> </p>  
+                                </li>   
+                                <li class="poster_grid" twitter_id="2798961270" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="2798961270"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/2798961270?d_r=6__0-1-1-2-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/5106dc9469ad9dcb8335f070cb2f_640_832.jpg"></a> 
+                                        <span class="price">19.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/2798961270?d_r=6__0-1-1-2-r_hdtbottom" target="_blank">肌漾 身体乳300ml</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">9439</span> </a> <span class="gray_f right_f">销量（3294）</span> </p>  
+                                </li>   
+                                <li class="poster_grid" twitter_id="2690117384" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="2690117384"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/2690117384?d_r=6__0-1-1-3-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/c0c527bc2615ebe9403004b14f5b_640_832.jpg"></a> 
+                                        <span class="price">25.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/2690117384?d_r=6__0-1-1-3-r_hdtbottom" target="_blank">韩束 金盏花去角质素</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">8125</span> </a> <span class="gray_f right_f">销量（2195）</span> </p>  
+                                </li>   
+                                <li class="poster_grid" style="margin-right:0" twitter_id="3544593113" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3544593113"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/3544593113?d_r=6__0-1-1-4-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/a2e02e53dd9af1c6d8e98394aebe_640_832.jpg"></a> 
+                                        <span class="price">25.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/3544593113?d_r=6__0-1-1-4-r_hdtbottom" target="_blank">韩束 芦荟凝胶 2支</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">3009</span> </a> <span class="gray_f right_f">销量（1945）</span> </p>  
+                                </li>   
+                                <li class="poster_grid" twitter_id="2791705102" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="2791705102"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/2791705102?d_r=6__0-1-1-5-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/16aaeafe157965b4492bd253f984_640_832.jpg"></a> 
+                                        <span class="price">19.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/2791705102?d_r=6__0-1-1-5-r_hdtbottom" target="_blank">韩束 芦荟凝胶 35g</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">5739</span> </a> <span class="gray_f right_f">销量（1686）</span> </p>  
+                                </li>   
+                                <li class="poster_grid" twitter_id="3105969849" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="3105969849"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/3105969849?d_r=6__0-1-1-6-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/28700ee8409595f295286eb213ff_640_832.jpg"></a> 
+                                        <span class="price">25.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/3105969849?d_r=6__0-1-1-6-r_hdtbottom" target="_blank">韩束 水嫩亮颜洗颜霜</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">2776</span> </a> <span class="gray_f right_f">销量（1474）</span> </p>  
+                                </li>   
+                                <li class="poster_grid" twitter_id="2746230336" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="2746230336"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/2746230336?d_r=6__0-1-1-7-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/43559961d6639713f865e213a45e_640_832.jpg"></a> 
+                                        <span class="price">39.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/2746230336?d_r=6__0-1-1-7-r_hdtbottom" target="_blank">韩束 红石榴眼霜 15g</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">6565</span> </a> <span class="gray_f right_f">销量（1435）</span> </p>  
+                                </li>   
+                                <li class="poster_grid" style="margin-right:0" twitter_id="2700912604" twitter_author_uid="68978476" twitter_source_tid="0" twitter_show_type="7" like_twitter_id="2700912604"> 
+                                    <div class="hover_pic"> 
+                                        <a href="http://www.meilishuo.com/share/item/2700912604?d_r=6__0-1-1-8-r_hdtbottom" target="_blank"><img class="goods_pic" src="/img/detail/1/256b3baa804c99e24cb1fc3833df_640_832.jpg"></a> 
+                                        <span class="price">299.00</span> 
+                                        <div class="like_merge"> 
+                                            <a class="right_f poster_forward" href="javascript:void(0)"><em class="lm_shouji">&nbsp;</em>收进杂志</a> 
+                                        </div> 
+                                    </div> 
+                                    <p class="tle"><a href="http://www.meilishuo.com/share/item/2700912604?d_r=6__0-1-1-8-r_hdtbottom" target="_blank">韩束 红石榴鲜活六件套</a></p> 
+                                    <p class="comm_num"> <a isshowlike="1" s_uid="68978476" class="left_f poster_likes likes " href="javascript:void(0)"> <b class="likes_status"> <i class="lm_love2">&nbsp;</i>喜欢 </b> <span class="red_f f14_f poster_like_num">8173</span> </a> <span class="gray_f right_f">销量（1402）</span> </p>  
+                                </li>  
+                            </ul> 
+                        </div>   
+                        <div class="shop_box">  
+                            <h3 class="sp_tle"><a href="http://www.meilishuo.com/shop/110158" target="_blank"><span class="sp_ico">&nbsp;</span>韩束官方旗舰店</a></h3>   
+                            <a class="goqq knilmi" href="###--110158-2-3478365879" target="_blank"><em class="qqico">&nbsp;</em>联系客服</a>  
+                            <a class="attention no_att"> <i class="plus-ico"></i>关注本店 </a> 
+                            <div class="fans_bottom j_fans"> <i>23679</i>粉丝 </div> 
+                            <div class="clear_f"></div>  
+                            <p class="sp_link"><a href="http://www.meilishuo.com/shop/110158" target="_blank">http://www.meilishuo.com/shop/110158</a></p> 
+                            <a href="http://www.meilishuo.com/shop/?frm=banner_to_shop" target="_blank" class="check-more-shop"><i class="right-arrow-ico"></i>查看更多店铺</a>  
+                        </div>  
+                    </div> 
+                    <div class="sidebar"> 
+                        <div class="js-shop-cover shop-cover"> 
+                            <h3 class="title"></h3> 
+                            <a target="_blank"><img height="226" width="226"></a> 
+                        </div>  
+                        <div class="cat"> 
+                            <h3 class="hd">商品分类</h3> 
+                            <div class="cat-wrap">  
+                                <h4>查看所有商品</h4> 
+                                <ul class="cat-list-horizon">  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?order=new&amp;sharecat_to_shop" target="_blank">最新上架</a></li>   
+                                    <li><a href="http://www.meilishuo.com/shop/110158?order=hot&amp;sharecat_to_shop" target="_blank">热卖单品</a></li>   
+                                </ul>  
+                                <h4>全部商品</h4> 
+                                <ul class="cat-list">  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=316722&amp;sharecat_to_shop" target="_blank">全部商品</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=257966&amp;sharecat_to_shop" target="_blank">所有商品</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261370&amp;sharecat_to_shop" target="_blank">店长推荐</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261316&amp;sharecat_to_shop" target="_blank">彩妆</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261352&amp;sharecat_to_shop" target="_blank">面膜</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261330&amp;sharecat_to_shop" target="_blank">套装</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261318&amp;sharecat_to_shop" target="_blank">新品墨菊</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261320&amp;sharecat_to_shop" target="_blank">红石榴</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261322&amp;sharecat_to_shop" target="_blank">火棘</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261348&amp;sharecat_to_shop" target="_blank">水嫩亮颜</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261324&amp;sharecat_to_shop" target="_blank">雪白肌</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261326&amp;sharecat_to_shop" target="_blank">金盏花</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261406&amp;sharecat_to_shop" target="_blank">水漾活泉</a></li>  
+                                    <li><a href="http://www.meilishuo.com/shop/110158?category_id=261328&amp;sharecat_to_shop" target="_blank">超能</a></li>   
+                                </ul>  
+                            </div> 
+                        </div>   
+                        <div class="buy-more"> 
+                            <h3 class="hd">买了本商品还买了</h3> 
+                            <ul>  
+                                <li class="item"> 
+                                    <div class="wrap"> 
+                                        <a href="http://www.meilishuo.com/share/item/3685900953?d_r=6__0-1-1-1-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank"><img src="/img/detail/1/90245809aa1ea9fee9c3bc417d20_640_832_002.jpg"></a> 
+                                        <span class="price">￥149.00</span> 
+                                    </div> 
+                                    <p class="title">
+                                        <a href="http://www.meilishuo.com/share/item/3685900953?d_r=6__0-1-1-1-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank">韩束 墨菊深度补水精华素</a>
+                                    </p> 
+                                    <div class="buy-more-info"> <span class="sales">销量 ( 2 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>4人已喜欢</span> 
+                                    </div> 
+                                </li>  
+                                <li class="item"> 
+                                    <div class="wrap"> 
+                                        <a href="http://www.meilishuo.com/share/item/3685911701?d_r=6__0-1-1-2-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank"><img src="/img/detail/1/1c60164adb67557b0e8615cde76f_640_832.jpg"></a> 
+                                        <span class="price">￥39.00</span> 
+                                    </div> 
+                                    <p class="title"><a href="http://www.meilishuo.com/share/item/3685911701?d_r=6__0-1-1-2-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank">韩束 吾尊磨砂洁面啫哩</a></p> 
+                                    <div class="buy-more-info"> <span class="sales">销量 ( 0 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>8人已喜欢</span> 
+                                    </div> 
+                                </li>  
+                                <li class="item"> 
+                                    <div class="wrap"> 
+                                        <a href="http://www.meilishuo.com/share/item/3685921075?d_r=6__0-1-1-3-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank"><img src="/img/detail/1/91b90be3f2b4a1e9b656a84ee22b_640_832.jpg"></a> 
+                                        <span class="price">￥119.00</span> 
+                                    </div> 
+                                    <p class="title"><a href="http://www.meilishuo.com/share/item/3685921075?d_r=6__0-1-1-3-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank">韩束 吾尊合动能水凝乳</a></p> 
+                                    <div class="buy-more-info"> 
+                                        <span class="sales">销量 ( 0 )</span> 
+                                        <span class="likes"><i class="love-ico">&nbsp;</i>2人已喜欢</span> 
+                                    </div> 
+                                </li>  
+                                <li class="item"> 
+                                    <div class="wrap"> 
+                                        <a href="http://www.meilishuo.com/share/item/3685880107?d_r=6__0-1-1-4-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank"><img src="/img/detail/1/1478027ad0ebaa6803dedccac9c0_640_832.jpg"></a> 
+                                        <span class="price">￥89.00</span> 
+                                    </div> 
+                                    <p class="title"><a href="http://www.meilishuo.com/share/item/3685880107?d_r=6__0-1-1-4-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank">韩束 红石榴鲜活精华液</a></p> 
+                                    <div class="buy-more-info"> <span class="sales">销量 ( 0 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>4人已喜欢</span> </div> 
+                                </li>  
+                                <li class="item"> 
+                                    <div class="wrap"> 
+                                        <a href="http://www.meilishuo.com/share/item/3672503609?d_r=6__0-1-1-5-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank"><img src="/img/detail/1/23a56ee8906de3c701f59f66574e_640_832.jpg"></a> 
+                                        <span class="price">￥49.00</span> 
+                                    </div> 
+                                    <p class="title"><a href="http://www.meilishuo.com/share/item/3672503609?d_r=6__0-1-1-5-r_hdtcobuy-t_shop-abtest_2-ot_3478365879" target="_blank">韩束 补水保湿面膜组</a></p> 
+                                    <div class="buy-more-info"> <span class="sales">销量 ( 41 )</span> <span class="likes"><i class="love-ico">&nbsp;</i>185人已喜欢</span>
+                                    </div> 
+                                </li>  
+                            </ul> 
+                        </div>  
+                    </div> 
+                </div>
+            </div>
+            <div class="pro_line"></div>
+            <div class="promise ">	
+                <ul>			
+                    <li>			
+                        <a href="http://www.meilishuo.com/help/return/" target="_blank" class="pro_ico"><img src="/img/detail/1/cosmetic_zheng.png"></a>			
+                        <p class="pro_tle"><a href="http://www.meilishuo.com/help/return/" target="_blank">100%正品</a></p>		
+                        <p><a href="http://www.meilishuo.com/help/return/" target="_blank">轻松购物有保障</a></p>		
+                    </li>				
+                    <li>			
+                        <a href="http://www.meilishuo.com/help/return/" target="_blank" class="pro_ico"><img src="/img/detail/1/cosmetic_serven.png"></a>			
+                        <p class="pro_tle"><a href="http://www.meilishuo.com/help/return/" target="_blank">7天无理由退货</a></p>
+                        <p><a href="http://www.meilishuo.com/help/return/" target="_blank">轻松购物有保障</a></p>		
+                    </li>				
+                    <li class="last">			
+                        <a href="http://www.meilishuo.com/help/return/" target="_blank" class="pro_ico"><img src="/img/detail/1/cosmetic_fan.png"></a>			
+                        <p class="pro_tle"><a href="http://www.meilishuo.com/help/return/" target="_blank">退货补贴运费</a></p>
+                        <p><a href="http://www.meilishuo.com/help/return/" target="_blank">轻松购物有保障</a></p>		
+                    </li>				
+                </ul>
+            </div>
+            <div id="js-cities" class="cities"></div>
+            <div class="item-share-panel-wrap js-item-share-panel"> 
+                <div class="item-share-panel label-arrow-top"> <a id="share-sina" class="i_sina">&nbsp;</a> <a id="share-tx" class="i_tx">&nbsp;</a> <a id="share-qzone" class="i_qzone">&nbsp;</a> 
+            </div>
+        </div>
+
+    <script>
+    // 点击商品详情，购买评价，成交记录 时，下面显示各自的版块
+        $(".tabArea").each(function(i){
+            $(".tabArea").eq(i).click(function(){
+                $(".tabArea").removeClass('cur');
+                $(this).addClass('cur');
+                $(".contentArea").css("display","none");
+                $(".contentArea").eq(i).css("display","block");
+                if(i == 0){
+                    $(".detail_items").css("display","block");
+                }else{
+                    $(".detail_items").css("display","none");
+                }
+            });
+        });
+        // 移动鼠标到商品图片时，显示大图
+        $(".item-pic-thumb > span").each(function(i){
+            $(".item-pic-thumb > span").eq(i).mousemove(function(){
+                $(".item-pic-thumb > span").removeClass('active');
+                $(this).addClass('active');
+                var pic = $(this).children('img').attr('bsrc');
+                $(".j-big-pic").attr("src",pic);
+            });
+        });
+
+        //点击颜色，显示放大镜图片
+        function color(obj){
+            var img = $(obj).children('img').attr('src');
+            var _csrf = $('#_csrf').val();
+            var id = <?php echo $goods['id'];?>;
+
+            //点击颜色，否则点击尺码
+            if (img !== undefined) {
+                $('.twitter_pic').attr('src',img);
+                $(".item-color-img").removeClass('active');
+                $(obj).addClass('active');
+
+                var dataId = $(obj).attr('data-id');
+
+                var size = $(".active[data-type='size']").html();
+                
+                if (size !== undefined) {
+                    var request = {'id':id,'dataId':dataId,'size':size,_csrf:_csrf};
+                } else {
+                    var request = {'id':id,'dataId':dataId,_csrf:_csrf};
+                }
+
+                $.ajax({
+                    url:"../detail/inventory",
+                    type:'post',
+                    dataType:'json',
+                    cache:false,
+                    data:request,
+                    success:function(data){
+                        if (data.status) {
+                            $("#inventory").html(data.data);
+                        }
+                    }
+                });
+            } else {
+                $(".item-size-type").removeClass('active');
+                $(obj).addClass('active');
+
+                var size = $(obj).html();
+
+                var dataId = $(".active[data-type='color']").attr('data-id');
+                
+                if (dataId !== undefined) {
+                    var request = {'id':id,'dataId':dataId,'size':size,_csrf:_csrf};
+                } else {
+                    var request = {'id':id,'size':size,_csrf:_csrf};
+                }
+
+                $.ajax({
+                    url:"../detail/inventory",
+                    type:'post',
+                    dataType:'json',
+                    cache:false,
+                    data:request,
+                    success:function(data){
+                        if (data.status) {
+                            $("#inventory").html(data.data);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
