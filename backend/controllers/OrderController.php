@@ -1,10 +1,11 @@
 <?php
 namespace backend\controllers;
-use Yii;
-use yii\web\Controller;
-use backend\service\OrderService;
 
-class OrderController extends Controller
+use Yii;
+use backend\service\OrderService;
+use backend\controllers\BaseController;
+
+class OrderController extends BaseController
 {
     //未发货订单列表
     public function actionIndex()

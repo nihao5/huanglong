@@ -2,10 +2,10 @@
 namespace backend\controllers;
 
 use Yii;
-use yii\web\Controller;
 use backend\service\BannerService;
+use backend\controllers\BaseController;
 
-class BannerController extends Controller
+class BannerController extends BaseController
 {
     public function actionIndex()
     {

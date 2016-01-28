@@ -32,10 +32,10 @@ class Admin extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'passward', 'email', 'check', 'count', 'addtime', 'lastlogin'], 'required'],
+            [['name', 'password', 'email', 'addtime', 'lastlogin'], 'required'],
             [['check', 'count', 'addtime', 'lastlogin'], 'integer'],
             [['name'], 'string', 'max' => 30],
-            [['passward'], 'string', 'max' => 32],
+            [['password'], 'string', 'max' => 32],
             [['email'], 'string', 'max' => 50]
         ];
     }
@@ -48,7 +48,7 @@ class Admin extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'passward' => 'Passward',
+            'password' => 'Password',
             'email' => 'Email',
             'check' => 'Check',
             'count' => 'Count',

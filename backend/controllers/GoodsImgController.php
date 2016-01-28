@@ -1,9 +1,10 @@
 <?php
 namespace backend\controllers;
+
 use Yii;
-use backend\controllers\BaseController;
-use backend\service\UploadHandler;
 use backend\models\Goods;
+use backend\service\UploadHandler;
+use backend\controllers\BaseController;
 
 class GoodsImgController extends BaseController
 {

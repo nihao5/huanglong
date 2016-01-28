@@ -1,10 +1,11 @@
 <?php
 namespace backend\controllers;
-use Yii;
-use yii\web\Controller;
-use backend\service\UserService;
 
-class UserController extends Controller
+use Yii;
+use backend\service\UserService;
+use backend\controllers\BaseController;
+
+class UserController extends BaseController
 {
     public function actionIndex()
     {

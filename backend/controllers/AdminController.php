@@ -1,8 +1,10 @@
 <?php
 namespace backend\controllers;
-use yii\web\Controller;
 
-class AdminController extends Controller
+use Yii;
+use backend\controllers\BaseController;
+
+class AdminController extends BaseController
 {
     public function actionIndex()
     {

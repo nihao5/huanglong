@@ -1,9 +1,11 @@
 <?php
 namespace backend\controllers;
+
 use Yii;
-use backend\controllers\BaseController;
-use backend\service\GoodsService;
 use backend\models\Goods;
+use backend\service\GoodsService;
+use backend\controllers\BaseController;
+
 
 class GoodsController extends BaseController
 {

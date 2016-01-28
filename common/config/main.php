@@ -2,16 +2,16 @@
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-	  'urlManager' => [
+	    'urlManager' => [
 	        'enablePrettyUrl' => true,
 	        'enableStrictParsing' => true,
 	        'showScriptName' => false,
 	        'rules' => [
                 '<controller:\w+\-\w+|\w+>/<action:\w+\-\w+|\w+>'=>'<controller>/<action>',
                 '<module:\w+\-\w+|\w+>/<controller:\w+\-\w+|\w+>/<action:\w+\-\w+|\w+>'=>'<module>/<controller>/<action>',
-                '/' => 'site/index'
+                '/' => 'index/index'
             ]
-	   ],
+	    ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

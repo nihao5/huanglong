@@ -12,6 +12,7 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'layout'=>'layout',
+    // 'defaultRoute' => 'index/index',
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',

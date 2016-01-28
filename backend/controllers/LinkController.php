@@ -3,6 +3,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\service\LinkService;
+use backend\controllers\BaseController;
 
 class LinkController extends BaseController
 {
